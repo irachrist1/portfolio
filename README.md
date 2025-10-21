@@ -35,7 +35,9 @@ This portfolio showcases:
 - **Icons**: Lucide React
 - **Typography**: Built-in `next/font`
 
-## Running Locally
+## Quick Start
+
+### Running Locally
 
 ```sh-session
 git clone https://github.com/irachrist1/portfolio.git
@@ -45,6 +47,12 @@ npm run dev
 ```
 
 Visit `http://localhost:3000` to see the portfolio.
+
+### Deploy to Vercel (One-Click)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/irachrist1/portfolio)
+
+Or follow the detailed [Deployment Guide](./DEPLOYMENT.md) for step-by-step instructions.
 
 ## Production Build
 
@@ -74,9 +82,16 @@ app/
 
 ## Customization Notes
 
-- Update `app/contact/page.tsx` with your real email and LinkedIn URL.
-- Project copy lives in `data/projects.ts`—edit there to change case studies.
-- Visual polish (Particles, gradients) lives in `app/components/particles.tsx` and `global.css`.
+- **Contact Info**: Update `app/contact/page.tsx` with your real email and LinkedIn URL
+- **Project Content**: Edit `app/data/projects.ts` to modify case studies
+- **Visual Effects**: Customize `app/components/particles.tsx` and `global.css`
+- **Branding**: Update metadata in `app/layout.tsx` for SEO and social sharing
+
+## Documentation
+
+- 📖 [Deployment Guide](./DEPLOYMENT.md) - Step-by-step deployment instructions
+- 🎨 [Portfolio Guide](./PORTFOLIO_GUIDE.md) - Content structure and customization
+- 🚀 [Lean Plan](./lean.plan.md) - Technical refactoring details
 
 ## License
 

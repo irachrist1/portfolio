@@ -7,17 +7,17 @@ import "./mdx.css";
 export const dynamic = "force-static";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
 export default async function PostPage({ params }: Props) {
-  const slug = params?.slug;
+  const { slug } = await params;
   const project = projects.find((project) => project.slug === slug);
 
   if (!project) {
