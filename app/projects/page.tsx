@@ -1,41 +1,22 @@
 import Link from "next/link";
 import React from "react";
-import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-import { Article } from "./article";
-import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
+import { projects } from "@/app/data/projects";
 
-const redis = Redis.fromEnv();
+export const dynamic = "force-static";
 
-export const revalidate = 60;
-export default async function ProjectsPage() {
-  const views = (
-    await redis.mget<number[]>(
-      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
-    )
-  ).reduce((acc, v, i) => {
-    acc[allProjects[i].slug] = v ?? 0;
-    return acc;
-  }, {} as Record<string, number>);
+export default function ProjectsPage() {
+  const featuredSlug = "nisr-ai-platform";
+  const secondarySlugs = ["ai-consulting", "enterprise-infrastructure"];
 
-  const featured = allProjects.find((project) => project.slug === "unkey")!;
-  const top2 = allProjects.find((project) => project.slug === "planetfall")!;
-  const top3 = allProjects.find((project) => project.slug === "highstorm")!;
-  const sorted = allProjects
-    .filter((p) => p.published)
-    .filter(
-      (project) =>
-        project.slug !== featured.slug &&
-        project.slug !== top2.slug &&
-        project.slug !== top3.slug,
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-    );
+  const featured = projects.find((project) => project.slug === featuredSlug)!;
+  const secondary = secondarySlugs
+    .map((slug) => projects.find((project) => project.slug === slug)!)
+    .filter(Boolean);
+  const rest = projects.filter(
+    (project) => project.slug !== featuredSlug && !secondarySlugs.includes(project.slug),
+  );
 
   return (
     <div className="relative pb-16">
@@ -46,7 +27,7 @@ export default async function ProjectsPage() {
             Projects
           </h2>
           <p className="mt-4 text-zinc-400">
-            Some of the projects are from work and some are on my own time.
+            Real projects that generated measurable business impact. Every line of code serves a business objective.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
@@ -64,15 +45,9 @@ export default async function ProjectsPage() {
                         }).format(new Date(featured.date))}
                       </time>
                     ) : (
-                      <span>SOON</span>
+                      <span>Case Study</span>
                     )}
                   </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-                    <Eye className="w-4 h-4" />{" "}
-                    {Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                      views[featured.slug] ?? 0,
-                    )}
-                  </span>
                 </div>
 
                 <h2
@@ -94,44 +69,66 @@ export default async function ProjectsPage() {
           </Card>
 
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-            {[top2, top3].map((project) => (
+            {secondary.map((project) => (
               <Card key={project.slug}>
-                <Article project={project} views={views[project.slug] ?? 0} />
+                <Link href={`/projects/${project.slug}`}>
+                  <article className="p-4 md:p-8">
+                    <div className="flex justify-between gap-2 items-center">
+                      <span className="text-xs duration-1000 text-zinc-200">
+                        {project.date ? (
+                          <time dateTime={new Date(project.date).toISOString()}>
+                            {Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
+                              new Date(project.date),
+                            )}
+                          </time>
+                        ) : (
+                          <span>Case Study</span>
+                        )}
+                      </span>
+                    </div>
+                    <h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+                      {project.title}
+                    </h2>
+                    <p className="z-20 mt-4 text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
+                      {project.description}
+                    </p>
+                  </article>
+                </Link>
               </Card>
             ))}
           </div>
         </div>
         <div className="hidden w-full h-px md:block bg-zinc-800" />
 
-        <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 0)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
-                </Card>
-              ))}
+        {rest.length ? (
+          <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
+            {rest.map((project) => (
+              <Card key={project.slug}>
+                <Link href={`/projects/${project.slug}`}>
+                  <article className="p-4 md:p-8">
+                    <span className="text-xs text-zinc-200">
+                      {project.date ? (
+                        <time dateTime={new Date(project.date).toISOString()}>
+                          {Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
+                            new Date(project.date),
+                          )}
+                        </time>
+                      ) : (
+                        <span>Case Study</span>
+                      )}
+                    </span>
+                    <h3 className="mt-4 text-xl font-medium text-zinc-200 group-hover:text-white font-display">
+                      {project.title}
+                    </h3>
+                    <p className="mt-4 text-sm text-zinc-400 group-hover:text-zinc-200">
+                      {project.description}
+                    </p>
+                  </article>
+                </Link>
+              </Card>
+            ))}
           </div>
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 1)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
-                </Card>
-              ))}
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 2)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
-                </Card>
-              ))}
-          </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );

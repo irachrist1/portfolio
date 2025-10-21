@@ -1,11 +1,8 @@
-import { withContentlayer } from "next-contentlayer";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-	experimental: {
-		mdxRs: true,
-	},
+  // Remove MDX extensions since we're using static data
+  pageExtensions: ["js", "jsx", "ts", "tsx"],
+  // Remove experimental MDX settings
 };
 
-export default withContentlayer(nextConfig);
+export default nextConfig;

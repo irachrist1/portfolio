@@ -1,24 +1,24 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "Christian Iradukunda - Software Engineer & AI Implementation Consultant",
+    template: "%s | Christian Iradukunda",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Software Engineer and AI Implementation Consultant building technology that generates measurable business impact. Built Rwanda's first AI-powered government intelligence platform and generated $120K in qualified leads.",
+  metadataBase: new URL("https://christiantonny.dev"),
   openGraph: {
-    title: "chronark.com",
-    description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    title: "Christian Iradukunda - Software Engineer & AI Implementation Consultant",
+    description: "Building technology that generates measurable business impact. AI implementation, enterprise systems, and digital operations expertise.",
+    url: "https://christiantonny.dev",
+    siteName: "Christian Iradukunda Portfolio",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "Christian Iradukunda - Software Engineer & AI Consultant",
     card: "summary_large_image",
   },
   icons: {
@@ -48,11 +48,13 @@ export const metadata: Metadata = {
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
-const calSans = LocalFont({
+const calSans = localFont({
   src: "../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-calsans",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -61,7 +63,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html
+      lang="en"
+      className={[inter.variable, calSans.variable].join(" ")}
+      suppressHydrationWarning
+    >
       <head>
         <Analytics />
       </head>

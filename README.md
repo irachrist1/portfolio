@@ -1,33 +1,87 @@
 <div align="center">
-    <a href="https://chronark.com"><h1 align="center">chronark.com</h1></a>
+    <a href="https://christiantonny.dev"><h1 align="center">Christian Iradukunda Portfolio</h1></a>
 
-My personal website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Upstash](https://upstash.com?ref=chronark.com), [Contentlayer](https://www.contentlayer.dev/) and deployed to [Vercel](https://vercel.com/).
+Professional portfolio website for Christian Iradukunda - Software Engineer & AI Implementation Consultant building technology that generates measurable business impact.
+
+Built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and deployable to your preferred host.
 
 </div>
 
 <br/>
 
+## About This Portfolio
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/upstash/clone?demo-title=Next.js%20Portfolio%20with%20Pageview%20Counter&demo-description=Portfolio%20site%20with%20pageview%20counter%2C%20built%20with%20Next.js%2013%20App%20Router%2C%20Contentlayer%2C%20and%20Upstash%20Redis.&demo-url=https%3A%2F%2Fchronark.com%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1DA8n5a6WaP9p1FXf9LmUY%2Fc6264fa2732355787bf657df92dda8a1%2FCleanShot_2023-04-17_at_14.17.37.png&project-name=Next.js%20Portfolio%20with%20Pageview%20Counter&repository-name=nextjs-portfolio-pageview-counter&repository-url=https%3A%2F%2Fgithub.com%2Fchronark%2Fchronark.com&from=templates&integration-ids=oac_V3R1GIpkoJorr6fqyiwdhl17)
+This portfolio showcases:
+
+- **$120K in qualified leads** generated through AI consulting
+- **90% accuracy** AI platform for Rwanda's government intelligence
+- **50+ employees** secured with enterprise infrastructure improvements
+- **1,500+ views** on published thought leadership articles
+
+### Pages Included
+
+- **Homepage**: Compelling hero section with key metrics and featured projects
+- **Projects**: Three detailed case studies (NISR AI Platform, AI Consulting Practice, Enterprise Infrastructure)
+- **About**: Origin story, mission, philosophy, and professional track record
+- **Skills**: Categorized technical and business skills with proof points
+- **Writing**: Published articles and thought leadership content
+- **Contact**: Multiple engagement options with clear process outline
+
+## Technology Stack
+
+- **Framework**: Next.js 13 App Router (fully static output)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion for hero visuals
+- **Icons**: Lucide React
+- **Typography**: Built-in `next/font`
 
 ## Running Locally
 
-
 ```sh-session
-git clone https://github.com/chronark/chronark.com.git
-cd chronark.com
+git clone https://github.com/irachrist1/portfolio.git
+cd portfolio
+npm install
+npm run dev
 ```
 
+Visit `http://localhost:3000` to see the portfolio.
 
-Create a `.env` file similar to [`.env.example`](https://github.com/chronark/chronark.com/blob/main/.env.example).
+## Production Build
 
-Then install dependencies and run the development server:
 ```sh-session
-pnpm install
-pnpm dev
+npm run build
+npm start
 ```
 
+## Deployment
 
-## Cloning / Forking
+1. Push to GitHub (or your preferred git host)
+2. Connect the repository to Vercel or Netlify
+3. Deploy — the site renders completely static pages
 
-Please remove all of my personal information (projects, images, etc.) before deploying your own version of this site.
+## Project Structure Highlights
+
+```
+app/
+  components/
+    markdown.tsx        // Lightweight markdown renderer
+    particles.tsx       // Hero visual effect
+  projects/
+    [slug]/page.tsx     // Static case study pages
+  data/
+    projects.ts         // Structured project copy
+```
+
+## Customization Notes
+
+- Update `app/contact/page.tsx` with your real email and LinkedIn URL.
+- Project copy lives in `data/projects.ts`—edit there to change case studies.
+- Visual polish (Particles, gradients) lives in `app/components/particles.tsx` and `global.css`.
+
+## License
+
+See [LICENSE](./LICENSE) for more information.
+
+---
+
+Built with ❤️ by Christian Iradukunda
