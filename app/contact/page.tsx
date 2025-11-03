@@ -7,13 +7,13 @@ import { Card } from "../components/card";
 const socials = [
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:christian@example.com",
+		href: "mailto:ctonny111@gmail.com",
 		label: "Email",
-		handle: "christian@example.com",
+		handle: "ctonny111@gmail.com",
 	},
 	{
 		icon: <Linkedin size={20} />,
-		href: "https://linkedin.com/in/christian-iradukunda",
+		href: "https://www.linkedin.com/in/irachrist1-3aa9a0216/",
 		label: "LinkedIn",
 		handle: "Christian Iradukunda",
 	},
@@ -274,7 +274,7 @@ export default function ContactPage() {
 								Response time: I aim to respond to all inquiries within 48 hours.
 							</p>
 							<Link
-								href="mailto:christian@example.com"
+								href="mailto:ctonny111@gmail.com"
 								className="inline-block px-8 py-4 text-base font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
 							>
 								Send Me an Email

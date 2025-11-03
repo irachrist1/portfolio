@@ -7,8 +7,8 @@ import { projects } from "@/app/data/projects";
 export const dynamic = "force-static";
 
 export default function ProjectsPage() {
-  const featuredSlug = "nisr-ai-platform";
-  const secondarySlugs = ["ai-consulting", "enterprise-infrastructure"];
+  const featuredSlug = "erp-integration-system";
+  const secondarySlugs = ["website-performance-optimization", "it-infrastructure-management"];
 
   const featured = projects.find((project) => project.slug === featuredSlug)!;
   const secondary = secondarySlugs
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
             Projects
           </h2>
           <p className="mt-4 text-zinc-400">
-            Real projects that generated measurable business impact. Every line of code serves a business objective.
+            Real work from managing IT infrastructure, building integrations, and optimizing systems at Andersen Rwanda and SPCS Tech Solutions.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />

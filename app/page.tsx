@@ -39,193 +39,127 @@ export default function Home() {
         
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
         
-        <div className="z-10 max-w-5xl mx-auto text-center mt-8 mb-8 animate-fade-in">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-zinc-100 leading-tight mb-6 px-4">
-            At 22, I Built Rwanda's First AI-Powered Government Intelligence Platform. Then I Generated $120,000 in New Business.
+        <div className="z-10 max-w-4xl mx-auto text-center mt-8 mb-8 animate-fade-in">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-zinc-100 leading-tight mb-6 px-4">
+            Christian Tonny
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-400 mb-4">
-            Software Engineer | AI Implementation Consultant | Digital Operations Specialist
+          <p className="text-xl md:text-2xl text-zinc-300 mb-6 max-w-2xl mx-auto">
+            Software Engineer & Writer exploring how AI transforms business
           </p>
-          <p className="text-base md:text-lg text-zinc-500 italic">
-            Where Technical Excellence Meets Measurable Business Impact
+          <p className="text-base md:text-lg text-zinc-500">
+            Building things. Writing about technology. Based in Kigali.
           </p>
         </div>
 
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
         
+        {/* Brief About */}
         <div className="my-16 max-w-3xl mx-auto text-center animate-fade-in px-6">
-          <p className="text-lg text-zinc-400 leading-relaxed mb-8">
-            Most software engineers can write code. Some can ship products. Few can prove their work makes money.
+          <p className="text-lg text-zinc-300 leading-relaxed mb-6">
+            I work at Andersen in Rwanda managing IT infrastructure, ERP systems, and cybersecurity. I'm also building an AI advisory practice to help businesses implement AI effectively.
           </p>
-          <p className="text-lg text-zinc-100 font-semibold mb-8">
-            I'm one of the few.
+          <p className="text-lg text-zinc-300 leading-relaxed mb-6">
+            Co-founded SPCS Tech Solutions to provide comprehensive IT support to companies becoming tech-mature.
+          </p>
+          <p className="text-lg text-zinc-300 leading-relaxed mb-8">
+            I write about AI, technology trends, and founder stories. Learning by building.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
-              href="/projects"
+              href="/writing"
               className="px-6 py-3 text-sm font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
             >
-              View My Projects
+              Read My Writing
             </Link>
             <Link
               href="/about"
               className="px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors duration-200"
             >
-              Read About Me
+              More About Me
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Key Metrics Section */}
-      <div className="px-6 pb-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 text-center mb-12">
-            Impact By The Numbers
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card>
-              <div className="p-6 text-center">
-                <p className="text-4xl font-bold text-zinc-100 mb-2">$120K</p>
-                <p className="text-sm text-zinc-400">Qualified Leads Generated</p>
-              </div>
-            </Card>
-            <Card>
-              <div className="p-6 text-center">
-                <p className="text-4xl font-bold text-zinc-100 mb-2">90%</p>
-                <p className="text-sm text-zinc-400">AI Platform Accuracy</p>
-              </div>
-            </Card>
-            <Card>
-              <div className="p-6 text-center">
-                <p className="text-4xl font-bold text-zinc-100 mb-2">50+</p>
-                <p className="text-sm text-zinc-400">Employees Secured</p>
-              </div>
-            </Card>
-            <Card>
-              <div className="p-6 text-center">
-                <p className="text-4xl font-bold text-zinc-100 mb-2">1,500+</p>
-                <p className="text-sm text-zinc-400">Article Views</p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Projects Preview */}
+      {/* Featured Writing */}
       <div className="px-6 pb-24">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-zinc-100">
-              Featured Work
+              Featured Writing
             </h2>
             <Link
-              href="/projects"
+              href="/writing"
               className="text-sm text-zinc-400 hover:text-zinc-100 transition-colors duration-200"
             >
-              View All Projects &rarr;
+              View All Articles &rarr;
             </Link>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card>
-              <Link href="/projects/nisr-ai-platform" className="block p-6 group">
+              <Link href="https://www.linkedin.com/pulse/when-everything-automated-christian-tonny-iradukunda-jcpyc/" target="_blank" className="block p-6 group">
+                <div className="text-xs text-zinc-500 mb-3">July 15, 2025 • LinkedIn</div>
                 <h3 className="text-xl font-bold text-zinc-100 mb-3 group-hover:text-white transition-colors">
-                  NISR AI Platform
+                  When Everything is Automated
                 </h3>
-                <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-                  Rwanda's first AI-powered government intelligence platform enabling policymakers to query years of data in seconds.
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Exploring the AI browser wars, the agentic era, and how talent wars will reshape the tech industry when automation becomes ubiquitous.
                 </p>
-                <div className="space-y-2 text-xs text-zinc-500">
-                  <p>• 90% accuracy across 50+ datasets</p>
-                  <p>• Built with RAG architecture</p>
-                  <p>• React + Python + LangChain</p>
-                </div>
               </Link>
             </Card>
             
             <Card>
-              <Link href="/projects/ai-consulting" className="block p-6 group">
+              <Link href="https://www.linkedin.com/pulse/state-ai-2025-christian-tonny-iradukunda-tzdqc/" target="_blank" className="block p-6 group">
+                <div className="text-xs text-zinc-500 mb-3">March 25, 2025 • LinkedIn</div>
                 <h3 className="text-xl font-bold text-zinc-100 mb-3 group-hover:text-white transition-colors">
-                  AI Consulting Practice
+                  The State of AI in 2025
                 </h3>
-                <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-                  Launched AI advisory service line generating qualified business opportunities through workshops and thought leadership.
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Vibe coding, model breakthroughs, and a practical framework for implementing AI in business. A comprehensive look at where we are.
                 </p>
-                <div className="space-y-2 text-xs text-zinc-500">
-                  <p>• $120K in qualified leads</p>
-                  <p>• 15% conversion rate</p>
-                  <p>• 5 published articles</p>
-                </div>
               </Link>
             </Card>
             
             <Card>
-              <Link href="/projects/enterprise-infrastructure" className="block p-6 group">
+              <Link href="https://www.linkedin.com/pulse/12-key-insights-from-psychology-money-christian-tonny-iradukunda-u0bqc/" target="_blank" className="block p-6 group">
+                <div className="text-xs text-zinc-500 mb-3">March 18, 2025 • LinkedIn</div>
                 <h3 className="text-xl font-bold text-zinc-100 mb-3 group-hover:text-white transition-colors">
-                  Enterprise Infrastructure
+                  12 Key Insights from The Psychology of Money
                 </h3>
-                <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-                  Secured 50+ employees with zero-downtime upgrades, comprehensive cybersecurity, and automated systems.
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Financial mental models and the power of compounding. Lessons from Morgan Housel's masterpiece on wealth and behavior.
                 </p>
-                <div className="space-y-2 text-xs text-zinc-500">
-                  <p>• 100% MFA adoption</p>
-                  <p>• 99.9% uptime achieved</p>
-                  <p>• Zero security breaches</p>
-                </div>
               </Link>
             </Card>
           </div>
         </div>
       </div>
 
-      {/* Mission Statement */}
+      {/* What I'm Learning */}
       <div className="px-6 pb-24">
         <div className="max-w-4xl mx-auto">
           <Card>
             <div className="p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-6 text-center">
-                What Drives Me
+                Currently Learning From
               </h2>
-              <p className="text-lg text-zinc-300 leading-relaxed text-center mb-6">
-                Every line of code I write serves a business objective. Every system I build solves a real problem. Every strategy I propose includes measurable ROI.
-              </p>
-              <p className="text-base text-zinc-400 leading-relaxed text-center">
-                I don't just build technology. I build technology that makes money, saves time, and creates competitive advantage. And I do it while maintaining a singular mission: using these skills to bring quality education to rural students across Africa who need it most.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-zinc-300">
+                <div>
+                  <p className="font-semibold text-zinc-200 mb-3">Books</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Founder biographies: Steve Jobs, Bill Gates, Mark Zuckerberg. Understanding how they built products that "feel like magic."
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-zinc-200 mb-3">Podcasts</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Acquired, Founders. Deep dives into company building, decision-making, and what actually matters in technology.
+                  </p>
+                </div>
+              </div>
             </div>
           </Card>
-        </div>
-      </div>
-
-      {/* Trust Indicators */}
-      <div className="px-6 pb-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-zinc-100 mb-8">
-            Currently
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-zinc-400">
-            <div>
-              <p className="font-semibold text-zinc-300 mb-2">Organization</p>
-              <p>Andersen Rwanda</p>
-              <p className="text-sm">Digital Operations Associate</p>
-            </div>
-            <div>
-              <p className="font-semibold text-zinc-300 mb-2">Education</p>
-              <p>African Leadership University</p>
-              <p className="text-sm">Software Engineering</p>
-            </div>
-            <div>
-              <p className="font-semibold text-zinc-300 mb-2">Published</p>
-              <p>5 Articles on AI Implementation</p>
-              <p className="text-sm">1,500+ Views</p>
-            </div>
-            <div>
-              <p className="font-semibold text-zinc-300 mb-2">Location</p>
-              <p>Kigali, Rwanda</p>
-              <p className="text-sm">Available for Remote Work</p>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -233,10 +167,10 @@ export default function Home() {
       <div className="px-6 pb-24">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-6">
-            Let's Work Together
+            Let's Connect
           </h2>
           <p className="text-lg text-zinc-400 mb-8">
-            Open to: AI consulting projects, software engineering roles, speaking opportunities, and collaborations in educational technology.
+            Interested in AI implementation, technology trends, or just want to chat about building products.
           </p>
           <Link
             href="/contact"

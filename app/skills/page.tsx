@@ -42,16 +42,16 @@ export default function SkillsPage() {
 								<div>
 									<h3 className="text-xl font-semibold text-zinc-200 mb-4">What I've Built</h3>
 									<ul className="space-y-2 text-zinc-400">
-										<li>• AI-powered intelligence platform (90% accuracy)</li>
-										<li>• Custom RAG systems for document querying</li>
-										<li>• AI readiness assessment tools</li>
-										<li>• Automated content processing pipelines</li>
+										<li>• Python-based data processing pipelines</li>
+										<li>• AI tools for internal advisory practice development</li>
+										<li>• Automation scripts for workflow improvements</li>
+										<li>• Data analysis and visualization tools</li>
 									</ul>
 								</div>
 							</div>
 							<div className="mt-6 pt-6 border-t border-zinc-700">
 								<p className="text-sm text-zinc-500">
-									<span className="font-semibold text-zinc-300">Proof:</span> NISR project, AI consulting tools, published implementation guides
+									<span className="font-semibold text-zinc-300">Proof:</span> Developed AI advisory practice at Andersen, published newsletter articles on AI implementation
 								</p>
 							</div>
 						</div>
@@ -77,16 +77,16 @@ export default function SkillsPage() {
 								<div>
 									<h3 className="text-xl font-semibold text-zinc-200 mb-4">What I've Built</h3>
 									<ul className="space-y-2 text-zinc-400">
-										<li>• React interfaces for AI platforms</li>
-										<li>• ERP customizations with Python and XML</li>
-										<li>• Website performance improvements (25% faster)</li>
-										<li>• Custom dashboards for business metrics</li>
+										<li>• React web applications and interfaces</li>
+										<li>• ERP customizations with Python and XML (Odoo)</li>
+										<li>• Website performance optimization</li>
+										<li>• Custom integration scripts between systems</li>
 									</ul>
 								</div>
 							</div>
 							<div className="mt-6 pt-6 border-t border-zinc-700">
 								<p className="text-sm text-zinc-500">
-									<span className="font-semibold text-zinc-300">Proof:</span> NISR frontend, company website optimization, Odoo customizations
+									<span className="font-semibold text-zinc-300">Proof:</span> Company website optimization, Odoo ERP customizations, system integrations at Andersen
 								</p>
 							</div>
 						</div>
@@ -112,16 +112,16 @@ export default function SkillsPage() {
 								<div>
 									<h3 className="text-xl font-semibold text-zinc-200 mb-4">What I've Built</h3>
 									<ul className="space-y-2 text-zinc-400">
-										<li>• Custom ERP workflows (40% faster approvals)</li>
-										<li>• Automated financial reporting (10+ hours saved monthly)</li>
-										<li>• SharePoint restructuring (60% better findability)</li>
-										<li>• User provisioning systems</li>
+										<li>• Custom Odoo ERP workflows and automations</li>
+										<li>• QuickBooks to Odoo integration system</li>
+										<li>• SharePoint restructuring and optimization</li>
+										<li>• PowerAutomate workflow automations</li>
 									</ul>
 								</div>
 							</div>
 							<div className="mt-6 pt-6 border-t border-zinc-700">
 								<p className="text-sm text-zinc-500">
-									<span className="font-semibold text-zinc-300">Proof:</span> Odoo customizations, M365 optimization, documented time savings
+									<span className="font-semibold text-zinc-300">Proof:</span> ERP integration projects, M365 administration, system automation at Andersen
 								</p>
 							</div>
 						</div>
@@ -147,17 +147,17 @@ export default function SkillsPage() {
 								<div>
 									<h3 className="text-xl font-semibold text-zinc-200 mb-4">What I've Implemented</h3>
 									<ul className="space-y-2 text-zinc-400">
-										<li>• Zero-downtime infrastructure upgrades</li>
-										<li>• MFA with 100% adoption rate</li>
-										<li>• Intrusion Detection Systems</li>
-										<li>• Disaster recovery plans (4-hour RTO)</li>
-										<li>• Phishing prevention and response</li>
+										<li>• Network infrastructure maintenance and upgrades</li>
+										<li>• Multi-Factor Authentication deployment</li>
+										<li>• Security policy configuration</li>
+										<li>• Backup and disaster recovery procedures</li>
+										<li>• Phishing prevention and incident response</li>
 									</ul>
 								</div>
 							</div>
 							<div className="mt-6 pt-6 border-t border-zinc-700">
 								<p className="text-sm text-zinc-500">
-									<span className="font-semibold text-zinc-300">Proof:</span> 50+ employees secured, 99.9% uptime, zero breaches
+									<span className="font-semibold text-zinc-300">Proof:</span> IT infrastructure management at Andersen, cybersecurity implementations, ongoing network administration
 								</p>
 							</div>
 						</div>
@@ -180,7 +180,7 @@ export default function SkillsPage() {
 								</ul>
 								<div className="mt-4 pt-4 border-t border-zinc-700">
 									<p className="text-xs text-zinc-500">
-										<span className="font-semibold text-zinc-300">Proof:</span> $120K in generated leads, client workshops, published ROI frameworks
+										<span className="font-semibold text-zinc-300">Proof:</span> AI advisory practice development at Andersen, business analysis work, system requirements gathering
 									</p>
 								</div>
 							</div>
@@ -197,7 +197,7 @@ export default function SkillsPage() {
 								</ul>
 								<div className="mt-4 pt-4 border-t border-zinc-700">
 									<p className="text-xs text-zinc-500">
-										<span className="font-semibold text-zinc-300">Proof:</span> Published articles (1,500+ views), trained employees, workshop conversions
+										<span className="font-semibold text-zinc-300">Proof:</span> Rwanda's Tech Insider newsletter (7 editions), 49 Kit broadcasts, published LinkedIn articles
 									</p>
 								</div>
 							</div>
@@ -222,18 +222,18 @@ export default function SkillsPage() {
 									</ul>
 								</div>
 								<div>
-									<h3 className="text-xl font-semibold text-zinc-200 mb-4">Campaigns I've Run</h3>
+									<h3 className="text-xl font-semibold text-zinc-200 mb-4">What I've Done</h3>
 									<ul className="space-y-2 text-zinc-400">
-										<li>• LinkedIn ads (15% conversion rate)</li>
-										<li>• Content marketing (50+ newsletter signups)</li>
-										<li>• Social media strategy (2K+ impressions)</li>
-										<li>• Website performance optimization</li>
+										<li>• Social media campaign management</li>
+										<li>• Content creation and publishing</li>
+										<li>• Newsletter publishing and distribution</li>
+										<li>• Website optimization and maintenance</li>
 									</ul>
 								</div>
 							</div>
 							<div className="mt-6 pt-6 border-t border-zinc-700">
 								<p className="text-sm text-zinc-500">
-									<span className="font-semibold text-zinc-300">Proof:</span> Measurable conversion rates, documented engagement metrics
+									<span className="font-semibold text-zinc-300">Proof:</span> Digital marketing work at Andersen, Rwanda's Tech Insider newsletter, company social media management
 								</p>
 							</div>
 						</div>
@@ -246,25 +246,25 @@ export default function SkillsPage() {
 						<h2 className="text-3xl font-bold text-zinc-100 mb-6 text-center">The Difference</h2>
 						<div className="space-y-4 text-zinc-400 leading-relaxed max-w-3xl mx-auto">
 							<p className="text-center text-lg">
-								Most portfolios list skills without proof.<br />
-								<span className="text-zinc-100 font-semibold">I list proof without needing to list skills.</span>
+								Most portfolios list skills without context.<br />
+								<span className="text-zinc-100 font-semibold">I show what I've actually built.</span>
 							</p>
 							<div className="space-y-3 mt-8">
 								<p>
 									When I say <span className="text-zinc-300 font-semibold">"Python,"</span> I don't mean I took a course.<br />
-									I mean I built an AI platform that government officials use.
+									I mean I built ERP integrations and automation tools used daily.
 								</p>
 								<p>
-									When I say <span className="text-zinc-300 font-semibold">"consulting,"</span> I don't mean I gave advice.<br />
-									I mean I generated $120,000 in qualified business.
+									When I say <span className="text-zinc-300 font-semibold">"IT infrastructure,"</span> I don't mean I set up a home network.<br />
+									I mean I manage systems that businesses depend on every day.
 								</p>
 								<p>
-									When I say <span className="text-zinc-300 font-semibold">"cybersecurity,"</span> I don't mean I read about best practices.<br />
-									I mean I prevented an actual breach and secured 50 employees.
+									When I say <span className="text-zinc-300 font-semibold">"writing,"</span> I don't mean I have a blog.<br />
+									I mean I published a newsletter for 7 editions and sent 49 broadcasts to real subscribers.
 								</p>
 							</div>
 							<p className="text-center text-lg font-semibold text-zinc-100 mt-8">
-								That's the difference: Facts, not fluff.
+								Real work over credentials.
 							</p>
 						</div>
 					</div>

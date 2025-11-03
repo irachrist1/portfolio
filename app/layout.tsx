@@ -6,16 +6,16 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "Christian Iradukunda - Software Engineer & AI Implementation Consultant",
-    template: "%s | Christian Iradukunda",
+    default: "Christian Tonny - Software Engineer & Writer",
+    template: "%s | Christian Tonny",
   },
-  description: "Software Engineer and AI Implementation Consultant building technology that generates measurable business impact. Built Rwanda's first AI-powered government intelligence platform and generated $120K in qualified leads.",
+  description: "Software engineer writing about AI, technology trends, and building products. Working on IT infrastructure and AI implementation at Andersen Rwanda. Based in Kigali.",
   metadataBase: new URL("https://christiantonny.dev"),
   openGraph: {
-    title: "Christian Iradukunda - Software Engineer & AI Implementation Consultant",
-    description: "Building technology that generates measurable business impact. AI implementation, enterprise systems, and digital operations expertise.",
+    title: "Christian Tonny - Software Engineer & Writer",
+    description: "Software engineer writing about AI, technology trends, and building products that transform how we interact with information.",
     url: "https://christiantonny.dev",
-    siteName: "Christian Iradukunda Portfolio",
+    siteName: "Christian Tonny",
     images: [
       {
         url: "/og.png",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Christian Iradukunda - Software Engineer & AI Consultant",
+    title: "Christian Tonny - Software Engineer & Writer",
     card: "summary_large_image",
   },
   icons: {
