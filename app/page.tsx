@@ -47,7 +47,7 @@ export default function Home() {
             Software Engineer & Writer exploring how AI transforms business
           </p>
           <p className="text-base md:text-lg text-zinc-500">
-            Building things. Writing about technology. Based in Kigali.
+            Building things. Writing about technology.
           </p>
         </div>
 
@@ -136,30 +136,30 @@ export default function Home() {
         </div>
       </div>
 
-      {/* What I'm Learning */}
+      {/* Recent Interests */}
       <div className="px-6 pb-24">
-        <div className="max-w-4xl mx-auto">
-          <Card>
-            <div className="p-8 md:p-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-6 text-center">
-                Currently Learning From
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-zinc-300">
-                <div>
-                  <p className="font-semibold text-zinc-200 mb-3">Books</p>
-                  <p className="text-zinc-400 text-sm leading-relaxed">
-                    Founder biographies: Steve Jobs, Bill Gates, Mark Zuckerberg. Understanding how they built products that "feel like magic."
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-zinc-200 mb-3">Podcasts</p>
-                  <p className="text-zinc-400 text-sm leading-relaxed">
-                    Acquired, Founders. Deep dives into company building, decision-making, and what actually matters in technology.
-                  </p>
-                </div>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-8 text-center">
+            Recent Interests
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+              <div className="p-8">
+                <p className="font-semibold text-zinc-200 mb-3 text-xl">Books</p>
+                <p className="text-zinc-400 leading-relaxed">
+                  Founder biographies: Steve Jobs, Bill Gates, Mark Zuckerberg. Understanding how they built products that "feel like magic."
+                </p>
               </div>
-            </div>
-          </Card>
+            </Card>
+            <Card>
+              <div className="p-8">
+                <p className="font-semibold text-zinc-200 mb-3 text-xl">Podcasts</p>
+                <p className="text-zinc-400 leading-relaxed">
+                  Acquired, Founders. Deep dives into company building, decision-making, and what actually matters in technology.
+                </p>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
 

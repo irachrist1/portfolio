@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const articles = [
 	{
-		title: "When Everything is Automated",
-		date: "July 15, 2025",
+		title: "AI Implementation & Business Strategy",
+		date: "January 2025",
 		platform: "LinkedIn",
-		url: "https://www.linkedin.com/pulse/when-everything-automated-christian-tonny-iradukunda-jcpyc/",
-		excerpt: "Exploring the AI browser wars between OpenAI, Anthropic, and Google. When AI can do everything, the talent wars begin. What happens when automation becomes ubiquitous?",
-		topics: ["AI Browsers", "Agentic AI", "Talent Wars", "Automation"]
+		url: "https://www.linkedin.com/posts/irachrist1_ai-implementation-businessstrategy-activity-7310186247170199553-3CUF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADabeDIBOQhatOqtEozzbCzV4WwaWj_O280",
+		excerpt: "Practical insights on implementing AI in business. Real-world strategies, frameworks, and lessons from working with companies adopting AI technology.",
+		topics: ["AI Implementation", "Business Strategy", "Digital Transformation"]
 	},
 	{
 		title: "The State of AI in 2025",
@@ -60,7 +60,7 @@ export default function WritingPage() {
 						</p>
 						<div className="flex gap-4 justify-center flex-wrap">
 							<Link
-								href="https://www.linkedin.com/newsletters/7131233970339373056/"
+								href="https://www.linkedin.com/newsletters/rwanda-s-tech-insider-7131233970339373056/"
 								target="_blank"
 								className="px-6 py-3 text-sm font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
 							>
@@ -204,7 +204,14 @@ export default function WritingPage() {
 					</h2>
 					<div className="flex gap-4 justify-center flex-wrap">
 						<Link
-							href="https://www.linkedin.com/in/irachrist1-3aa9a0216/"
+							href="https://www.linkedin.com/newsletters/rwanda-s-tech-insider-7131233970339373056/"
+							target="_blank"
+							className="px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors duration-200"
+						>
+							More Articles &rarr;
+						</Link>
+						<Link
+							href="https://www.linkedin.com/in/irachrist1/"
 							target="_blank"
 							className="px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors duration-200"
 						>
@@ -216,13 +223,6 @@ export default function WritingPage() {
 							className="px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors duration-200"
 						>
 							Substack
-						</Link>
-						<Link
-							href="https://sunday-scoops.kit.com/"
-							target="_blank"
-							className="px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors duration-200"
-						>
-							Kit
 						</Link>
 					</div>
 				</div>
