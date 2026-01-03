@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.christonny.tech)",
+      "Bash(dir \"C:\\Users\\ChristianTonny\\.ssh\" 2)",
+      "Bash($null)",
+      "Bash(ssh:*)",
+      "WebFetch(domain:www.get.tech)",
+      "WebSearch",
+      "Bash(whois:*)",
+      "Bash(curl:*)",
+      "Bash(echo:*)",
+      "Bash(git config:*)",
+      "Bash(gh auth status:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
+
+    

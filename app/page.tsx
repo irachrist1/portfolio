@@ -44,10 +44,10 @@ export default function Home() {
           Building AI solutions for businesses
         </p>
         <p className="text-lg text-zinc-400 mb-4">
-          Software Engineering @ ALU Rwanda 🇷🇼
+          Software Engineering @ALU
         </p>
         <p className="text-base text-zinc-500 max-w-2xl mx-auto">
-          AI Advisory at Andersen Rwanda | Building automation tools for research, compliance, and market analysis
+          Digital Operations at Andersen Rwanda | Building automation tools for research, compliance, and market analysis
         </p>
       </div>
 
