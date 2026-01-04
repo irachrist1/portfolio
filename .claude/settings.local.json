@@ -11,11 +11,14 @@
       "Bash(curl:*)",
       "Bash(echo:*)",
       "Bash(git config:*)",
-      "Bash(gh auth status:*)"
+      "Bash(gh auth status:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx tsc:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
   }
 }
-
-    

@@ -6,6 +6,7 @@ export const dynamic = "force-static";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
+  { name: "Changelog", href: "/changelog" },
   { name: "About", href: "/about" },
   { name: "Skills", href: "/skills" },
   { name: "Writing", href: "/writing" },
@@ -30,7 +31,7 @@ export default function Home() {
             >
               {item.name}
             </Link>
-          ))}
+          ))} 
         </ul>
       </nav>
 
