@@ -107,8 +107,8 @@ export const Navigation: React.FC = () => {
 										animate={{ opacity: 1, scale: 1, y: 0 }}
 										exit={{ opacity: 0, scale: 0.95, y: -10 }}
 										transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-										className="absolute right-0 top-full mt-2 w-48 z-50 rounded-xl border border-zinc-700/50 bg-zinc-900/70 backdrop-blur-3xl shadow-2xl overflow-hidden"
-										style={{ backdropFilter: 'blur(40px)' }}
+										className="absolute right-0 top-full mt-2 w-48 z-50 rounded-xl border border-zinc-700/50 bg-zinc-900/90 shadow-2xl overflow-hidden"
+										style={{ backdropFilter: 'blur(80px) saturate(180%)' }}
 									>
 										<nav className="flex flex-col py-2">
 											{navLinks.map((link, index) => (
