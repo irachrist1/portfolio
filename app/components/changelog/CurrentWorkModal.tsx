@@ -34,10 +34,11 @@ export function CurrentWorkModal({ entry, isOpen, onClose }: CurrentWorkModalPro
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+                onClick={onClose}
+                className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm cursor-pointer"
               />
             </Dialog.Overlay>
-            <Dialog.Content asChild>
+            <Dialog.Content asChild onPointerDownOutside={onClose} onInteractOutside={onClose}>
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95, y: 20 }}

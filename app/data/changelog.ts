@@ -96,16 +96,17 @@ export const currentWork: CurrentEntry[] = [
       "Building unified timeline view with year grouping and project filters",
     extendedDescription:
       "The portfolio changelog is evolving from a simple list into a rich, interactive timeline. This update introduces project-based filtering, year grouping, and deep-dive modals to provide a transparent view of my development process.",
-    progress: 90,
+    progress: 95,
     eta: "Today",
     completedTasks: [
       "Unified timeline architecture",
       "Year grouping logic",
       "Project filter chips",
+      "Interactive project deep-dive modals",
+      "Mobile navigation responsiveness",
     ],
     tasks: [
-      "Interactive project deep-dive modals",
-      "Mobile interaction optimization",
+      "Final visual polish and performance audit",
     ],
     techStack: ["Next.js", "Framer Motion", "Radix UI", "Tailwind CSS"],
     lastUpdated: "2026-01-04",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { CurrentEntry, getStalenessLabel, isStale } from "@/app/data/changelog";
 import { ArrowUpRight, Clock, AlertCircle, Maximize2 } from "lucide-react";
+import { motion } from "framer-motion";
 import { CurrentWorkModal } from "./CurrentWorkModal";
 
 type CurrentWorkProps = {
@@ -17,14 +18,16 @@ export function CurrentWork({ entries }: CurrentWorkProps) {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center gap-3">
-        <div className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+          </div>
+          <h2 className="text-sm font-medium text-zinc-500 uppercase tracking-wider">
+            Currently Building
+          </h2>
         </div>
-        <h2 className="text-sm font-medium text-zinc-500 uppercase tracking-wider">
-          Currently Building
-        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -113,10 +116,18 @@ function CurrentWorkCard({
           <span className="text-zinc-500">Progress</span>
           <span className="text-zinc-400 font-medium">{entry.progress}%</span>
         </div>
-        <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-500"
-            style={{ width: `${entry.progress}%` }}
+        <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden relative">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${entry.progress}%` }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full relative z-10"
+          />
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${entry.progress}%` }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="absolute inset-0 bg-emerald-500/20 blur-sm rounded-full"
           />
         </div>
       </div>
