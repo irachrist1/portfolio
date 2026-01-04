@@ -18,8 +18,16 @@ export type CurrentEntry = BaseEntry & {
   type: "current";
   progress: number; // 0-100
   eta: string; // "This week", "End of January"
-  tasks: string[]; // What's left to do
+  tasks: string[]; // What's left to do (Remaining Tasks)
+  completedTasks?: string[]; // What's already done
+  extendedDescription?: string; // 2-3 sentences for modal
+  techStack?: string[]; // Technology badges
   lastUpdated: string; // For staleness detection
+  links?: {
+    github?: string;
+    live?: string;
+    project?: string; // Link to /projects/[slug]
+  };
 };
 
 // Major milestone releases
@@ -56,14 +64,26 @@ export const currentWork: CurrentEntry[] = [
     title: "Launch Preparation",
     description:
       "Finalizing MNotes for public launch - waitlist integration and final polish",
+    extendedDescription:
+      "MNotes is a privacy-first note-taking application designed for speed and simplicity. We're currently in the final stretch of preparing for a public beta launch, focusing on robust waitlist management and a seamless onboarding experience.",
     progress: 85,
     eta: "This week",
+    completedTasks: [
+      "Core editor implementation",
+      "Local-first sync engine",
+      "Privacy-focused encryption layer",
+    ],
     tasks: [
       "Email waitlist integration with Resend",
       "Final landing page polish",
       "Launch announcement preparation",
     ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Resend", "Supabase"],
     lastUpdated: "2026-01-04",
+    links: {
+      live: "https://mnotes.io",
+      github: "https://github.com/irachrist1/mnotes",
+    },
   },
   {
     id: "current-portfolio-changelog",
@@ -74,13 +94,24 @@ export const currentWork: CurrentEntry[] = [
     title: "Changelog Timeline",
     description:
       "Building unified timeline view with year grouping and project filters",
+    extendedDescription:
+      "The portfolio changelog is evolving from a simple list into a rich, interactive timeline. This update introduces project-based filtering, year grouping, and deep-dive modals to provide a transparent view of my development process.",
     progress: 90,
     eta: "Today",
+    completedTasks: [
+      "Unified timeline architecture",
+      "Year grouping logic",
+      "Project filter chips",
+    ],
     tasks: [
-      "Add type-based filtering (Releases/Updates)",
+      "Interactive project deep-dive modals",
       "Mobile interaction optimization",
     ],
+    techStack: ["Next.js", "Framer Motion", "Radix UI", "Tailwind CSS"],
     lastUpdated: "2026-01-04",
+    links: {
+      github: "https://github.com/irachrist1/portfolio",
+    },
   },
   {
     id: "current-opportunitymap-v3",
@@ -91,14 +122,25 @@ export const currentWork: CurrentEntry[] = [
     title: "Next.js 16 + React 19 Upgrade",
     description:
       "Major framework upgrade with enhanced mentor profiles and assessment redesign",
+    extendedDescription:
+      "OpportunityMap is a platform connecting talent with mentorship. We're undergoing a significant technical migration to Next.js 16 and React 19 to leverage the latest performance improvements and server components features.",
     progress: 60,
     eta: "Next week",
+    completedTasks: [
+      "React 19 compiler integration",
+      "Server Actions migration",
+      "Database schema optimization",
+    ],
     tasks: [
       "Mentor profile usability improvements",
       "Assessment page redesign with research-backed questions",
       "Google Calendar integration for sessions",
     ],
+    techStack: ["Next.js 16", "React 19", "Prisma", "PostgreSQL", "Google API"],
     lastUpdated: "2025-12-16",
+    links: {
+      live: "https://opportunitymap.com",
+    },
   },
 ];
 

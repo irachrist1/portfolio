@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
     "next": "^16.1.1",

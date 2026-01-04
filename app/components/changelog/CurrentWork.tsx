@@ -1,14 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { CurrentEntry, getStalenessLabel, isStale } from "@/app/data/changelog";
-import { ArrowUpRight, Clock, AlertCircle } from "lucide-react";
+import { ArrowUpRight, Clock, AlertCircle, Maximize2 } from "lucide-react";
+import { CurrentWorkModal } from "./CurrentWorkModal";
 
 type CurrentWorkProps = {
   entries: CurrentEntry[];
 };
 
 export function CurrentWork({ entries }: CurrentWorkProps) {
+  const [selectedEntry, setSelectedEntry] = useState<CurrentEntry | null>(null);
+
   if (entries.length === 0) return null;
 
   return (
@@ -25,37 +29,64 @@ export function CurrentWork({ entries }: CurrentWorkProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {entries.map((entry) => (
-          <CurrentWorkCard key={entry.id} entry={entry} />
+          <CurrentWorkCard
+            key={entry.id}
+            entry={entry}
+            onClick={() => setSelectedEntry(entry)}
+          />
         ))}
       </div>
+
+      <CurrentWorkModal
+        entry={selectedEntry}
+        isOpen={!!selectedEntry}
+        onClose={() => setSelectedEntry(null)}
+      />
     </section>
   );
 }
 
-function CurrentWorkCard({ entry }: { entry: CurrentEntry }) {
+function CurrentWorkCard({
+  entry,
+  onClick,
+}: {
+  entry: CurrentEntry;
+  onClick: () => void;
+}) {
   const stalenessLabel = getStalenessLabel(entry);
   const stale = isStale(entry);
 
   return (
     <article
+      onClick={onClick}
       className={`
-        relative p-5 rounded-xl border transition-all duration-200
+        relative p-5 rounded-xl border transition-all duration-200 cursor-pointer group
         ${stale
-          ? "border-amber-800/50 bg-amber-900/10"
-          : "border-zinc-800 bg-zinc-900/50 hover:bg-zinc-900/70"
+          ? "border-amber-800/50 bg-amber-900/10 hover:bg-amber-900/20"
+          : "border-zinc-800 bg-zinc-900/50 hover:bg-zinc-900/70 hover:border-zinc-700"
         }
       `}
     >
+      {/* Expand icon hint */}
+      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <Maximize2 className="w-4 h-4 text-zinc-500" />
+      </div>
+
       {/* Project badge and dates */}
       <div className="flex flex-col gap-1.5 mb-3">
         <div className="flex items-center justify-between">
-          <Link
-            href={`/projects/${entry.projectSlug}`}
-            className="text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1"
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="z-10"
           >
-            {entry.projectTitle}
-            <ArrowUpRight className="w-3 h-3" />
-          </Link>
+            <Link
+              href={`/projects/${entry.projectSlug}`}
+              className="text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1"
+            >
+              {entry.projectTitle}
+              <ArrowUpRight className="w-3 h-3" />
+            </Link>
+          </div>
           {stalenessLabel && (
             <span className={`text-xs flex items-center gap-1 ${stale ? "text-amber-500" : "text-zinc-500"}`}>
               {stale ? <AlertCircle className="w-3 h-3" /> : <Clock className="w-3 h-3" />}
@@ -72,7 +103,7 @@ function CurrentWorkCard({ entry }: { entry: CurrentEntry }) {
       <h3 className="text-lg font-semibold text-zinc-100 mb-1">
         {entry.title}
       </h3>
-      <p className="text-sm text-zinc-400 mb-4">
+      <p className="text-sm text-zinc-400 mb-4 line-clamp-2">
         {entry.description}
       </p>
 
@@ -95,14 +126,19 @@ function CurrentWorkCard({ entry }: { entry: CurrentEntry }) {
         <div className="space-y-2">
           <span className="text-xs text-zinc-500">Remaining tasks</span>
           <ul className="space-y-1.5">
-            {entry.tasks.map((task, index) => (
+            {entry.tasks.slice(0, 2).map((task, index) => (
               <li
                 key={index}
-                className="text-sm text-zinc-400 pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.55em] before:w-1.5 before:h-1.5 before:border before:border-zinc-600 before:rounded-sm"
+                className="text-sm text-zinc-400 pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.55em] before:w-1.5 before:h-1.5 before:border before:border-zinc-600 before:rounded-sm truncate"
               >
                 {task}
               </li>
             ))}
+            {entry.tasks.length > 2 && (
+              <li className="text-xs text-zinc-500 pl-4">
+                + {entry.tasks.length - 2} more tasks...
+              </li>
+            )}
           </ul>
         </div>
       )}
@@ -115,3 +151,4 @@ function CurrentWorkCard({ entry }: { entry: CurrentEntry }) {
     </article>
   );
 }
+
