@@ -152,6 +152,18 @@ export const currentWork: CurrentEntry[] = [
 export const timelineEntries: TimelineEntry[] = [
   // 2026
   {
+    id: "essay-two-things-every-app-needs",
+    date: "2026-01-05",
+    type: "release",
+    projectSlug: "writing",
+    projectTitle: "Writing",
+    title: "Two Things Every App Needs",
+    description:
+      "New essay on product development philosophy. Explores why changelogs and feedback pages are essential for building trust in the AI era, with analysis of Arc, Perplexity, Raycast, and lessons from high-profile product failures.",
+    tags: ["Essay", "Product Strategy"],
+    link: "/writing",
+  },
+  {
     id: "mnotes-landing-launch",
     date: "2026-01-04",
     type: "release",
