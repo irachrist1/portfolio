@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Christian Tonny - Software Engineer & Writer",
     card: "summary_large_image",
+    images: ["/og.png"],
   },
   icons: {
     shortcut: "/favicon.png",
