@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import { MobileMenu } from "./components/mobile-menu";
 
 export const dynamic = "force-static";
 
@@ -16,13 +17,17 @@ const navigation = [
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      {/* Mobile hamburger menu - only visible on mobile */}
+      <MobileMenu />
+      
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
 
-      <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+      {/* Desktop inline navigation - hidden on mobile */}
+      <nav className="my-16 animate-fade-in hidden md:block">
+        <ul className="flex items-center justify-center gap-8">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -31,9 +36,12 @@ export default function Home() {
             >
               {item.name}
             </Link>
-          ))} 
+          ))}
         </ul>
       </nav>
+
+      {/* Mobile spacer */}
+      <div className="h-16 md:hidden" />
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 

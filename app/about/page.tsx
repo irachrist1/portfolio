@@ -1,4 +1,5 @@
 import { Navigation } from "../components/nav";
+import { Footer } from "../components/footer";
 import { Card } from "../components/card";
 import Link from "next/link";
 
@@ -6,10 +7,10 @@ export const dynamic = "force-static";
 
 export default function AboutPage() {
   return (
-    <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen">
+    <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen flex flex-col">
       <Navigation />
-      <div className="px-6 pt-20 mx-auto space-y-16 max-w-4xl lg:px-8 md:pt-24 lg:pt-32 pb-24">
-        <div className="max-w-3xl mx-auto">
+      <div className="px-6 pt-20 mx-auto space-y-16 max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">
+        <div className="max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl mb-8">
             About Me
           </h1>
@@ -80,7 +81,7 @@ export default function AboutPage() {
           </div>
         </Card>
 
-        <div className="text-center pt-8">
+        <div className="pt-8">
           <Link
             href="/contact"
             className="inline-block px-8 py-4 text-base font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
@@ -89,6 +90,8 @@ export default function AboutPage() {
           </Link>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

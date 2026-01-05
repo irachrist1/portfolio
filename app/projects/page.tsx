@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Navigation } from "../components/nav";
+import { Footer } from "../components/footer";
 import { Card } from "../components/card";
 import { projects, categories } from "@/app/data/projects";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
@@ -18,10 +19,10 @@ export default function ProjectsPage() {
     .filter((cat) => cat.projects.length > 0);
 
   return (
-    <div className="relative pb-16 min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+    <div className="relative min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 flex flex-col">
       <Navigation />
 
-      <div className="px-6 pt-20 mx-auto space-y-12 max-w-7xl lg:px-8 md:pt-24 lg:pt-32">
+      <div className="px-6 pt-20 mx-auto space-y-12 max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">
         {/* Header */}
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
@@ -80,6 +81,8 @@ export default function ProjectsPage() {
           </section>
         ))}
       </div>
+      
+      <Footer />
     </div>
   );
 }

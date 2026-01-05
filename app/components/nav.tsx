@@ -4,6 +4,15 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navLinks = [
+	{ href: "/projects", label: "Projects" },
+	{ href: "/changelog", label: "Changelog" },
+	{ href: "/about", label: "About" },
+	{ href: "/skills", label: "Skills" },
+	{ href: "/writing", label: "Writing" },
+	{ href: "/contact", label: "Contact" },
+];
+
 export const Navigation: React.FC = () => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
@@ -18,15 +27,6 @@ export const Navigation: React.FC = () => {
 		observer.observe(ref.current);
 		return () => observer.disconnect();
 	}, []);
-
-	const navLinks = [
-		{ href: "/projects", label: "Projects" },
-		{ href: "/changelog", label: "Changelog" },
-		{ href: "/about", label: "About" },
-		{ href: "/skills", label: "Skills" },
-		{ href: "/writing", label: "Writing" },
-		{ href: "/contact", label: "Contact" },
-	];
 
 	return (
 		<header ref={ref}>
@@ -99,7 +99,7 @@ export const Navigation: React.FC = () => {
 										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
 										exit={{ opacity: 0 }}
-										className="fixed inset-0 z-40"
+										className="fixed inset-0 z-40 bg-black/20"
 										onClick={() => setIsOpen(false)}
 									/>
 									<motion.div
@@ -107,8 +107,12 @@ export const Navigation: React.FC = () => {
 										animate={{ opacity: 1, scale: 1, y: 0 }}
 										exit={{ opacity: 0, scale: 0.95, y: -10 }}
 										transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-										className="absolute right-0 top-full mt-2 w-48 z-50 rounded-xl border border-zinc-700/50 bg-zinc-900/90 shadow-2xl overflow-hidden"
-										style={{ backdropFilter: 'blur(80px) saturate(180%)' }}
+										className="absolute right-0 top-full mt-2 w-48 z-50 rounded-xl border border-zinc-700/50 shadow-2xl overflow-hidden"
+										style={{ 
+											backgroundColor: 'rgba(24, 24, 27, 0.85)',
+											backdropFilter: 'blur(24px) saturate(180%)',
+											WebkitBackdropFilter: 'blur(24px) saturate(180%)'
+										}}
 									>
 										<nav className="flex flex-col py-2">
 											{navLinks.map((link, index) => (
@@ -121,7 +125,7 @@ export const Navigation: React.FC = () => {
 													<Link
 														href={link.href}
 														onClick={() => setIsOpen(false)}
-														className="block px-4 py-2.5 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50 transition-colors"
+														className="block px-4 py-2.5 text-sm font-medium text-zinc-300 hover:text-zinc-100 hover:bg-zinc-700/50 transition-colors"
 													>
 														{link.label}
 													</Link>

@@ -1,4 +1,5 @@
 import { Navigation } from "../components/nav";
+import { Footer } from "../components/footer";
 import { CurrentWork } from "../components/changelog/CurrentWork";
 import { Timeline } from "../components/changelog/Timeline";
 import { currentWork, timelineEntries } from "../data/changelog";
@@ -11,12 +12,12 @@ export const metadata = {
 
 export default function ChangelogPage() {
   return (
-    <div className="relative pb-16 min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+    <div className="relative min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 flex flex-col">
       <Navigation />
 
-      <div className="px-6 pt-20 mx-auto space-y-12 max-w-4xl lg:px-8 md:pt-24 lg:pt-32 pb-24">
+      <div className="px-6 pt-20 mx-auto space-y-12 max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">
         {/* Header */}
-        <header className="space-y-4">
+        <header className="space-y-4 max-w-4xl">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Changelog
           </h1>
@@ -45,29 +46,9 @@ export default function ChangelogPage() {
           <Timeline entries={timelineEntries} />
         </section>
 
-        {/* Footer CTA */}
-        <div className="mt-16 pt-8 border-t border-zinc-800">
-          <div className="text-center space-y-4">
-            <p className="text-zinc-400">
-              Explore the full portfolio or get in touch
-            </p>
-            <div className="flex gap-4 justify-center flex-wrap">
-              <a
-                href="/projects"
-                className="px-6 py-3 text-sm font-medium text-zinc-900 bg-white rounded-lg hover:bg-zinc-200 transition-colors duration-200"
-              >
-                View All Projects
-              </a>
-              <a
-                href="/contact"
-                className="px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors duration-200"
-              >
-                Get In Touch
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }
