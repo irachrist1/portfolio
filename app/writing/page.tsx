@@ -4,6 +4,39 @@ import { Card } from "../components/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
+// Helper to render text with inline links [text](url)
+function renderWithLinks(text: string) {
+	const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+	const parts: (string | JSX.Element)[] = [];
+	let lastIndex = 0;
+	let match;
+
+	while ((match = linkRegex.exec(text)) !== null) {
+		// Add text before the link
+		if (match.index > lastIndex) {
+			parts.push(text.slice(lastIndex, match.index));
+		}
+		// Add the link
+		parts.push(
+			<a
+				key={match.index}
+				href={match[2]}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="text-zinc-100 underline decoration-zinc-600 hover:decoration-zinc-400 transition-colors"
+			>
+				{match[1]}
+			</a>
+		);
+		lastIndex = match.index + match[0].length;
+	}
+	// Add remaining text
+	if (lastIndex < text.length) {
+		parts.push(text.slice(lastIndex));
+	}
+	return parts.length > 0 ? parts : text;
+}
+
 // Featured Essay
 const featuredEssay = {
 	title: "Two Things Every App Needs",
@@ -16,7 +49,7 @@ So how do you stand out?
 
 For a while now, developers have been slowly turning into content creators. You used to just ship code and not have to deal with marketing and sales because there were teams for that (mostly). This has been changing because it's now easier than ever to get started on social media, and more importantly, building in public is the new way of building anything. It's easier than ever to see small and large organizations shipping so-called beta's of whatever product it is.
 
-We're in a strange period. It's become normal for companies to ship things that don't work yet. The Fisker car that Marques Brownlee reviewed had so many issues he titled it "the worst car I've ever reviewed." The Rabbit R1 didn't work as a device and it's slowly dying. The Humane AI pin is already dead and sold to HP. But this isn't only apparent in physical products - it's in software too. It feels more than ever as if all software is broken. Cursor, my favorite IDE, crashes on my machine constantly. I'm pretty sure you're familiar with the Cloudflare stories. Even big orgs like Google and Microsoft constantly ships things that don't work according to their promises.
+We're in a strange period. It's become normal for companies to ship things that don't work yet. The Fisker car that Marques Brownlee reviewed had so many issues he titled it ["the worst car I've ever reviewed."](https://youtu.be/6xWXRk3yaSw?si=JFvMGm9O69odsA8O) The Rabbit R1 didn't work as a device and it's slowly dying. The Humane AI pin is already dead and sold to HP. But this isn't only apparent in physical products - it's in software too. It feels more than ever as if all software is broken. Cursor, my favorite IDE, [crashes on my machine constantly](https://forum.cursor.com/t/performance-degradation-and-ai-editing-issues-in-cursor-ide/61928). I'm pretty sure you're familiar with the Cloudflare stories. Even big orgs like Google and Microsoft constantly ships things that don't work according to their promises.
 
 It used to be that products had to work fully out of the box. Now? Companies ship the dream first, then build toward it publicly. WhatsApp (of all things), which used to be rock solid, has bugs now. Everyone's shipping more code, and everyone's dealing with more bugs because of it.
 
@@ -148,7 +181,7 @@ export default function WritingPage() {
 								{/* Main content paragraphs */}
 								<div className="space-y-4 text-zinc-300 leading-relaxed">
 									{featuredEssay.content.split('\n\n').map((paragraph, idx) => (
-										<p key={idx}>{paragraph}</p>
+										<p key={idx}>{renderWithLinks(paragraph)}</p>
 									))}
 								</div>
 
@@ -160,7 +193,7 @@ export default function WritingPage() {
 										</h4>
 										<div className="space-y-4 text-zinc-300 leading-relaxed">
 											{section.content.split('\n\n').map((paragraph, pIdx) => (
-												<p key={pIdx}>{paragraph}</p>
+												<p key={pIdx}>{renderWithLinks(paragraph)}</p>
 											))}
 										</div>
 									</div>
