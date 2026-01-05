@@ -28,6 +28,14 @@ export const Navigation: React.FC = () => {
 		return () => observer.disconnect();
 	}, []);
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (isOpen) setIsOpen(false);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [isOpen]);
+
 	return (
 		<header ref={ref}>
 			<div

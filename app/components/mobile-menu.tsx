@@ -1,7 +1,7 @@
 "use client";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -15,6 +15,14 @@ const navLinks = [
 
 export const MobileMenu: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (isOpen) setIsOpen(false);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [isOpen]);
 
 	return (
 		<div className="md:hidden fixed top-6 right-6 z-50">

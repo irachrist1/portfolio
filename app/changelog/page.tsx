@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function ChangelogPage() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 flex flex-col">
+    <div className="relative min-h-screen bg-gradient-to-tl from-zinc-900 via-zinc-900/50 to-black flex flex-col">
       <Navigation />
 
       <div className="px-6 pt-20 mx-auto space-y-12 max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">

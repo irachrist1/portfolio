@@ -23,7 +23,10 @@ export const Footer: React.FC = () => {
 	};
 
 	return (
-		<footer className="border-t border-zinc-800 bg-zinc-900">
+		<footer className="border-t border-zinc-800 bg-zinc-900 relative">
+			{/* Extension to cover overscroll on mobile */}
+			<div className="absolute top-full left-0 right-0 h-[100vh] bg-zinc-900 -z-10" />
+			
 			<div className="px-6 py-12 md:py-16 mx-auto max-w-7xl lg:px-8">
 				{/* Main Footer Content */}
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
