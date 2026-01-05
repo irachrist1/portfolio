@@ -28,12 +28,16 @@ export const Navigation: React.FC = () => {
 		return () => observer.disconnect();
 	}, []);
 
+	// Auto-close mobile menu on scroll
 	useEffect(() => {
+		if (!isOpen) return;
+		
 		const handleScroll = () => {
-			if (isOpen) setIsOpen(false);
+			setIsOpen(false);
 		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
 	}, [isOpen]);
 
 	return (
