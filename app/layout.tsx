@@ -10,17 +10,17 @@ export const metadata: Metadata = {
     template: "%s | Christian Tonny",
   },
   description: "Software engineer writing about AI, technology trends, and building products. Working on IT infrastructure and AI implementation at Andersen Rwanda. Based in Kigali.",
-  metadataBase: new URL("https://christiantonny.dev"),
+  metadataBase: new URL("https://christian-tonny.vercel.app"),
   openGraph: {
     title: "Christian Tonny - Software Engineer & Writer",
     description: "Software engineer writing about AI, technology trends, and building products that transform how we interact with information.",
-    url: "https://christiantonny.dev",
+    url: "https://christian-tonny.vercel.app",
     siteName: "Christian Tonny",
     images: [
       {
-        url: "/og.png",
-        width: 1920,
-        height: 1080,
+        url: "https://christian-tonny.vercel.app/og.png",
+        width: 1200,
+        height: 630,
       },
     ],
     locale: "en-US",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Christian Tonny - Software Engineer & Writer",
     card: "summary_large_image",
-    images: ["/og.png"],
+    images: ["https://christian-tonny.vercel.app/og.png"],
   },
   icons: {
     shortcut: "/favicon.png",
