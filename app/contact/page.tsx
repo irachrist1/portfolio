@@ -32,7 +32,7 @@ export default function ContactPage() {
 	return (
 		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen flex flex-col">
 			<Navigation />
-			<div className="px-6 pt-20 mx-auto max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">
+			<div className="px-6 pt-28 mx-auto max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">
 				{/* Hero Section */}
 				<div className="max-w-3xl mb-16">
 					<h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl mb-6">
