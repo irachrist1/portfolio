@@ -6,10 +6,10 @@ import { ExternalLink } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Writing | Christian Tonny",
-	description: "Two Things Every App Needs - AI is making the barrier to building software nearly zero. So how do you stand out? Essays on product development, AI, and building in public.",
+	title: "Two Things Every App Needs",
+	description: "AI is making the barrier to building software nearly zero. So how do you stand out? Essays on product development, AI, and building in public.",
 	openGraph: {
-		title: "Two Things Every App Needs | Christian Tonny",
+		title: "Two Things Every App Needs",
 		description: "AI is making the barrier to building software nearly zero. So how do you stand out? The answer lies in two simple things: a changelog and a feedback page.",
 		url: "https://christian-tonny.vercel.app/writing",
 		images: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
 				url: "https://christian-tonny.vercel.app/og-writing.png",
 				width: 1200,
 				height: 630,
-				alt: "Two Things Every App Needs - Essay by Christian Tonny",
+				alt: "Two Things Every App Needs",
 			},
 		],
 		type: "article",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Two Things Every App Needs | Christian Tonny",
+		title: "Two Things Every App Needs",
 		description: "AI is making the barrier to building software nearly zero. So how do you stand out? The answer lies in two simple things.",
 		images: ["https://christian-tonny.vercel.app/og-writing.png"],
 	},
