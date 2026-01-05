@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Christian Tonny",
     images: [
       {
-        url: "https://christian-tonny.vercel.app/og.png",
+        url: "https://christian-tonny.vercel.app/christian.tonny.png",
         width: 1200,
         height: 630,
       },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Christian Tonny - Software Engineer & Writer",
     card: "summary_large_image",
-    images: ["https://christian-tonny.vercel.app/og.png"],
+    images: ["https://christian-tonny.vercel.app/christian.tonny.png"],
   },
   icons: {
     shortcut: "/favicon.png",

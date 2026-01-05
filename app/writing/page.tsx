@@ -8,10 +8,12 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Two Things Every App Needs",
 	description: "AI is making the barrier to building software nearly zero. So how do you stand out? Essays on product development, AI, and building in public.",
+	authors: [{ name: "Christian Tonny Iradukunda", url: "https://christian-tonny.vercel.app" }],
 	openGraph: {
 		title: "Two Things Every App Needs",
 		description: "AI is making the barrier to building software nearly zero. So how do you stand out? The answer lies in two simple things: a changelog and a feedback page.",
 		url: "https://christian-tonny.vercel.app/writing",
+		siteName: "Christian Tonny",
 		images: [
 			{
 				url: "https://christian-tonny.vercel.app/og-writing.png",
@@ -21,12 +23,15 @@ export const metadata: Metadata = {
 			},
 		],
 		type: "article",
+		authors: ["Christian Tonny Iradukunda"],
+		publishedTime: "2026-01-05T00:00:00.000Z",
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Two Things Every App Needs",
 		description: "AI is making the barrier to building software nearly zero. So how do you stand out? The answer lies in two simple things.",
 		images: ["https://christian-tonny.vercel.app/og-writing.png"],
+		creator: "@irachrist01",
 	},
 };
 
