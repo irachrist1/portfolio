@@ -23,6 +23,12 @@ export type ProjectCategory = {
 
 export const categories: ProjectCategory[] = [
   {
+    id: "learning",
+    name: "Learning & Development",
+    description: "Current learning activities and skill development",
+    order: 0
+  },
+  {
     id: "personal",
     name: "Personal Apps",
     description: "Tools built for personal productivity and insights",
@@ -61,6 +67,119 @@ export const categories: ProjectCategory[] = [
 ];
 
 export const projects: Project[] = [
+  // ===== LEARNING & DEVELOPMENT =====
+  {
+    slug: "learning",
+    title: "Learning & Development",
+    description: "Current learning activities: Building Flutter health app and taking R programming course on Coursera.",
+    category: "learning",
+    date: "2026-01-12",
+    links: [
+      { label: "Flutter Health App", href: "#flutter-health-app" },
+      { label: "R Programming", href: "#r-programming" }
+    ],
+    body: `## Current Learning Activities
+
+Activities I'm currently learning and experimenting with as of January 2026.
+
+---
+
+## Flutter Health Application
+
+### Overview
+Building an all-in-one health tracking application using Flutter that combines features from MyFitnessPal and Whoop. This project serves as my introduction to mobile development with Flutter and Dart.
+
+### Project Vision
+Create a comprehensive health tracker that monitors:
+- **Calendar Schedules** - Track daily routines and activities
+- **Nutrition & Diet** - Log meals and monitor nutritional intake
+- **Activity Recommendations** - Location-based suggestions for staying healthy
+
+### Current Progress (20%)
+
+**Completed:**
+- Flutter development environment setup
+- Understanding Flutter basics and widget system
+- Research on state management patterns
+
+**In Progress:**
+- Designing app architecture and data models
+- Planning calendar integration approach
+- Researching nutrition database APIs
+
+**Next Steps:**
+- Build calendar integration for schedule tracking
+- Implement nutrition and diet tracking features
+- Create activity recommendation system with location services
+- Learn state management (Provider/Riverpod)
+
+### Tech Stack
+- **Framework:** Flutter
+- **Language:** Dart
+- **Target Platforms:** iOS & Android
+
+### Why This Project?
+Mobile development is a crucial skill in today's tech landscape. By building a real-world health app, I'm learning:
+- Cross-platform mobile development
+- State management in Flutter
+- Integration with device features (calendar, location)
+- UI/UX design for mobile interfaces
+- Working with external APIs
+
+---
+
+## R Programming Course
+
+### Overview
+Taking a structured R programming course on Coursera as part of my school curriculum. Focusing on statistical computing, data analysis, and visualization techniques.
+
+### Course Focus
+Developing skills in:
+- **Statistical Computing** - Using R for data analysis
+- **Data Visualization** - Creating meaningful charts and graphs
+- **Analysis Techniques** - Applying statistical methods to real datasets
+
+### Current Progress (30%)
+
+**Completed:**
+- Enrolled in Coursera R programming course
+- Completed initial R syntax and data structures modules
+- Set up RStudio development environment
+
+**In Progress:**
+- Working through data visualization modules
+- Learning ggplot2 for advanced graphics
+- Practicing with sample datasets
+
+**Next Steps:**
+- Complete data visualization modules
+- Learn statistical analysis with R
+- Apply R to school project requirements
+- Master data manipulation with dplyr
+
+### Tech Stack
+- **Language:** R
+- **IDE:** RStudio
+- **Key Libraries:** ggplot2, dplyr, tidyverse
+
+### Why This Course?
+Data science and statistical analysis are foundational skills for making data-driven decisions. This course provides:
+- Academic requirement fulfillment
+- Practical data analysis skills
+- Foundation for future machine learning work
+- Experience with statistical computing
+
+---
+
+## Learning Philosophy
+
+I believe in learning by building. Both these activities represent hands-on approaches to skill development:
+- **Flutter Project** - Learning through practical application development
+- **R Course** - Structured learning with academic rigor
+
+This combination of project-based and course-based learning helps solidify concepts through both theory and practice.`
+  },
+
   // ===== PERSONAL APPS =====
   {
     slug: "mnotes",

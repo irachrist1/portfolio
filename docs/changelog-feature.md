@@ -54,17 +54,24 @@ type ProjectUpdate = {
 
 ### 1. Featured Release (Major Milestone)
 
-Edit `app/data/changelog.ts` - add to top of `featuredReleases`:
+Edit `app/data/changelog.ts` - add to top of `timelineEntries` (releases):
 
 ```typescript
 {
   date: "2026-01-10",
   title: "Your Launch Title",
   description: "What you shipped and why it matters. Include metrics if possible.",
-  link: "/projects/your-slug",
+  link: "https://github.com/username/repo/commits/main",  // REQUIRED: GitHub repo or specific commit
   tags: ["Product Launch", "Category"],
 }
 ```
+
+**CRITICAL**: Every timeline entry MUST have a `link` field pointing to:
+- Specific commit: `https://github.com/username/repo/commit/abc1234`
+- Repo commits page: `https://github.com/username/repo/commits/main`
+- Live project (if no public repo): `/projects/slug`
+
+This provides transparency and allows viewers to see actual code changes, not just words.
 
 ### 2. Project Update (Version)
 
@@ -123,6 +130,7 @@ GITHUB_TOKEN=your_github_personal_access_token
 - **Concise** - Keep descriptions under 2-3 sentences
 - **Metrics** - Include numbers when possible ("100+ careers", "8+ datasets")
 - **Professional** - Write like you're reporting to investors
+- **GitHub Links Required** - Every timeline entry must link to actual code (repo/commit) for transparency
 
 ## Example Entry
 
@@ -139,12 +147,14 @@ GITHUB_TOKEN=your_github_personal_access_token
 }
 ```
 
-**Good (professional, specific):**
+**Good (professional, specific, with GitHub link):**
 ```typescript
 {
   date: "2026-01-04",
   title: "MNotes Landing Page Launch",
   description: "Complete landing page implementation with 11 new components. Smooth scroll animations, email waitlist integration, and mobile-responsive design.",
+  link: "https://github.com/irachrist1/mnotes/commits/main",  // Links to actual code
+  tags: ["Product Launch"],
   changes: [
     "Built 11 landing page components (Hero, Features, FAQ, Waitlist)",
     "Integrated Framer Motion for smooth scroll animations",

@@ -134,7 +134,7 @@ function ReleaseEntryCard({
                     onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-100 hover:text-white transition-colors group/link"
                   >
-                    {entry.link.startsWith("http") ? "Read article" : "View project"}
+                    {entry.link.startsWith("http") ? "View on GitHub" : "View project"}
                     <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                   </Link>
                 </div>

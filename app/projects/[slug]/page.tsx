@@ -3,6 +3,7 @@ import { projects } from "@/app/data/projects";
 import { Header } from "./header";
 import { Markdown } from "@/app/components/markdown";
 import { Footer } from "@/app/components/footer";
+import { LearningDashboard } from "@/app/components/learning/LearningDashboard";
 
 export const dynamic = "force-static";
 
@@ -24,11 +25,18 @@ export default async function PostPage({ params }: Props) {
     notFound();
   }
 
+  // Special rendering for learning project
+  const isLearningPage = slug === "learning";
+
   return (
     <div className="bg-zinc-900 min-h-screen flex flex-col">
       <Header project={project} />
       <article className="px-4 py-12 mx-auto max-w-4xl flex-grow">
-        <Markdown content={project.body} />
+        {isLearningPage ? (
+          <LearningDashboard />
+        ) : (
+          <Markdown content={project.body} />
+        )}
       </article>
       <Footer />
     </div>

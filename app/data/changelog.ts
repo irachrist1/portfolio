@@ -86,33 +86,56 @@ export const currentWork: CurrentEntry[] = [
     },
   },
   {
-    id: "current-portfolio-changelog",
-    date: "2026-01-04",
+    id: "current-flutter-health-app",
+    date: "2026-01-12",
     type: "current",
-    projectSlug: "portfolio",
-    projectTitle: "Portfolio",
-    title: "Changelog Timeline",
+    projectSlug: "learning",
+    projectTitle: "Learning & Development",
+    title: "Flutter Health Application",
     description:
-      "Building unified timeline view with year grouping and project filters",
+      "Building all-in-one health tracking app with Flutter - calendar schedules, diet tracking, and activity recommendations",
     extendedDescription:
-      "The portfolio changelog is evolving from a simple list into a rich, interactive timeline. This update introduces project-based filtering, year grouping, and deep-dive modals to provide a transparent view of my development process.",
-    progress: 95,
-    eta: "Today",
+      "Expanding skillset into mobile development with Flutter by building a comprehensive health application. Combining features from MyFitnessPal and Whoop to create an all-in-one health tracker that monitors calendar schedules, nutrition intake, and provides location-based activity recommendations.",
+    progress: 20,
+    eta: "Ongoing",
     completedTasks: [
-      "Unified timeline architecture",
-      "Year grouping logic",
-      "Project filter chips",
-      "Interactive project deep-dive modals",
-      "Mobile navigation responsiveness",
+      "Flutter development environment setup",
+      "Understanding Flutter basics and widget system",
     ],
     tasks: [
-      "Final visual polish and performance audit",
+      "Design app architecture and data models",
+      "Build calendar integration for schedule tracking",
+      "Implement nutrition and diet tracking features",
+      "Create activity recommendation system with location services",
+      "Learn state management (Provider/Riverpod)",
     ],
-    techStack: ["Next.js", "Framer Motion", "Radix UI", "Tailwind CSS"],
-    lastUpdated: "2026-01-04",
-    links: {
-      github: "https://github.com/irachrist1/portfolio",
-    },
+    techStack: ["Flutter", "Dart"],
+    lastUpdated: "2026-01-12",
+  },
+  {
+    id: "current-r-programming",
+    date: "2026-01-12",
+    type: "current",
+    projectSlug: "learning",
+    projectTitle: "Learning & Development",
+    title: "R Programming Course",
+    description:
+      "Learning R programming through Coursera for data analysis and statistical computing as part of school curriculum",
+    extendedDescription:
+      "Developing data science skills through structured R programming coursework on Coursera. Focusing on statistical computing, data visualization, and analysis techniques as required for academic projects.",
+    progress: 30,
+    eta: "Ongoing",
+    completedTasks: [
+      "Enrolled in Coursera R programming course",
+      "Completed initial R syntax and data structures modules",
+    ],
+    tasks: [
+      "Complete data visualization modules",
+      "Learn statistical analysis with R",
+      "Apply R to school project requirements",
+    ],
+    techStack: ["R", "RStudio"],
+    lastUpdated: "2026-01-12",
   },
   {
     id: "current-opportunitymap-v3",
@@ -152,6 +175,30 @@ export const currentWork: CurrentEntry[] = [
 export const timelineEntries: TimelineEntry[] = [
   // 2026
   {
+    id: "portfolio-v3-release",
+    date: "2026-01-12",
+    type: "release",
+    projectSlug: "portfolio",
+    projectTitle: "Portfolio",
+    title: "Portfolio v3.0 Release",
+    description:
+      "Major feature release with unified changelog timeline, social preview images, and comprehensive mobile UX improvements. Enhanced navigation, interactive modals, and standardized layouts across all pages.",
+    tags: ["Feature Release", "UX Improvement"],
+    link: "https://github.com/irachrist1/portfolio/commits/main",
+  },
+  {
+    id: "portfolio-social-previews",
+    date: "2026-01-06",
+    type: "release",
+    projectSlug: "portfolio",
+    projectTitle: "Portfolio",
+    title: "Social Preview Images",
+    description:
+      "Implemented social media preview images (og.png) for improved link sharing on platforms like LinkedIn and Twitter. Custom previews for writing page featuring essay titles and professional branding.",
+    tags: ["Feature Release", "SEO"],
+    link: "https://github.com/irachrist1/portfolio/commit/ac9e993",
+  },
+  {
     id: "essay-two-things-every-app-needs",
     date: "2026-01-05",
     type: "release",
@@ -173,7 +220,26 @@ export const timelineEntries: TimelineEntry[] = [
     description:
       "Complete landing page implementation with 11 new components. Smooth scroll animations, email waitlist integration, and mobile-responsive design. Over 3,200 lines of code added to prepare MNotes for public launch.",
     tags: ["Product Launch", "Landing Page"],
-    link: "/projects/mnotes",
+    link: "https://github.com/irachrist1/mnotes/commits/main",
+  },
+  {
+    id: "portfolio-v3",
+    date: "2026-01-12",
+    type: "update",
+    projectSlug: "portfolio",
+    projectTitle: "Portfolio",
+    title: "Major Feature Release",
+    version: "v3.0",
+    description: "Changelog timeline, social previews, and mobile improvements",
+    changes: [
+      "Social preview images (og.png) for improved link sharing on social platforms",
+      "Published essay: Two Things Every App Needs with citations and hyperlinks",
+      "Mobile navigation dropdown with improved backdrop effects",
+      "Interactive deep-dive modals for currently building cards",
+      "Unified changelog timeline with year grouping and project filters",
+      "Mobile UI refinements (auto-close menu on scroll, vertical project headers)",
+      "Page width standardization to max-w-7xl for consistent left-aligned layouts",
+    ],
   },
   {
     id: "mnotes-phase-3",
@@ -205,7 +271,7 @@ export const timelineEntries: TimelineEntry[] = [
     description:
       "NISR 2025 Big Data Hackathon finalist. Built AI-powered government intelligence platform integrating 8+ official datasets. Reduced policy analysis time from weeks to 30 seconds for Rwanda's 23 ministries.",
     tags: ["Hackathon Finalist", "AI Platform"],
-    link: "/projects/rgi",
+    link: "https://github.com/ChristianTonny/rgi",
   },
   {
     id: "rgi-v1",
@@ -247,7 +313,7 @@ export const timelineEntries: TimelineEntry[] = [
     description:
       "Launched career discovery platform for Rwandan students. 100+ African tech career paths with salary data, AI-powered matching via 15-question assessment, and mobile-optimized PWA for offline access.",
     tags: ["Product Launch", "Education"],
-    link: "/projects/opportunitymap",
+    link: "https://github.com/irachrist1/spark",
   },
   {
     id: "opportunitymap-v2-1",
@@ -291,7 +357,7 @@ export const timelineEntries: TimelineEntry[] = [
     description:
       "Ground handling operations platform for African aviation. Real-time flight dashboard, automated staff assignment, and mobile-first design for tarmac access.",
     tags: ["Product Launch", "Aviation"],
-    link: "/projects/beacon-skyway",
+    link: "https://github.com/irachrist1/beacon-skyway",
   },
   {
     id: "beacon-skyway-v1",
@@ -471,6 +537,22 @@ export const featuredReleases: FeaturedRelease[] = timelineEntries
   }));
 
 export const projectChangelogs: ProjectChangelog[] = [
+  {
+    projectSlug: "portfolio",
+    projectTitle: "Portfolio",
+    githubRepo: "irachrist1/portfolio",
+    updates: timelineEntries
+      .filter(
+        (e): e is UpdateEntry =>
+          e.type === "update" && e.projectSlug === "portfolio"
+      )
+      .map((e) => ({
+        version: e.version,
+        date: e.date,
+        description: e.description,
+        changes: e.changes,
+      })),
+  },
   {
     projectSlug: "opportunitymap",
     projectTitle: "OpportunityMap",

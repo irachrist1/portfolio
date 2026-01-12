@@ -18,13 +18,13 @@ gh api repos/irachrist1/beacon-skyway/commits --jq '.[:3] | .[] | "\(.sha[:7]) |
 `app/data/changelog.ts`
 
 ## Add Featured Release (30 seconds)
-Go to line 28, add at top of array:
+Go to `timelineEntries`, add at top of array:
 ```typescript
 {
   date: "YYYY-MM-DD",
   title: "Launch Title",
   description: "What shipped and why it matters.",
-  link: "/projects/slug",
+  link: "https://github.com/username/repo/commits/main",  // REQUIRED: GitHub link
   tags: ["Launch", "Category"],
 },
 ```
@@ -48,6 +48,7 @@ Find your project in `projectChangelogs`, add at top of `updates`:
 - Use metrics ("100+ users", "8 datasets")
 - Keep descriptions concise
 - Professional tone
+- **GitHub links required** - Every timeline entry must link to repo/commit
 
 ## Live Activity
 Auto-updates from GitHub - no manual work needed.
