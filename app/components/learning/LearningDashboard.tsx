@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ProgressCircle } from "./ProgressCircle";
 import { TaskCard } from "./TaskCard";
 import { TechBadge } from "./TechBadge";
-import { Calendar, Target, BookOpen } from "lucide-react";
+import { Calendar, Target, BookOpen, GraduationCap, CalendarDays, Apple, MapPin, BarChart3, LineChart, Search } from "lucide-react";
 
 export function LearningDashboard() {
     const [activeTab, setActiveTab] = useState<"flutter" | "r">("flutter");
@@ -12,17 +12,17 @@ export function LearningDashboard() {
     return (
         <div className="space-y-8">
             {/* Degree Context Banner */}
-            <div className="p-6 rounded-xl border border-blue-500/20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-emerald-500/10">
+            <div className="p-6 rounded-xl border border-zinc-800 bg-zinc-900/50">
                 <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                        <span className="text-2xl">🎓</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-zinc-800 flex items-center justify-center">
+                        <GraduationCap className="w-6 h-6 text-zinc-400" />
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold text-zinc-100 mb-1">University Degree Program</h3>
                         <p className="text-zinc-300">
-                            <span className="font-medium text-blue-400">AI/ML Specialization</span>
+                            <span className="font-medium text-zinc-100">AI/ML Specialization</span>
                             {" > "}
-                            <span className="font-medium text-purple-400">Software Engineering Degree</span>
+                            <span className="font-medium text-zinc-100">Software Engineering Degree</span>
                         </p>
                         <p className="text-sm text-zinc-500 mt-2">
                             All learning activities below are part of my university curriculum and degree requirements
@@ -126,15 +126,24 @@ export function LearningDashboard() {
                         {/* Features */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                                <h5 className="font-medium text-zinc-200 mb-1">📅 Calendar</h5>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <CalendarDays className="w-5 h-5 text-zinc-400" />
+                                    <h5 className="font-medium text-zinc-200">Calendar</h5>
+                                </div>
                                 <p className="text-sm text-zinc-500">Track daily routines and activities</p>
                             </div>
                             <div className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                                <h5 className="font-medium text-zinc-200 mb-1">🍎 Nutrition</h5>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <Apple className="w-5 h-5 text-zinc-400" />
+                                    <h5 className="font-medium text-zinc-200">Nutrition</h5>
+                                </div>
                                 <p className="text-sm text-zinc-500">Log meals and monitor intake</p>
                             </div>
                             <div className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                                <h5 className="font-medium text-zinc-200 mb-1">📍 Activities</h5>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <MapPin className="w-5 h-5 text-zinc-400" />
+                                    <h5 className="font-medium text-zinc-200">Activities</h5>
+                                </div>
                                 <p className="text-sm text-zinc-500">Location-based recommendations</p>
                             </div>
                         </div>
@@ -202,15 +211,24 @@ export function LearningDashboard() {
                         {/* Focus Areas */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                                <h5 className="font-medium text-zinc-200 mb-1">📊 Statistics</h5>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <BarChart3 className="w-5 h-5 text-zinc-400" />
+                                    <h5 className="font-medium text-zinc-200">Statistics</h5>
+                                </div>
                                 <p className="text-sm text-zinc-500">Statistical computing and analysis</p>
                             </div>
                             <div className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                                <h5 className="font-medium text-zinc-200 mb-1">📈 Visualization</h5>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <LineChart className="w-5 h-5 text-zinc-400" />
+                                    <h5 className="font-medium text-zinc-200">Visualization</h5>
+                                </div>
                                 <p className="text-sm text-zinc-500">Creating charts and graphs</p>
                             </div>
                             <div className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                                <h5 className="font-medium text-zinc-200 mb-1">🔍 Analysis</h5>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <Search className="w-5 h-5 text-zinc-400" />
+                                    <h5 className="font-medium text-zinc-200">Analysis</h5>
+                                </div>
                                 <p className="text-sm text-zinc-500">Data manipulation techniques</p>
                             </div>
                         </div>
@@ -249,10 +267,10 @@ export function LearningDashboard() {
             )}
 
             {/* Learning Philosophy */}
-            <div className="p-6 rounded-xl border border-zinc-800 bg-gradient-to-br from-blue-500/5 to-emerald-500/5">
+            <div className="p-6 rounded-xl border border-zinc-800 bg-zinc-900/50">
                 <h3 className="text-lg font-semibold text-zinc-100 mb-3">Learning Philosophy</h3>
                 <p className="text-zinc-400 leading-relaxed">
-                    I believe in <span className="text-blue-400 font-medium">learning by building</span>.
+                    I believe in <span className="text-zinc-100 font-medium">learning by building</span>.
                     Both these activities represent hands-on approaches to skill development: the Flutter
                     project provides practical application development experience, while the R course
                     offers structured learning with academic rigor. This combination of project-based
