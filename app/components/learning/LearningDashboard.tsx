@@ -11,6 +11,26 @@ export function LearningDashboard() {
 
     return (
         <div className="space-y-8">
+            {/* Degree Context Banner */}
+            <div className="p-6 rounded-xl border border-blue-500/20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-emerald-500/10">
+                <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                        <span className="text-2xl">🎓</span>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold text-zinc-100 mb-1">University Degree Program</h3>
+                        <p className="text-zinc-300">
+                            <span className="font-medium text-blue-400">AI/ML Specialization</span>
+                            {" > "}
+                            <span className="font-medium text-purple-400">Software Engineering Degree</span>
+                        </p>
+                        <p className="text-sm text-zinc-500 mt-2">
+                            All learning activities below are part of my university curriculum and degree requirements
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* Header Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-6 rounded-xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-900/50">
@@ -53,8 +73,8 @@ export function LearningDashboard() {
                     <button
                         onClick={() => setActiveTab("flutter")}
                         className={`px-6 py-3 text-sm font-medium transition-colors relative ${activeTab === "flutter"
-                                ? "text-blue-400"
-                                : "text-zinc-500 hover:text-zinc-300"
+                            ? "text-blue-400"
+                            : "text-zinc-500 hover:text-zinc-300"
                             }`}
                     >
                         Flutter Health App
@@ -65,8 +85,8 @@ export function LearningDashboard() {
                     <button
                         onClick={() => setActiveTab("r")}
                         className={`px-6 py-3 text-sm font-medium transition-colors relative ${activeTab === "r"
-                                ? "text-emerald-400"
-                                : "text-zinc-500 hover:text-zinc-300"
+                            ? "text-emerald-400"
+                            : "text-zinc-500 hover:text-zinc-300"
                             }`}
                     >
                         R Programming Course

@@ -74,10 +74,6 @@ export const projects: Project[] = [
     description: "Current learning activities: Building Flutter health app and taking R programming course on Coursera.",
     category: "learning",
     date: "2026-01-12",
-    links: [
-      { label: "Flutter Health App", href: "#flutter-health-app" },
-      { label: "R Programming", href: "#r-programming" }
-    ],
     body: `## Current Learning Activities
 
 Activities I'm currently learning and experimenting with as of January 2026.
