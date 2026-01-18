@@ -12,6 +12,11 @@ interface CurrentWorkModalProps {
   onClose: () => void;
 }
 
+const scrollbarHiddenStyle: React.CSSProperties = {
+  scrollbarWidth: "none",
+  msOverflowStyle: "none",
+};
+
 export function CurrentWorkModal({ entry, isOpen, onClose }: CurrentWorkModalProps) {
   if (!entry) return null;
 
@@ -34,18 +39,25 @@ export function CurrentWorkModal({ entry, isOpen, onClose }: CurrentWorkModalPro
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onClick={onClose}
-                className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm cursor-pointer"
+                className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
               />
             </Dialog.Overlay>
-            <Dialog.Content asChild onPointerDownOutside={onClose} onInteractOutside={onClose}>
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <Dialog.Content asChild>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={onClose}
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 cursor-pointer"
+              >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: 20 }}
                   transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-                  className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl pointer-events-auto"
+                  onClick={(e) => e.stopPropagation()}
+                  style={scrollbarHiddenStyle}
+                  className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl cursor-default [&::-webkit-scrollbar]:hidden"
                 >
                   {/* Header Image/Pattern Placeholder */}
                   <div className="h-32 bg-gradient-to-br from-zinc-800 to-zinc-900 relative overflow-hidden">
@@ -218,7 +230,7 @@ export function CurrentWorkModal({ entry, isOpen, onClose }: CurrentWorkModalPro
                     </div>
                   </div>
                 </motion.div>
-              </div>
+              </motion.div>
             </Dialog.Content>
           </Dialog.Portal>
         )}

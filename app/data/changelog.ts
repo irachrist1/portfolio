@@ -175,6 +175,34 @@ export const currentWork: CurrentEntry[] = [
 export const timelineEntries: TimelineEntry[] = [
   // 2026
   {
+    id: "portfolio-learning-page-overhaul",
+    date: "2026-01-18",
+    type: "release",
+    projectSlug: "portfolio",
+    projectTitle: "Portfolio",
+    title: "Learning Page Overhaul",
+    description:
+      "Launched a new interactive learning page highlighting the Flutter health app and R programming coursework. Refined layout, iconography, and typography for a cleaner educational narrative.",
+    tags: ["Feature Release", "Design"],
+    link: "https://github.com/irachrist1/portfolio/commits/main",
+  },
+  {
+    id: "portfolio-v3-1",
+    date: "2026-01-18",
+    type: "update",
+    projectSlug: "portfolio",
+    projectTitle: "Portfolio",
+    title: "Learning Page Refinement",
+    version: "v3.1",
+    description: "Interactive learning page and visual cleanup",
+    changes: [
+      "Added interactive learning page for Flutter health app and R programming course",
+      "Removed header links and resolved JSX layout issues",
+      "Replaced emoji accents with lucide iconography",
+      "Simplified gradients and shifted to zinc-based palette",
+    ],
+  },
+  {
     id: "portfolio-v3-release",
     date: "2026-01-12",
     type: "release",
