@@ -180,35 +180,55 @@ This combination of project-based and course-based learning helps solidify conce
   {
     slug: "mnotes",
     title: "MNotes",
-    description: "Entrepreneurial dashboard for tracking mentor sessions, income streams, ideas, and business analytics with AI-powered insights.",
+    description: "Personal AI assistant dashboard for entrepreneurs. Track income streams, ideas, mentorship, and get AI-powered business insights, all from one place.",
     category: "personal",
     externalUrl: "https://mnotes-omega.vercel.app/",
-    date: "2025-12-01",
+    date: "2026-02-12",
     links: [
       { label: "GitHub", href: "https://github.com/irachrist1/mnotes" },
       { label: "Live Demo", href: "https://mnotes-omega.vercel.app/" }
     ],
     body: `## Overview
 
-MNotes is a unified intelligence center for entrepreneurs, transforming chaotic business data into actionable insights.
+MNotes is a personal AI assistant dashboard for entrepreneurs. It combines income tracking, ideas pipeline, mentorship logs, and AI-powered business intelligence into a single, beautifully designed interface.
+
+The vision: Phase 1 is a structured dashboard where you manually input data and get on-demand AI analysis. Phase 2 turns it into an autonomous assistant that connects to your calendar, email, and proactively nudges you with insights.
 
 ## Key Features
 
-- **Business Intelligence Dashboard** - Real-time KPI tracking and analytics
-- **Income Stream Management** - Track and optimize revenue sources
-- **Mentor Session Tracking** - Log mentorship meetings with notes and follow-ups
-- **Ideas Repository** - Capture and organize business ideas
-- **Dark/Light Mode** - Full theme support
+- **Income Stream Management** - Track revenue sources with growth rates, time investment, and efficiency metrics ($/hour)
+- **Ideas Pipeline** - Capture and organize business ideas through stages: raw thought, researching, validating, developing, testing, launched
+- **Mentorship Tracking** - Log sessions with action items, ratings, topics, and follow-up tracking
+- **AI Insights** - Server-side AI analysis using OpenRouter or Google AI Studio. Persistent insights feed with priority and confidence scoring.
+- **Analytics Dashboard** - Revenue by category, efficiency rankings, ideas funnel, mentorship overview, pending action items
+- **Settings** - Choose AI provider, model, and API keys. Stored securely server-side.
+
+## Design System
+
+Premium design inspired by Vercel, Linear, Airbnb, and Apple:
+- Sky blue gradient palette (#38bdf8 to #0ea5e9)
+- Dot grid subtle background patterns
+- Framer Motion animations: staggered card entrances, spring sidebar, animated stat numbers
+- Dark mode first showcase
+- Rounded cards with hover glow effects
 
 ## Tech Stack
 
-- **Frontend:** React, TypeScript, Tailwind CSS
-- **Backend:** Supabase (PostgreSQL, Auth, Real-time)
-- **State:** React Query for server state management
+- **Frontend:** Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion
+- **Backend:** Convex (real-time database, server-side actions)
+- **AI:** Convex actions calling OpenRouter or Google AI Studio (server-side, no client exposure)
+- **Icons:** Lucide React
+- **Toasts:** Sonner
+
+## Architecture Decisions
+
+- All AI calls happen server-side via Convex actions. API keys never touch the browser.
+- Convex provides real-time reactivity. When data changes, the UI updates instantly.
+- Server-side AI analysis generates structured JSON insights with title, body, action items, priority, and confidence.
 
 ## Status
 
-Phase 2.5 — Frontend Integration 95% Complete`
+Dashboard 85% complete. Landing page 95%. AI system 70% (server-side, persistent). Auth, tests, and deployment at 0%. Currently in active multi-agent development with three AI agents working in parallel.`
   },
   {
     slug: "momo-p",
