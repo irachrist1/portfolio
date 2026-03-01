@@ -1,3 +1,7 @@
+import repositories from "./repositories.json";
+import { projects } from "./projects";
+import { assertChangelogIntegrity } from "./changelog-validation";
+
 // ========================================
 // UNIFIED CHANGELOG DATA MODEL
 // Using discriminated unions for type safety
@@ -552,11 +556,13 @@ export const timelineEntries: TimelineEntry[] = [
 // ========================================
 
 // Get unique projects for filter chips
-export function getUniqueProjects(): { slug: string; title: string }[] {
+export function getUniqueProjects(
+  entries: TimelineEntry[]
+): { slug: string; title: string }[] {
   const seen = new Set<string>();
   const projects: { slug: string; title: string }[] = [];
 
-  for (const entry of timelineEntries) {
+  for (const entry of entries) {
     if (!seen.has(entry.projectSlug)) {
       seen.add(entry.projectSlug);
       projects.push({
@@ -611,7 +617,6 @@ export function getStalenessLabel(entry: CurrentEntry): string | null {
 
 // ========================================
 // LEGACY EXPORTS (for backwards compatibility during migration)
-// TODO: Remove these after migration is complete
 // ========================================
 export type FeaturedRelease = {
   date: string;
@@ -646,100 +651,26 @@ export const featuredReleases: FeaturedRelease[] = timelineEntries
     tags: e.tags,
   }));
 
-export const projectChangelogs: ProjectChangelog[] = [
-  {
-    projectSlug: "portfolio",
-    projectTitle: "Portfolio",
-    githubRepo: "irachrist1/portfolio",
-    updates: timelineEntries
-      .filter(
-        (e): e is UpdateEntry =>
-          e.type === "update" && e.projectSlug === "portfolio"
-      )
-      .map((e) => ({
-        version: e.version,
-        date: e.date,
-        description: e.description,
-        changes: e.changes,
-      })),
-  },
-  {
-    projectSlug: "opportunitymap",
-    projectTitle: "OpportunityMap",
-    githubRepo: "irachrist1/spark",
-    updates: timelineEntries
-      .filter(
-        (e): e is UpdateEntry =>
-          e.type === "update" && e.projectSlug === "opportunitymap"
-      )
-      .map((e) => ({
-        version: e.version,
-        date: e.date,
-        description: e.description,
-        changes: e.changes,
-      })),
-  },
-  {
-    projectSlug: "mnotes",
-    projectTitle: "MNotes",
-    githubRepo: "irachrist1/mnotes",
-    updates: timelineEntries
-      .filter(
-        (e): e is UpdateEntry =>
-          e.type === "update" && e.projectSlug === "mnotes"
-      )
-      .map((e) => ({
-        version: e.version,
-        date: e.date,
-        description: e.description,
-        changes: e.changes,
-      })),
-  },
-  {
-    projectSlug: "rgi",
-    projectTitle: "RGI - Rwanda Government Intelligence",
-    githubRepo: "ChristianTonny/rgi",
-    updates: timelineEntries
-      .filter(
-        (e): e is UpdateEntry => e.type === "update" && e.projectSlug === "rgi"
-      )
-      .map((e) => ({
-        version: e.version,
-        date: e.date,
-        description: e.description,
-        changes: e.changes,
-      })),
-  },
-  {
-    projectSlug: "beacon-skyway",
-    projectTitle: "Beacon Skyway",
-    githubRepo: "irachrist1/beacon-skyway",
-    updates: timelineEntries
-      .filter(
-        (e): e is UpdateEntry =>
-          e.type === "update" && e.projectSlug === "beacon-skyway"
-      )
-      .map((e) => ({
-        version: e.version,
-        date: e.date,
-        description: e.description,
-        changes: e.changes,
-      })),
-  },
-  {
-    projectSlug: "contentflow",
-    projectTitle: "ContentFlow",
-    githubRepo: "irachrist1/andersen-content-dashboard",
-    updates: timelineEntries
-      .filter(
-        (e): e is UpdateEntry =>
-          e.type === "update" && e.projectSlug === "contentflow"
-      )
-      .map((e) => ({
-        version: e.version,
-        date: e.date,
-        description: e.description,
-        changes: e.changes,
-      })),
-  },
-];
+export const projectChangelogs: ProjectChangelog[] = repositories.map((project) => ({
+  projectSlug: project.projectSlug,
+  projectTitle: project.projectTitle,
+  githubRepo: project.githubRepo,
+  updates: timelineEntries
+    .filter(
+      (entry): entry is UpdateEntry =>
+        entry.type === "update" && entry.projectSlug === project.projectSlug
+    )
+    .map((entry) => ({
+      version: entry.version,
+      date: entry.date,
+      description: entry.description,
+      changes: entry.changes,
+    })),
+}));
+
+assertChangelogIntegrity({
+  projects,
+  repositories,
+  currentWork,
+  timelineEntries,
+});

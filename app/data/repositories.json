@@ -1,0 +1,32 @@
+[
+  {
+    "projectSlug": "portfolio",
+    "projectTitle": "Portfolio",
+    "githubRepo": "irachrist1/portfolio"
+  },
+  {
+    "projectSlug": "mnotes",
+    "projectTitle": "MNotes",
+    "githubRepo": "irachrist1/mnotes"
+  },
+  {
+    "projectSlug": "opportunitymap",
+    "projectTitle": "OpportunityMap",
+    "githubRepo": "irachrist1/spark"
+  },
+  {
+    "projectSlug": "rgi",
+    "projectTitle": "RGI - Rwanda Government Intelligence",
+    "githubRepo": "ChristianTonny/rgi"
+  },
+  {
+    "projectSlug": "beacon-skyway",
+    "projectTitle": "Beacon Skyway",
+    "githubRepo": "irachrist1/beacon-skyway"
+  },
+  {
+    "projectSlug": "contentflow",
+    "projectTitle": "ContentFlow",
+    "githubRepo": "irachrist1/andersen-content-dashboard"
+  }
+]

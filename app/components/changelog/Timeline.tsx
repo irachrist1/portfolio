@@ -14,14 +14,23 @@ export function Timeline({ entries }: TimelineProps) {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [showEarlier, setShowEarlier] = useState(false);
 
-  // Get unique projects for filter
-  const projects = useMemo(() => getUniqueProjects(), []);
+  // Keep rendering deterministic regardless of manual entry order in data files.
+  const sortedEntries = useMemo(() => {
+    return [...entries].sort((a, b) => {
+      const byDate = new Date(b.date).getTime() - new Date(a.date).getTime();
+      if (byDate !== 0) return byDate;
+      return a.id.localeCompare(b.id);
+    });
+  }, [entries]);
+
+  // Get unique projects for filter from the visible data set.
+  const projects = useMemo(() => getUniqueProjects(sortedEntries), [sortedEntries]);
 
   // Filter entries by selected project
   const filteredEntries = useMemo(() => {
-    if (!selectedProject) return entries;
-    return entries.filter((entry) => entry.projectSlug === selectedProject);
-  }, [entries, selectedProject]);
+    if (!selectedProject) return sortedEntries;
+    return sortedEntries.filter((entry) => entry.projectSlug === selectedProject);
+  }, [sortedEntries, selectedProject]);
 
   // Group entries by year
   const groupedByYear = useMemo(() => {

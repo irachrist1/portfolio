@@ -2,6 +2,7 @@ import { Navigation } from "../components/nav";
 import { Footer } from "../components/footer";
 import { CurrentWork } from "../components/changelog/CurrentWork";
 import { Timeline } from "../components/changelog/Timeline";
+import { WeeklyActivity } from "../components/changelog/WeeklyActivity";
 import { currentWork, timelineEntries } from "../data/changelog";
 
 export const metadata = {
@@ -31,6 +32,9 @@ export default function ChangelogPage() {
 
         {/* Currently Building - Hero Section */}
         <CurrentWork entries={currentWork} />
+
+        {/* Auto-generated weekly activity from tracked repositories */}
+        <WeeklyActivity />
 
         {/* Main Timeline */}
         <section className="space-y-6">

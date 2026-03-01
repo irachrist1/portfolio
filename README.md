@@ -61,6 +61,23 @@ npm run build
 npm start
 ```
 
+## Tests
+
+```sh-session
+npm test
+```
+
+## Weekly Activity Data
+
+Weekly commit activity is generated from tracked repos and committed to:
+- `app/data/weekly-activity.generated.json`
+
+Generate locally:
+
+```sh-session
+npm run activity:generate
+```
+
 ## Deployment
 
 1. Push to GitHub (or your preferred git host)

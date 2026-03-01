@@ -178,6 +178,40 @@ This combination of project-based and course-based learning helps solidify conce
 
   // ===== PERSONAL APPS =====
   {
+    slug: "portfolio",
+    title: "Portfolio",
+    description: "This website. Built as a living project hub with weekly Git activity, changelog timeline, and structured project narratives.",
+    category: "personal",
+    externalUrl: "https://christian-tonny.vercel.app",
+    date: "2026-02-27",
+    links: [
+      { label: "GitHub", href: "https://github.com/irachrist1/portfolio" },
+      { label: "Live Demo", href: "https://christian-tonny.vercel.app" }
+    ],
+    body: `## Overview
+
+This portfolio is designed as a living system, not a static brochure. It centralizes active work, release milestones, and project context into one place.
+
+## Key Features
+
+- **Weekly Git Activity** - Auto-generated commit summaries from tracked repositories
+- **Changelog Timeline** - Releases and project updates with source links
+- **Project Pages** - Structured narratives for each project with architecture and outcomes
+- **Static-first Delivery** - Fast builds and predictable runtime behavior
+
+## Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Automation:** GitHub Actions for weekly activity generation
+
+## Why It Matters
+
+The site now reflects weekly momentum automatically while preserving curated milestone storytelling.`
+  },
+  {
     slug: "mnotes",
     title: "MNotes",
     description: "Personal AI assistant dashboard for entrepreneurs. Track income streams, ideas, mentorship, and get AI-powered business insights, all from one place.",

@@ -4,11 +4,14 @@ import { Navigation } from "../components/nav";
 import { Footer } from "../components/footer";
 import { Card } from "../components/card";
 import { projects, categories } from "@/app/data/projects";
+import { getWeeklyCommitCountByProject } from "@/app/data/weekly-activity";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 export const dynamic = "force-static";
 
 export default function ProjectsPage() {
+  const weeklyCommitCounts = getWeeklyCommitCountByProject();
+
   // Group projects by category
   const projectsByCategory = categories
     .sort((a, b) => a.order - b.order)
@@ -75,7 +78,11 @@ export default function ProjectsPage() {
             {/* Projects Grid */}
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {category.projects.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  weeklyCommitCount={weeklyCommitCounts[project.slug] ?? 0}
+                />
               ))}
             </div>
           </section>
@@ -89,10 +96,10 @@ export default function ProjectsPage() {
 
 type ProjectCardProps = {
   project: typeof projects[0];
+  weeklyCommitCount: number;
 };
 
-function ProjectCard({ project }: ProjectCardProps) {
-  const hasExternalUrl = project.externalUrl || project.links?.find(l => l.label === "Live Demo");
+function ProjectCard({ project, weeklyCommitCount }: ProjectCardProps) {
   const liveUrl = project.externalUrl || project.links?.find(l => l.label === "Live Demo")?.href;
   const githubUrl = project.links?.find(l => l.label === "GitHub")?.href;
 
@@ -117,6 +124,12 @@ function ProjectCard({ project }: ProjectCardProps) {
         <p className="mt-2 text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 flex-grow line-clamp-3">
           {project.description}
         </p>
+
+        {weeklyCommitCount > 0 && (
+          <p className="mt-3 text-xs text-emerald-400">
+            {weeklyCommitCount} commit{weeklyCommitCount === 1 ? "" : "s"} in the last 7 days
+          </p>
+        )}
 
         {/* Action Links */}
         <div className="mt-4 pt-4 border-t border-zinc-800 flex items-center gap-3">

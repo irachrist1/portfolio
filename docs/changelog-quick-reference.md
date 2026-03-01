@@ -14,8 +14,9 @@ git log --oneline --since="7 days ago"
 gh api repos/irachrist1/beacon-skyway/commits --jq '.[:3] | .[] | "\(.sha[:7]) | \(.commit.message | split("\n")[0])"'
 ```
 
-## File to Edit
+## Files to Edit
 `app/data/changelog.ts`
+`app/data/repositories.json` (only when adding a newly tracked repo)
 
 ## Add Featured Release (30 seconds)
 Go to `timelineEntries`, add at top of array:
@@ -30,7 +31,7 @@ Go to `timelineEntries`, add at top of array:
 ```
 
 ## Add Project Update (30 seconds)
-Find your project in `projectChangelogs`, add at top of `updates`:
+Add an `update` entry in `timelineEntries` (the project updates list is derived automatically):
 ```typescript
 {
   version: "v2.0",
@@ -50,5 +51,10 @@ Find your project in `projectChangelogs`, add at top of `updates`:
 - Professional tone
 - **GitHub links required** - Every timeline entry must link to repo/commit
 
-## Live Activity
-Auto-updates from GitHub - no manual work needed.
+## Weekly Activity
+Auto-generated weekly by GitHub Actions into `app/data/weekly-activity.generated.json`.
+To run locally:
+
+```bash
+npm run activity:generate
+```

@@ -1,0 +1,42 @@
+name: Weekly Activity Sync
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+jobs:
+  sync-weekly-activity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate weekly activity data
+        run: node scripts/generate-weekly-activity.mjs --days=7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN || github.token }}
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet app/data/weekly-activity.generated.json; then
+            echo "No weekly activity changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/data/weekly-activity.generated.json
+          git commit -m "chore: refresh weekly activity data"
+          git push
