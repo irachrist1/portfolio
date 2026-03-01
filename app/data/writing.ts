@@ -361,8 +361,8 @@ AI is no longer just chatbot UX. It is becoming execution infrastructure.
 The right posture now is practical: test, measure, deploy where value is clear, and stay rigorous about safety, cost, and outcome quality.
 
 CT`,
-    published: false,
-    publishedAt: null,
+    published: true,
+    publishedAt: "2026-02-28T22:00:00.000Z",
     scheduledOrder: 3,
     tags: ["AI Strategy", "Industry Analysis", "Issue #50"],
     coverImage: "/writing/50-state-of-ai-2026/cover.png",
