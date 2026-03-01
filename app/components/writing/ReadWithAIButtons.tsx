@@ -46,10 +46,13 @@ export function ReadWithAIButtons({ prefillPrompt, fullPrompt }: Props) {
         showNotice("Couldn't copy prompt automatically.");
       }
 
-      const openedWindow = window.open(targetUrl, "_blank", "noopener,noreferrer");
-      if (!openedWindow) {
-        window.location.assign(targetUrl);
-      }
+      const link = document.createElement("a");
+      link.href = targetUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     },
     [prefillPrompt, fullPrompt, showNotice]
   );
