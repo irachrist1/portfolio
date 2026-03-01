@@ -33,16 +33,31 @@ test("writing data includes required SEO fields and ordered schedule", () => {
 test("published article helpers hide unpublished entries by default", () => {
   const published = getPublishedArticles();
   assert.equal(Array.isArray(published), true);
+  assert.equal(
+    published.every((article) => article.published === true),
+    true
+  );
 
-  const firstSlug = writingArticles[0]?.slug;
-  assert.equal(Boolean(firstSlug), true);
-  if (!firstSlug) return;
+  const firstPublished = writingArticles.find((article) => article.published);
+  if (firstPublished) {
+    const visibleByDefault = getArticleBySlug(firstPublished.slug);
+    assert.equal(Boolean(visibleByDefault), true);
+  } else {
+    assert.equal(published.length, 0);
+  }
 
-  const hidden = getArticleBySlug(firstSlug);
-  assert.equal(hidden, undefined);
+  const firstDraft = writingArticles.find((article) => !article.published);
+  if (!firstDraft) {
+    return;
+  }
 
-  const visible = getArticleBySlug(firstSlug, { includeUnpublished: true });
-  assert.equal(Boolean(visible), true);
+  const hiddenDraft = getArticleBySlug(firstDraft.slug);
+  assert.equal(hiddenDraft, undefined);
+
+  const visibleDraft = getArticleBySlug(firstDraft.slug, {
+    includeUnpublished: true,
+  });
+  assert.equal(Boolean(visibleDraft), true);
 });
 
 test("buildReadWithAIPrompt includes execution-focused checklist", () => {

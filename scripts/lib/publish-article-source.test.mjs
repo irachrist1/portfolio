@@ -9,16 +9,63 @@ import {
 
 test("publish source helpers work against real writing source", async () => {
   const source = await readFile(resolve("app/data/writing.ts"), "utf8");
-
-  assert.doesNotThrow(() => assertSourceHasSlug(source, "48-before-we-get-started"));
-  assert.doesNotThrow(() => assertSourceHasSlug(source, "49-these-two-tools"));
-  assert.doesNotThrow(() => assertSourceHasSlug(source, "50-state-of-ai-2026"));
-
-  const updated = updateArticlePublicationInSource(
-    source,
+  const knownSlugs = [
     "48-before-we-get-started",
-    "2026-02-28T22:00:00.000Z"
+    "49-these-two-tools",
+    "50-state-of-ai-2026",
+  ];
+
+  for (const slug of knownSlugs) {
+    assert.doesNotThrow(() => assertSourceHasSlug(source, slug));
+  }
+
+  const getArticleSlice = (content, slug) => {
+    const start = content.indexOf(`slug: "${slug}"`);
+    if (start === -1) {
+      return null;
+    }
+
+    const end = content.indexOf("\n  },", start);
+    if (end === -1) {
+      return content.slice(start);
+    }
+
+    return content.slice(start, end);
+  };
+
+  const pickDraftSlug = (content) =>
+    knownSlugs.find((slug) => /published:\s*false/.test(getArticleSlice(content, slug) ?? ""));
+
+  const forceDraft = (content, slug) => {
+    const articleSlice = getArticleSlice(content, slug);
+    if (!articleSlice) {
+      return content;
+    }
+
+    const updatedSlice = articleSlice.replace(/published:\s*true/, "published: false");
+    if (updatedSlice === articleSlice) {
+      return content;
+    }
+
+    return content.replace(articleSlice, updatedSlice);
+  };
+
+  const targetSlug = pickDraftSlug(source) ?? knownSlugs[0];
+  const sourceForUpdate = pickDraftSlug(source) ? source : forceDraft(source, targetSlug);
+
+  const publishedAtIso = "2026-02-28T22:00:00.000Z";
+  const updated = updateArticlePublicationInSource(
+    sourceForUpdate,
+    targetSlug,
+    publishedAtIso
   );
 
-  assert.match(updated, /slug:\s*"48-before-we-get-started"[\s\S]*?published:\s*true/);
+  assert.match(
+    updated,
+    new RegExp(`slug:\\s*"${targetSlug}"[\\s\\S]*?published:\\s*true`)
+  );
+  assert.match(
+    updated,
+    new RegExp(`slug:\\s*"${targetSlug}"[\\s\\S]*?publishedAt:\\s*"${publishedAtIso}"`)
+  );
 });

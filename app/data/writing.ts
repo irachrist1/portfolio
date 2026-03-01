@@ -61,7 +61,6 @@ See you in your inbox soon.
 
 CT`,
     published: false,
-    publishedAt: null,
     scheduledOrder: 1,
     tags: ["Newsletter", "AI Workflows", "Issue #48"],
     coverImage: "/writing/48-before-we-get-started/cover.png",
