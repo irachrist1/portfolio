@@ -60,8 +60,8 @@ Two sentences is enough.
 See you in your inbox soon.
 
 CT`,
-    published: false,
-    publishedAt: null,
+    published: true,
+    publishedAt: "2026-02-28T22:00:00.000Z",
     scheduledOrder: 1,
     tags: ["Newsletter", "AI Workflows", "Issue #48"],
     coverImage: "/writing/48-before-we-get-started/cover.png",
