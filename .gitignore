@@ -44,5 +44,13 @@ next-env.d.ts
 *.swp
 *.swo
 
+# Emacs
+*~
+\#*\#
+.#*
+
 # OS
 Thumbs.db
+
+# Local assets
+images/
