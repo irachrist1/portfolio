@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  buildReadWithAIFullPrompt,
   buildReadWithAIPrompt,
   getArticleBySlug,
   getPublishedArticles,
@@ -63,11 +64,14 @@ test("published article helpers hide unpublished entries by default", () => {
 test("buildReadWithAIPrompt includes execution-focused checklist", () => {
   const article = writingArticles[0];
   const prompt = buildReadWithAIPrompt(article);
+  const fullPrompt = buildReadWithAIFullPrompt(article);
 
   assert.match(prompt, /7 bullets max/);
   assert.match(prompt, /5-day action plan/);
   assert.match(prompt, /Article title:/);
   assert.match(prompt, /Article URL:/);
+  assert.match(prompt, /Article excerpt:/);
   assert.match(prompt, /Summary focus:/);
   assert.match(prompt, /Application focus:/);
+  assert.match(fullPrompt, /Full article text:/);
 });

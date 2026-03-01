@@ -6,6 +6,7 @@ import { Markdown } from "@/app/components/markdown";
 import { ArticleCover } from "@/app/components/writing/ArticleCover";
 import { ReadWithAIButtons } from "@/app/components/writing/ReadWithAIButtons";
 import {
+  buildReadWithAIFullPrompt,
   buildReadWithAIPrompt,
   getAbsoluteArticleUrl,
   getArticleBySlug,
@@ -79,7 +80,8 @@ export default async function WritingArticlePage({ params }: PageProps) {
   }
 
   const articleUrl = getAbsoluteArticleUrl(article);
-  const readPrompt = buildReadWithAIPrompt(article);
+  const readPrefillPrompt = buildReadWithAIPrompt(article);
+  const readFullPrompt = buildReadWithAIFullPrompt(article);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -137,7 +139,10 @@ export default async function WritingArticlePage({ params }: PageProps) {
 
         <section className="rounded-xl border border-zinc-800/80 bg-zinc-900/30 p-5 md:p-6">
           <div className="mb-2 text-sm font-medium text-zinc-300">Read with AI</div>
-          <ReadWithAIButtons prompt={readPrompt} />
+          <ReadWithAIButtons
+            prefillPrompt={readPrefillPrompt}
+            fullPrompt={readFullPrompt}
+          />
         </section>
 
         <article className="rounded-xl border border-zinc-800/80 bg-zinc-900/20 p-5 md:p-8">

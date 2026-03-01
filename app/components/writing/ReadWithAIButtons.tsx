@@ -8,10 +8,11 @@ import {
 } from "@/app/lib/read-with-ai";
 
 type Props = {
-  prompt: string;
+  prefillPrompt: string;
+  fullPrompt: string;
 };
 
-export function ReadWithAIButtons({ prompt }: Props) {
+export function ReadWithAIButtons({ prefillPrompt, fullPrompt }: Props) {
   const [notice, setNotice] = useState<string | null>(null);
   const timeoutRef = useRef<number | null>(null);
 
@@ -36,21 +37,21 @@ export function ReadWithAIButtons({ prompt }: Props) {
 
   const handleProviderClick = useCallback(
     async (provider: ReadWithAIProvider) => {
-      const targetUrl = buildReadWithAIUrl(provider, prompt);
+      const targetUrl = buildReadWithAIUrl(provider, prefillPrompt);
+
+      try {
+        await navigator.clipboard.writeText(fullPrompt);
+        showNotice("Full prompt copied. Paste it if the provider cannot load the article directly.");
+      } catch (_error) {
+        showNotice("Couldn't copy prompt automatically.");
+      }
 
       const openedWindow = window.open(targetUrl, "_blank", "noopener,noreferrer");
       if (!openedWindow) {
         window.location.assign(targetUrl);
       }
-
-      try {
-        await navigator.clipboard.writeText(prompt);
-        showNotice("Prompt copied. Paste it if your provider did not prefill automatically.");
-      } catch (_error) {
-        showNotice("Couldn't copy prompt automatically.");
-      }
     },
-    [prompt, showNotice]
+    [prefillPrompt, fullPrompt, showNotice]
   );
 
   return (
@@ -69,7 +70,7 @@ export function ReadWithAIButtons({ prompt }: Props) {
       </div>
 
       <p className="text-xs text-zinc-500">
-        Prompt copied automatically when possible.
+        Full article prompt is copied automatically when possible.
       </p>
 
       {notice && <p className="text-xs text-zinc-400">{notice}</p>}

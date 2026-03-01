@@ -1,6 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildReadWithAIUrl, getReadWithAIProviders } from "./read-with-ai";
+import {
+  buildReadWithAIUrl,
+  getReadWithAIProviders,
+  toPrefillPrompt,
+} from "./read-with-ai";
 
 test("provider list is stable and unique", () => {
   const providers = getReadWithAIProviders();
@@ -18,4 +22,12 @@ test("provider URL builders preserve encoded prompt", () => {
     assert.equal(url.includes(encodeURIComponent(prompt)), true);
     assert.match(url, /^https:\/\//);
   }
+});
+
+test("toPrefillPrompt truncates very long prompts for URL safety", () => {
+  const longPrompt = "A".repeat(4000);
+  const prefill = toPrefillPrompt(longPrompt);
+
+  assert.equal(prefill.length <= 900, true);
+  assert.match(prefill, /truncated for URL length/);
 });

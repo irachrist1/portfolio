@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/app/lib/site-url";
+
 export type ArticleId = string;
 
 export type Article = {
@@ -30,7 +32,6 @@ type RawArticle = Omit<Article, "previewText"> & {
   previewText?: string;
 };
 
-const SITE_URL = "https://christian-tonny.vercel.app";
 const DEFAULT_COVER_IMAGE = "/og-writing.png";
 
 const RAW_ARTICLES: RawArticle[] = [
@@ -523,10 +524,39 @@ export function getAbsoluteArticleUrl(article: Article): string {
 }
 
 export function buildReadWithAIPrompt(article: Article): string {
+  const plainContent = stripMarkdown(article.contentMarkdown);
+  const excerpt = plainContent.slice(0, 1200).trim();
+  const excerptSuffix =
+    plainContent.length > excerpt.length
+      ? "\n\nNote: full article text was copied to clipboard for reliability."
+      : "";
+
   return [
     "You are my AI reading partner. Summarize this article and help me apply it this week.",
     `Article title: ${article.title}`,
     `Article URL: ${getAbsoluteArticleUrl(article)}`,
+    "Article excerpt:",
+    `\"\"\"\n${excerpt}\n\"\"\"`,
+    "What I need:",
+    "1) A concise summary (7 bullets max).",
+    "2) The 3 most important ideas for practical execution.",
+    "3) Where this applies in my work this week (specific examples).",
+    "4) A 5-day action plan with effort level and expected outcome.",
+    "5) If your memory has relevant context about me, tailor recommendations to it; otherwise ask 3 clarifying questions first.",
+    `Summary focus: ${article.readWithAI.summaryGoal}`,
+    `Application focus: ${article.readWithAI.applyGoal}`,
+    excerptSuffix,
+  ].join("\n");
+}
+
+export function buildReadWithAIFullPrompt(article: Article): string {
+  const plainContent = stripMarkdown(article.contentMarkdown);
+  return [
+    "You are my AI reading partner. Summarize this article and help me apply it this week.",
+    `Article title: ${article.title}`,
+    `Article URL: ${getAbsoluteArticleUrl(article)}`,
+    "Full article text:",
+    `\"\"\"\n${plainContent}\n\"\"\"`,
     "What I need:",
     "1) A concise summary (7 bullets max).",
     "2) The 3 most important ideas for practical execution.",
