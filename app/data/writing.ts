@@ -172,8 +172,8 @@ That is what this series is about.
 See you next week.
 
 CT`,
-    published: false,
-    publishedAt: null,
+    published: true,
+    publishedAt: "2026-02-28T22:00:00.000Z",
     scheduledOrder: 2,
     tags: ["AI Tools", "Productivity", "Issue #49"],
     coverImage: "/writing/49-these-two-tools/cover.png",
