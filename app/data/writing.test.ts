@@ -26,7 +26,7 @@ test("writing data includes required SEO fields and ordered schedule", () => {
     assert.equal(Boolean(article.seo.metaTitle), true);
     assert.equal(Boolean(article.seo.metaDescription), true);
     assert.equal(article.seo.canonicalPath.startsWith("/writing/"), true);
-    assert.equal(article.coverImage.startsWith("/writing/"), true);
+    assert.equal(article.coverImage.startsWith("/"), true);
   }
 });
 

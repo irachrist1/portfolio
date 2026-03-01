@@ -1,4 +1,4 @@
-export type ArticleId = "48" | "49" | "50";
+export type ArticleId = string;
 
 export type Article = {
   id: ArticleId;
@@ -31,8 +31,85 @@ type RawArticle = Omit<Article, "previewText"> & {
 };
 
 const SITE_URL = "https://christian-tonny.vercel.app";
+const DEFAULT_COVER_IMAGE = "/og-writing.png";
 
 const RAW_ARTICLES: RawArticle[] = [
+  {
+    id: "47",
+    slug: "47-two-things-every-app-needs",
+    title: "Two Things Every App Needs",
+    subtitle: "Issue #47",
+    previewText:
+      "In a world where everyone can ship quickly with AI, trust becomes the moat: ship in public with a changelog and make feedback visible.",
+    contentMarkdown: `# Two Things Every App Needs
+
+AI is making the barrier to building software close to zero. Shipping is faster than ever. Competition is noisier than ever.
+
+So what makes users trust you enough to stay?
+
+For most teams, two things are non-negotiable:
+
+## 1) A public changelog
+
+A changelog proves movement. It shows users you are alive, listening, and improving in the open.
+
+When people can see consistent shipping, they stop guessing whether your product is abandoned.
+
+Practical rule:
+
+- Publish updates frequently.
+- Keep entries clear and concrete.
+- Explain what changed and why it matters.
+
+## 2) A visible feedback loop
+
+A feedback page tells users they can shape the product, not just consume it.
+
+When people see what is requested, what is planned, and what is shipped, trust compounds.
+
+Practical rule:
+
+- Track requested features publicly.
+- Mark statuses clearly (planned, in progress, shipped).
+- Close the loop by referencing shipped requests in your changelog.
+
+## Why this matters now
+
+The market rewards velocity, but users stay for reliability and responsiveness.
+
+If your product is early, that is fine. If your communication is missing, trust collapses.
+
+## Sources
+
+- [MKBHD Fisker Review](https://youtu.be/6xWXRk3yaSw?si=JFvMGm9O69odsA8O)
+- [Cursor performance issues thread](https://forum.cursor.com/t/performance-degradation-and-ai-editing-issues-in-cursor-ide/61928)
+- [Arc release notes](https://resources.arc.net/hc/en-us/articles/22513842649623-Arc-for-Windows-2023-2025-Release-Notes)
+- [Perplexity changelog](https://docs.perplexity.ai/changelog/changelog)
+- [Raycast feedback system](https://www.raycast.com/blog/feedback)
+
+Products fail. Founders do not.
+
+CT`,
+    published: true,
+    publishedAt: "2026-01-05T00:00:00.000Z",
+    scheduledOrder: 0,
+    tags: ["Product Strategy", "Building in Public", "Issue #47"],
+    coverImage: DEFAULT_COVER_IMAGE,
+    seo: {
+      metaTitle: "Two Things Every App Needs (Issue #47)",
+      metaDescription:
+        "Why every product needs a public changelog and a visible feedback page to build trust in the AI era.",
+      ogImage: DEFAULT_COVER_IMAGE,
+      twitterImage: DEFAULT_COVER_IMAGE,
+      canonicalPath: "/writing/47-two-things-every-app-needs",
+    },
+    readWithAI: {
+      summaryGoal:
+        "Summarize why changelog discipline and feedback loops create trust and retention.",
+      applyGoal:
+        "Design a weekly operating cadence that combines changelog updates with actionable user feedback review.",
+    },
+  },
   {
     id: "48",
     slug: "48-before-we-get-started",
@@ -40,6 +117,8 @@ const RAW_ARTICLES: RawArticle[] = [
     subtitle: "Issue #48",
     previewText: "You are in. Weekly practical AI workflows, no hype, no noise. Just setups you can use immediately and a direct line back to me.",
     contentMarkdown: `# Before we get started - a quick note from me
+
+![Before we get started](/writing/48-before-we-get-started/cover.png)
 
 You are in.
 
@@ -64,12 +143,12 @@ CT`,
     publishedAt: "2026-02-28T22:00:00.000Z",
     scheduledOrder: 1,
     tags: ["Newsletter", "AI Workflows", "Issue #48"],
-    coverImage: "/writing/48-before-we-get-started/cover.png",
+    coverImage: DEFAULT_COVER_IMAGE,
     seo: {
       metaTitle: "Before We Get Started - A Quick Note From Me (Issue #48)",
       metaDescription: "A quick note from Christian Tonny on what to expect each week: practical AI workflows, rare signal alerts, and direct feedback loops.",
-      ogImage: "/writing/48-before-we-get-started/cover.png",
-      twitterImage: "/writing/48-before-we-get-started/cover.png",
+      ogImage: DEFAULT_COVER_IMAGE,
+      twitterImage: DEFAULT_COVER_IMAGE,
       canonicalPath: "/writing/48-before-we-get-started",
     },
     readWithAI: {
@@ -89,6 +168,8 @@ The thing about AI right now is that most people are using it the same way they 
 That works, but it leaves most of the value on the table.
 
 This week I am running a series called **Get AI Native in 2026**. Not a course and definitely not theory. In each issue I will walk you through one or two things you can set up this week to change how you work, step by step.
+
+![These two tools will change how fast you think, act, and get things done](/writing/49-these-two-tools/cover.png)
 
 ![Road to Getting AI Native in 2026](/writing/49-these-two-tools/inline-1.png)
 
@@ -176,13 +257,16 @@ CT`,
     publishedAt: "2026-02-28T22:00:00.000Z",
     scheduledOrder: 2,
     tags: ["AI Tools", "Productivity", "Issue #49"],
-    coverImage: "/writing/49-these-two-tools/cover.png",
-    inlineImages: ["/writing/49-these-two-tools/inline-1.png"],
+    coverImage: DEFAULT_COVER_IMAGE,
+    inlineImages: [
+      "/writing/49-these-two-tools/cover.png",
+      "/writing/49-these-two-tools/inline-1.png",
+    ],
     seo: {
       metaTitle: "These Two Tools Will Change How Fast You Think, Act, and Get Things Done (Issue #49)",
       metaDescription: "A practical breakdown of Typeless and Claude Skills, two tools that reduce AI workflow friction and speed up repeated work.",
-      ogImage: "/writing/49-these-two-tools/cover.png",
-      twitterImage: "/writing/49-these-two-tools/cover.png",
+      ogImage: DEFAULT_COVER_IMAGE,
+      twitterImage: DEFAULT_COVER_IMAGE,
       canonicalPath: "/writing/49-these-two-tools",
     },
     readWithAI: {
@@ -200,6 +284,8 @@ CT`,
 The definitive guide for people who pay attention.
 
 After years of hype, AI is now colliding with operational reality. The gap between demo and deployment is narrowing. LLMs are writing production code, autonomous systems are running live operations, and physical AI is moving from staged videos to measurable rollout.
+
+![State of AI in 2026](/writing/50-state-of-ai-2026/cover.png)
 
 This is the current frontier: models, infrastructure, open source, physical-world systems, agents, AGI trajectory, and business models.
 
@@ -365,12 +451,12 @@ CT`,
     publishedAt: "2026-02-28T22:00:00.000Z",
     scheduledOrder: 3,
     tags: ["AI Strategy", "Industry Analysis", "Issue #50"],
-    coverImage: "/writing/50-state-of-ai-2026/cover.png",
+    coverImage: DEFAULT_COVER_IMAGE,
     seo: {
       metaTitle: "State of AI 2026: What Actually Works (Issue #50)",
       metaDescription: "A grounded analysis of the AI frontier in 2026: models, agents, infra economics, robotics, open source momentum, and what actually works.",
-      ogImage: "/writing/50-state-of-ai-2026/cover.png",
-      twitterImage: "/writing/50-state-of-ai-2026/cover.png",
+      ogImage: DEFAULT_COVER_IMAGE,
+      twitterImage: DEFAULT_COVER_IMAGE,
       canonicalPath: "/writing/50-state-of-ai-2026",
     },
     readWithAI: {

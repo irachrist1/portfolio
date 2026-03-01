@@ -23,16 +23,71 @@ type KitWindowProps = {
   recentPosts?: KitRecentPost[];
 };
 
-export function parseKitWindowProps(html: string): KitWindowProps | null {
-  const marker = "window.props = ";
-  const markerIndex = html.indexOf(marker);
+function extractJsonObjectAfterMarker(input: string, marker: string): string | null {
+  const markerIndex = input.indexOf(marker);
   if (markerIndex === -1) return null;
 
-  const jsonStart = markerIndex + marker.length;
-  const scriptClose = html.indexOf(";</script>", jsonStart);
-  if (scriptClose === -1) return null;
+  let cursor = markerIndex + marker.length;
+  while (cursor < input.length && /\s/.test(input[cursor])) {
+    cursor += 1;
+  }
 
-  const payload = html.slice(jsonStart, scriptClose).trim();
+  if (input[cursor] !== "{") {
+    return null;
+  }
+
+  let depth = 0;
+  let inString = false;
+  let escaping = false;
+  let endIndex = -1;
+
+  for (let index = cursor; index < input.length; index += 1) {
+    const char = input[index];
+
+    if (inString) {
+      if (escaping) {
+        escaping = false;
+        continue;
+      }
+      if (char === "\\") {
+        escaping = true;
+        continue;
+      }
+      if (char === "\"") {
+        inString = false;
+      }
+      continue;
+    }
+
+    if (char === "\"") {
+      inString = true;
+      continue;
+    }
+
+    if (char === "{") {
+      depth += 1;
+      continue;
+    }
+
+    if (char === "}") {
+      depth -= 1;
+      if (depth === 0) {
+        endIndex = index + 1;
+        break;
+      }
+    }
+  }
+
+  if (endIndex === -1) {
+    return null;
+  }
+
+  return input.slice(cursor, endIndex);
+}
+
+export function parseKitWindowProps(html: string): KitWindowProps | null {
+  const payload = extractJsonObjectAfterMarker(html, "window.props = ");
+  if (!payload) return null;
 
   try {
     return JSON.parse(payload) as KitWindowProps;

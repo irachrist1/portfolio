@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Navigation } from "@/app/components/nav";
 import { Footer } from "@/app/components/footer";
 import { Markdown } from "@/app/components/markdown";
+import { ArticleCover } from "@/app/components/writing/ArticleCover";
 import { ReadWithAIButtons } from "@/app/components/writing/ReadWithAIButtons";
 import {
   buildReadWithAIPrompt,
@@ -129,16 +129,11 @@ export default async function WritingArticlePage({ params }: PageProps) {
           <p className="text-zinc-400 leading-relaxed">{article.previewText}</p>
         </header>
 
-        <div className="relative h-60 md:h-80 w-full overflow-hidden rounded-xl border border-zinc-800/80">
-          <Image
-            src={article.coverImage}
-            alt={article.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 1024px"
-            priority
-          />
-        </div>
+        <ArticleCover
+          id={article.id}
+          title={article.title}
+          subtitle={article.subtitle}
+        />
 
         <section className="rounded-xl border border-zinc-800/80 bg-zinc-900/30 p-5 md:p-6">
           <div className="mb-2 text-sm font-medium text-zinc-300">Read with AI</div>
