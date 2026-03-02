@@ -1,11 +1,63 @@
 {
-  "generatedAt": "2026-02-27T19:50:34.052Z",
+  "generatedAt": "2026-03-02T14:37:10.818Z",
   "windowDays": 7,
   "totals": {
-    "commits": 1,
-    "activeProjects": 1
+    "commits": 15,
+    "activeProjects": 3
   },
   "projects": [
+    {
+      "projectSlug": "portfolio",
+      "projectTitle": "Portfolio",
+      "githubRepo": "irachrist1/portfolio",
+      "commitCount": 12,
+      "lastCommitAt": "2026-03-01T13:39:13Z",
+      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/22ef08e605a6ae32c155e5a0987dc4372cfb6bc9",
+      "recentCommits": [
+        {
+          "sha": "22ef08e",
+          "message": "chore: add images/ and Emacs backup patterns to .gitignore",
+          "url": "https://github.com/irachrist1/portfolio/commit/22ef08e605a6ae32c155e5a0987dc4372cfb6bc9",
+          "committedAt": "2026-03-01T13:39:13Z"
+        },
+        {
+          "sha": "ae8cd8d",
+          "message": "chore: trigger vercel deploy for read-with-ai redirect fix",
+          "url": "https://github.com/irachrist1/portfolio/commit/ae8cd8d4767a5b629cbd10cd747978144f07ed7b",
+          "committedAt": "2026-03-01T11:50:39Z"
+        },
+        {
+          "sha": "5cb130c",
+          "message": "fix(writing): prevent current-tab redirect in read-with-ai buttons",
+          "url": "https://github.com/irachrist1/portfolio/commit/5cb130c11e3e6a1582619a1130039dcde386e06d",
+          "committedAt": "2026-03-01T11:50:22Z"
+        }
+      ],
+      "error": null
+    },
+    {
+      "projectSlug": "opportunitymap",
+      "projectTitle": "OpportunityMap",
+      "githubRepo": "irachrist1/spark",
+      "commitCount": 2,
+      "lastCommitAt": "2026-03-01T13:39:01Z",
+      "lastCommitUrl": "https://github.com/irachrist1/spark/commit/0c4abb2403e13eb2bb7a419f1cd1b15e2ff8d97a",
+      "recentCommits": [
+        {
+          "sha": "0c4abb2",
+          "message": "feat: add schools browser, analytics dashboard, mentor applications, and contact system",
+          "url": "https://github.com/irachrist1/spark/commit/0c4abb2403e13eb2bb7a419f1cd1b15e2ff8d97a",
+          "committedAt": "2026-03-01T13:39:01Z"
+        },
+        {
+          "sha": "bc277c7",
+          "message": "Fix auth UX redirects, improve signed-in nav, and add 1Password env backup command",
+          "url": "https://github.com/irachrist1/spark/commit/bc277c7443e847f6642cd2b78f5c3a83b2994165",
+          "committedAt": "2026-03-01T12:53:24Z"
+        }
+      ],
+      "error": null
+    },
     {
       "projectSlug": "mnotes",
       "projectTitle": "MNotes",
@@ -37,26 +89,6 @@
       "projectSlug": "contentflow",
       "projectTitle": "ContentFlow",
       "githubRepo": "irachrist1/andersen-content-dashboard",
-      "commitCount": 0,
-      "lastCommitAt": null,
-      "lastCommitUrl": null,
-      "recentCommits": [],
-      "error": null
-    },
-    {
-      "projectSlug": "opportunitymap",
-      "projectTitle": "OpportunityMap",
-      "githubRepo": "irachrist1/spark",
-      "commitCount": 0,
-      "lastCommitAt": null,
-      "lastCommitUrl": null,
-      "recentCommits": [],
-      "error": null
-    },
-    {
-      "projectSlug": "portfolio",
-      "projectTitle": "Portfolio",
-      "githubRepo": "irachrist1/portfolio",
       "commitCount": 0,
       "lastCommitAt": null,
       "lastCommitUrl": null,
