@@ -7,7 +7,7 @@ type ArticleCoverProps = {
   compact?: boolean;
 };
 
-export function ArticleCover({ id, title, subtitle, compact = false }: ArticleCoverProps) {
+export function ArticleCover({ id, title, subtitle: _subtitle, compact = false }: ArticleCoverProps) {
   const theme = buildArticleCoverTheme(`${id}:${title}`);
 
   const meshBackgrounds = [
@@ -44,9 +44,6 @@ export function ArticleCover({ id, title, subtitle, compact = false }: ArticleCo
         ].join(" ")}
         style={{ boxShadow: `inset 0 0 0 1px ${ringColor}` }}
       >
-        <div className="text-[11px] uppercase tracking-[0.18em] text-zinc-400">
-          Issue #{id}
-        </div>
         <div className="space-y-2">
           <h3
             className={[
@@ -56,9 +53,6 @@ export function ArticleCover({ id, title, subtitle, compact = false }: ArticleCo
           >
             {title}
           </h3>
-          {subtitle ? (
-            <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">{subtitle}</p>
-          ) : null}
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Navigation } from "@/app/components/nav";
-import { Footer } from "@/app/components/footer";
 import { Markdown } from "@/app/components/markdown";
 import { ArticleCover } from "@/app/components/writing/ArticleCover";
 import { ReadWithAIButtons } from "@/app/components/writing/ReadWithAIButtons";
@@ -38,10 +37,36 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const canonicalUrl = getAbsoluteArticleUrl(article);
   const imageUrl = `${WRITING_SITE_URL}${article.seo.ogImage}`;
+  const twitterImageUrl = `${WRITING_SITE_URL}${article.seo.twitterImage}`;
+  const keywords = Array.from(
+    new Set([
+      ...article.tags,
+      "AI workflows",
+      "AI productivity",
+      "AI newsletter",
+      "Christian Tonny",
+    ])
+  );
 
   return {
     title: article.seo.metaTitle,
     description: article.seo.metaDescription,
+    keywords,
+    authors: [{ name: "Christian Tonny Iradukunda", url: WRITING_SITE_URL }],
+    creator: "Christian Tonny Iradukunda",
+    publisher: "Christian Tonny",
+    category: "Technology",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     alternates: {
       canonical: canonicalUrl,
     },
@@ -52,6 +77,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: "Christian Tonny",
       type: "article",
       publishedTime: article.publishedAt ?? undefined,
+      tags: article.tags,
       images: [
         {
           url: imageUrl,
@@ -65,8 +91,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: article.seo.metaTitle,
       description: article.seo.metaDescription,
-      images: [imageUrl],
+      images: [twitterImageUrl],
       creator: "@irachrist01",
+      site: "@irachrist01",
     },
   };
 }
@@ -82,15 +109,41 @@ export default async function WritingArticlePage({ params }: PageProps) {
   const articleUrl = getAbsoluteArticleUrl(article);
   const readPrefillPrompt = buildReadWithAIPrompt(article);
   const readFullPrompt = buildReadWithAIFullPrompt(article);
+  const normalizedIssueLabel = `issue #${article.id}`.toLowerCase();
+  const normalizedSubtitle = article.subtitle?.trim().toLowerCase();
+  const subtitleToRender =
+    normalizedSubtitle && normalizedSubtitle !== normalizedIssueLabel
+      ? article.subtitle
+      : undefined;
+  const wordCount = article.contentMarkdown
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/[*_`>#~-]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(" ")
+    .filter(Boolean).length;
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
     description: article.seo.metaDescription,
+    url: articleUrl,
     image: `${WRITING_SITE_URL}${article.seo.ogImage}`,
     datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+    articleSection: "Writing",
+    keywords: article.tags.join(", "),
+    wordCount,
     author: {
+      "@type": "Person",
+      name: "Christian Tonny Iradukunda",
+      url: WRITING_SITE_URL,
+    },
+    publisher: {
       "@type": "Person",
       name: "Christian Tonny Iradukunda",
       url: WRITING_SITE_URL,
@@ -102,11 +155,19 @@ export default async function WritingArticlePage({ params }: PageProps) {
   };
 
   return (
-    <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen flex flex-col">
-      <Navigation />
+    <>
+      <main className="px-6 py-10 mx-auto space-y-8 max-w-4xl lg:px-8 w-full">
+        <div className="mb-2 xl:hidden">
+          <Link
+            href="/writing"
+            className="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+          >
+            <span aria-hidden="true">←</span>
+            <span>Back to writing</span>
+          </Link>
+        </div>
 
-      <main className="px-6 pt-28 mx-auto space-y-8 max-w-4xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow w-full">
-        <header className="space-y-4">
+        <header className="space-y-2">
           <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-500">
             <span className="px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">Issue #{article.id}</span>
             {article.publishedAt && (
@@ -119,16 +180,6 @@ export default async function WritingArticlePage({ params }: PageProps) {
               </span>
             )}
           </div>
-
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-100">
-            {article.title}
-          </h1>
-
-          {article.subtitle && (
-            <p className="text-zinc-400">{article.subtitle}</p>
-          )}
-
-          <p className="text-zinc-400 leading-relaxed">{article.previewText}</p>
         </header>
 
         <ArticleCover
@@ -154,8 +205,6 @@ export default async function WritingArticlePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-
-      <Footer />
-    </div>
+    </>
   );
 }

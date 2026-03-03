@@ -1,6 +1,7 @@
 "use client";
 import { ArrowLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,6 +16,7 @@ const navLinks = [
 
 export const Navigation: React.FC = () => {
 	const ref = useRef<HTMLElement>(null);
+	const pathname = usePathname();
 	const [isIntersecting, setIntersecting] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -51,7 +53,11 @@ export const Navigation: React.FC = () => {
 			>
 				<div className="container flex items-center justify-between p-6 mx-auto">
 					<Link
-						href="/"
+						href={
+							pathname && pathname.startsWith("/writing") && pathname !== "/"
+								? "/writing"
+								: "/"
+						}
 						className="duration-200 text-zinc-300 hover:text-zinc-100"
 					>
 						<ArrowLeft className="w-6 h-6" />

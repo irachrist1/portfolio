@@ -1,8 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Navigation } from "../components/nav";
-import { Footer } from "../components/footer";
-import { Card } from "../components/card";
+import { Card } from "../../components/card";
 import { projects, categories } from "@/app/data/projects";
 import { getWeeklyCommitCountByProject } from "@/app/data/weekly-activity";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
@@ -22,74 +20,68 @@ export default function ProjectsPage() {
     .filter((cat) => cat.projects.length > 0);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 flex flex-col">
-      <Navigation />
+    <div className="px-6 py-10 mx-auto space-y-12 max-w-4xl lg:px-8">
+      {/* Header */}
+      <div className="max-w-2xl">
+        <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+          Projects
+        </h1>
+        <p className="mt-4 text-zinc-400">
+          From personal productivity tools to government intelligence platforms — here's what I've been building.
+        </p>
 
-      <div className="px-6 pt-28 mx-auto space-y-12 max-w-7xl lg:px-8 md:pt-24 lg:pt-32 pb-16 flex-grow">
-        {/* Header */}
-        <div className="max-w-2xl mx-auto lg:mx-0">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-            Projects
-          </h1>
-          <p className="mt-4 text-zinc-400">
-            From personal productivity tools to government intelligence platforms — here's what I've been building.
-          </p>
-
-          {/* GitHub Links */}
-          <div className="mt-6 flex gap-4 flex-wrap">
-            <Link
-              href="https://github.com/irachrist1?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-5 py-2.5 text-sm font-medium text-zinc-900 bg-white rounded-lg hover:bg-zinc-200 transition-all duration-300 flex items-center gap-2 hover:scale-105"
-            >
-              <Github className="w-4 h-4" />
-              irachrist1
-              <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-            <Link
-              href="https://github.com/ChristianTonny?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-5 py-2.5 text-sm font-medium text-white bg-zinc-900 border border-zinc-700 rounded-lg hover:bg-zinc-800 transition-all duration-300 flex items-center gap-2 hover:scale-105"
-            >
-              <Github className="w-4 h-4" />
-              ChristianTonny
-              <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-          </div>
+        {/* GitHub Links */}
+        <div className="mt-6 flex gap-4 flex-wrap">
+          <Link
+            href="https://github.com/irachrist1?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-5 py-2.5 text-sm font-medium text-zinc-900 bg-white rounded-lg hover:bg-zinc-200 transition-all duration-300 flex items-center gap-2 hover:scale-105"
+          >
+            <Github className="w-4 h-4" />
+            irachrist1
+            <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </Link>
+          <Link
+            href="https://github.com/ChristianTonny?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-5 py-2.5 text-sm font-medium text-white bg-zinc-900 border border-zinc-700 rounded-lg hover:bg-zinc-800 transition-all duration-300 flex items-center gap-2 hover:scale-105"
+          >
+            <Github className="w-4 h-4" />
+            ChristianTonny
+            <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </Link>
         </div>
-
-        <div className="w-full h-px bg-zinc-800" />
-
-        {/* Category Sections */}
-        {projectsByCategory.map((category) => (
-          <section key={category.id} className="space-y-6">
-            {/* Category Header */}
-            <div className="space-y-1">
-              <h2 className="text-xl font-semibold text-zinc-100">
-                {category.name}
-              </h2>
-              <p className="text-sm text-zinc-500">
-                {category.description}
-              </p>
-            </div>
-
-            {/* Projects Grid */}
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {category.projects.map((project) => (
-                <ProjectCard
-                  key={project.slug}
-                  project={project}
-                  weeklyCommitCount={weeklyCommitCounts[project.slug] ?? 0}
-                />
-              ))}
-            </div>
-          </section>
-        ))}
       </div>
-      
-      <Footer />
+
+      <div className="w-full h-px bg-zinc-800" />
+
+      {/* Category Sections */}
+      {projectsByCategory.map((category) => (
+        <section key={category.id} className="space-y-6">
+          {/* Category Header */}
+          <div className="space-y-1">
+            <h2 className="text-xl font-semibold text-zinc-100">
+              {category.name}
+            </h2>
+            <p className="text-sm text-zinc-500">
+              {category.description}
+            </p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            {category.projects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                weeklyCommitCount={weeklyCommitCounts[project.slug] ?? 0}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

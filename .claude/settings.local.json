@@ -16,7 +16,8 @@
       "Bash(npx tsc:*)",
       "Bash(gh repo view:*)",
       "Bash(gh api:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git diff app/components/nav.tsx app/components/writing/ArticleCover.tsx app/components/writing/ReadWithAIButtons.tsx app/writing/[slug]/page.tsx)"
     ],
     "deny": [],
     "ask": []
