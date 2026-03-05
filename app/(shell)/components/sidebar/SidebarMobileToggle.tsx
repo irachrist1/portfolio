@@ -1,71 +1,9 @@
-"use client";
+import { ReactNode } from "react";
 
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation";
-
-export function SidebarMobileToggle({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-
-  // Close sidebar on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  // Prevent body scroll when open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
+export function SidebarMobileToggle({ children }: { children: ReactNode }) {
   return (
-    <>
-      {/* Mobile hamburger button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-[#e8e8ed] dark:border-zinc-800 text-[#6e6e73] dark:text-zinc-400 hover:text-[#1d1d1f] dark:hover:text-zinc-100 transition-colors shadow-sm"
-        aria-label="Open menu"
-      >
-        <Menu className="w-5 h-5" />
-      </button>
-
-      {/* Overlay backdrop */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Sidebar wrapper — always visible on md+, slide-in on mobile */}
-      <aside
-        className={`fixed left-0 top-0 h-full w-[250px] bg-[#fbfbfd] dark:bg-zinc-900 border-r border-[#e8e8ed] dark:border-zinc-800 z-50 flex flex-col
-          transition-transform duration-200 ease-out
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}
-          lg:translate-x-0`}
-      >
-        {/* Close button on mobile */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 lg:hidden p-1 text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
-          aria-label="Close menu"
-        >
-          <X className="w-4 h-4" />
-        </button>
-
-        {children}
-      </aside>
-    </>
+    <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-full w-[250px] bg-[#fbfbfd] dark:bg-zinc-900 border-r border-[#e8e8ed] dark:border-zinc-800 z-50 overflow-y-auto">
+      {children}
+    </aside>
   );
 }

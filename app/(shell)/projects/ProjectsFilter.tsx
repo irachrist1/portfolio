@@ -38,12 +38,12 @@ function ProjectsFilterInner({
   return (
     <div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
       {/* Header */}
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-3">
+      <div className="mb-8">
+        <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-zinc-100 mb-2">
           {title}
         </h1>
         {!activeCategory && (
-          <p className="text-lg text-zinc-400 leading-relaxed">
+          <p className="text-base text-zinc-400 leading-relaxed">
             From personal productivity tools to government intelligence
             platforms.
           </p>
@@ -53,7 +53,7 @@ function ProjectsFilterInner({
         )}
 
         {/* GitHub links */}
-        <div className="mt-5 flex gap-3 flex-wrap">
+        <div className="mt-4 flex gap-3 flex-wrap">
           <Link
             href="https://github.com/irachrist1?tab=repositories"
             target="_blank"
@@ -75,33 +75,30 @@ function ProjectsFilterInner({
         </div>
       </div>
 
-      {/* Category pills — mobile only */}
-      <div className="flex gap-2 mb-8 overflow-x-auto pb-2 lg:hidden">
-        <Link
-          href="/projects"
-          className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
-            !activeCategory
-              ? "bg-zinc-100 text-zinc-900"
-              : "bg-zinc-800 text-zinc-400 hover:text-zinc-200"
-          }`}
-        >
-          All
-        </Link>
-        {categories
-          .sort((a, b) => a.order - b.order)
-          .map((cat) => (
+      {/* Category pills — mobile only, matches sidebar nav */}
+      <div className="flex gap-2 mb-8 overflow-x-auto pb-1 -mx-1 px-1 lg:hidden scrollbar-hidden">
+        {[
+          { id: null, label: "All" },
+          { id: "personal", label: "Apps" },
+          { id: "career", label: "Growth" },
+          { id: "community", label: "Community" },
+          { id: "analytics", label: "Analytics" },
+        ].map(({ id, label }) => {
+          const isActive = id === null ? !category : category === id;
+          return (
             <Link
-              key={cat.id}
-              href={`/projects?category=${cat.id}`}
-              className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-full transition-colors whitespace-nowrap ${
-                category === cat.id
+              key={label}
+              href={id ? `/projects?category=${id}` : "/projects"}
+              className={`flex-shrink-0 px-4 py-1.5 text-xs font-medium rounded-full transition-colors whitespace-nowrap ${
+                isActive
                   ? "bg-zinc-100 text-zinc-900"
-                  : "bg-zinc-800 text-zinc-400 hover:text-zinc-200"
+                  : "bg-zinc-800/70 text-zinc-400 hover:text-zinc-200 border border-zinc-700/50"
               }`}
             >
-              {cat.name}
+              {label}
             </Link>
-          ))}
+          );
+        })}
       </div>
 
       {/* Project sections */}
