@@ -28,39 +28,35 @@ export const dynamic = "force-static";
 
 export default function ContactPage() {
 	return (
-		<div className="px-6 py-10 mx-auto max-w-4xl lg:px-8">
+		<div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
 			{/* Hero Section */}
-			<div className="max-w-3xl mb-16">
-				<h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl mb-6">
-					Let's Work Together
+			<div className="mb-12">
+				<h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-4">
+					Let&apos;s Work Together
 				</h1>
-				<p className="text-xl text-zinc-400">
+				<p className="text-lg text-zinc-400 leading-relaxed">
 					Open to conversations about AI implementation, software engineering roles, speaking opportunities,
 					and collaborations in educational technology.
 				</p>
 			</div>
 
 			{/* Contact Cards */}
-			<div className="grid w-full grid-cols-1 gap-8 mx-auto mb-16 sm:grid-cols-3 lg:gap-16">
+			<div className="grid w-full grid-cols-1 gap-4 mb-12 sm:grid-cols-3 sm:gap-6">
 				{socials.map((s, index) => (
 					<Card key={index}>
 						<Link
 							href={s.href}
 							target={s.label !== "Location" ? "_blank" : undefined}
-							className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 lg:pb-48 md:p-16"
+							className="p-6 relative flex flex-col items-center gap-4 duration-700 group"
 						>
-							<span
-								className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
-								aria-hidden="true"
-							/>
-							<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
+							<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200">
 								{s.icon}
 							</span>
 							<div className="z-10 flex flex-col items-center">
-								<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display text-center">
+								<span className="text-sm font-medium duration-150 text-zinc-200 group-hover:text-white text-center">
 									{s.handle}
 								</span>
-								<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
+								<span className="mt-1 text-xs text-center duration-1000 text-zinc-500 group-hover:text-zinc-300">
 									{s.label}
 								</span>
 							</div>
@@ -70,20 +66,18 @@ export default function ContactPage() {
 			</div>
 
 			{/* What I'm Open To */}
-			<div className="space-y-12 max-w-5xl mx-auto">
-				<div className="text-center">
-					<h2 className="text-3xl font-bold text-zinc-100 mb-12">
-						What I'm Open To
-					</h2>
-				</div>
+			<div className="space-y-8">
+				<h2 className="text-2xl font-bold text-zinc-100 mb-6">
+					What I&apos;m Open To
+				</h2>
 
 				<div className="grid md:grid-cols-2 gap-6">
 					<Card>
 						<div className="p-6">
 							<h3 className="text-xl font-bold text-zinc-100 mb-4">1. AI Implementation Projects</h3>
 							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you're a business that wants to implement AI but doesn't know where to start, I can help.
-								I don't just build—I assess, strategize, and execute complete implementations.
+								If you&apos;re a business that wants to implement AI but doesn&apos;t know where to start, I can help.
+								I don&apos;t just build—I assess, strategize, and execute complete implementations.
 							</p>
 							<p className="text-xs text-zinc-500 font-semibold mb-2">Ideal projects:</p>
 							<ul className="space-y-1 text-xs text-zinc-500">
@@ -115,7 +109,7 @@ export default function ContactPage() {
 						<div className="p-6">
 							<h3 className="text-xl font-bold text-zinc-100 mb-4">3. Technology Consulting</h3>
 							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you're looking for strategic guidance on technology decisions, I can help.
+								If you&apos;re looking for strategic guidance on technology decisions, I can help.
 							</p>
 							<p className="text-xs text-zinc-500 font-semibold mb-2">Ideal projects:</p>
 							<ul className="space-y-1 text-xs text-zinc-500">
@@ -131,7 +125,7 @@ export default function ContactPage() {
 						<div className="p-6">
 							<h3 className="text-xl font-bold text-zinc-100 mb-4">4. Speaking & Workshops</h3>
 							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you want someone to speak at your event or facilitate workshops on AI implementation, I'm interested.
+								If you want someone to speak at your event or facilitate workshops on AI implementation, I&apos;m interested.
 							</p>
 							<p className="text-xs text-zinc-500 font-semibold mb-2">Topics I can cover:</p>
 							<ul className="space-y-1 text-xs text-zinc-500">
@@ -148,8 +142,8 @@ export default function ContactPage() {
 					<div className="p-8 text-center">
 						<h3 className="text-xl font-bold text-zinc-100 mb-4">5. Educational Technology Projects</h3>
 						<p className="text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-							If you're working on technology to improve education access in Africa, I definitely want to talk.
-							This is my passion project. If you're building in this space—whether for-profit or nonprofit—I'd
+							If you&apos;re working on technology to improve education access in Africa, I definitely want to talk.
+							This is my passion project. If you&apos;re building in this space—whether for-profit or nonprofit—I&apos;d
 							love to explore collaboration.
 						</p>
 					</div>
@@ -157,8 +151,8 @@ export default function ContactPage() {
 			</div>
 
 			{/* How I Work */}
-			<div className="mt-16 max-w-4xl mx-auto">
-				<h2 className="text-3xl font-bold text-zinc-100 mb-8 text-center">How I Work</h2>
+			<div className="mt-12">
+				<h2 className="text-2xl font-bold text-zinc-100 mb-6">How I Work</h2>
 				<Card>
 					<div className="p-8">
 						<div className="space-y-6">
@@ -186,15 +180,15 @@ export default function ContactPage() {
 			</div>
 
 			{/* What I Need From You */}
-			<div className="mt-16 max-w-4xl mx-auto">
-				<h2 className="text-3xl font-bold text-zinc-100 mb-8 text-center">What I Need From You</h2>
+			<div className="mt-12">
+				<h2 className="text-2xl font-bold text-zinc-100 mb-6">What I Need From You</h2>
 				<Card>
 					<div className="p-8">
 						<p className="text-zinc-400 mb-6">To work effectively, I need:</p>
 						<ul className="space-y-4 text-zinc-400">
 							<li>
 								<span className="font-semibold text-zinc-300">1. Clear Business Objectives</span><br />
-								<span className="text-sm">"Make it work with AI" isn't a goal. "Reduce customer support response time by 50%" is.</span>
+								<span className="text-sm">"Make it work with AI" isn&apos;t a goal. "Reduce customer support response time by 50%" is.</span>
 							</li>
 							<li>
 								<span className="font-semibold text-zinc-300">2. Access to Stakeholders</span><br />
@@ -206,7 +200,7 @@ export default function ContactPage() {
 							</li>
 							<li>
 								<span className="font-semibold text-zinc-300">4. Decision-Making Authority</span><br />
-								<span className="text-sm">If you need three layers of approval for minor changes, we'll both be frustrated.</span>
+								<span className="text-sm">If you need three layers of approval for minor changes, we&apos;ll both be frustrated.</span>
 							</li>
 							<li>
 								<span className="font-semibold text-zinc-300">5. Measurement Criteria</span><br />
@@ -218,15 +212,15 @@ export default function ContactPage() {
 			</div>
 
 			{/* FAQ */}
-			<div className="mt-16 max-w-4xl mx-auto">
-				<h2 className="text-3xl font-bold text-zinc-100 mb-8 text-center">Frequently Asked Questions</h2>
+			<div className="mt-12">
+				<h2 className="text-2xl font-bold text-zinc-100 mb-6">Frequently Asked Questions</h2>
 				<div className="space-y-4">
 					<Card>
 						<div className="p-6">
-							<h3 className="text-lg font-semibold text-zinc-200 mb-2">What's your rate?</h3>
+							<h3 className="text-lg font-semibold text-zinc-200 mb-2">What&apos;s your rate?</h3>
 							<p className="text-zinc-400 text-sm">
 								It depends on the project. For consulting: $75-150/hour depending on scope. For projects:
-								I prefer fixed-fee based on deliverables. For equity: Let's talk about the opportunity.
+								I prefer fixed-fee based on deliverables. For equity: Let&apos;s talk about the opportunity.
 							</p>
 						</div>
 					</Card>
@@ -234,7 +228,7 @@ export default function ContactPage() {
 						<div className="p-6">
 							<h3 className="text-lg font-semibold text-zinc-200 mb-2">Are you available for full-time employment?</h3>
 							<p className="text-zinc-400 text-sm">
-								Potentially, for the right opportunity. I'm particularly interested in roles that combine
+								Potentially, for the right opportunity. I&apos;m particularly interested in roles that combine
 								technical work with business impact, and anything related to educational technology in Africa.
 							</p>
 						</div>
@@ -243,15 +237,15 @@ export default function ContactPage() {
 						<div className="p-6">
 							<h3 className="text-lg font-semibold text-zinc-200 mb-2">Can you work remotely?</h3>
 							<p className="text-zinc-400 text-sm">
-								Yes. I've effectively collaborated across time zones and prefer asynchronous communication for most work.
+								Yes. I&apos;ve effectively collaborated across time zones and prefer asynchronous communication for most work.
 							</p>
 						</div>
 					</Card>
 					<Card>
 						<div className="p-6">
-							<h3 className="text-lg font-semibold text-zinc-200 mb-2">What's your availability?</h3>
+							<h3 className="text-lg font-semibold text-zinc-200 mb-2">What&apos;s your availability?</h3>
 							<p className="text-zinc-400 text-sm">
-								Currently accepting projects starting from November 2025. For urgent needs, let's discuss.
+								Currently accepting projects starting from November 2025. For urgent needs, let&apos;s discuss.
 							</p>
 						</div>
 					</Card>
@@ -259,13 +253,13 @@ export default function ContactPage() {
 			</div>
 
 			{/* Final CTA */}
-			<div className="mt-16 text-center">
+			<div className="mt-12">
 				<Card>
-					<div className="p-12">
-						<h2 className="text-2xl font-bold text-zinc-100 mb-6">Ready to Get Started?</h2>
-						<p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
+					<div className="p-8 text-center">
+						<h2 className="text-2xl font-bold text-zinc-100 mb-4">Ready to Get Started?</h2>
+						<p className="text-zinc-400 mb-6">
 							When you reach out, please include: brief description of your project/opportunity,
-							timeline and budget (if applicable), and why you think we'd be a good fit.
+							timeline and budget (if applicable), and why you think we&apos;d be a good fit.
 						</p>
 						<p className="text-sm text-zinc-500 mb-6">
 							Response time: I aim to respond to all inquiries within 48 hours.
@@ -281,16 +275,16 @@ export default function ContactPage() {
 			</div>
 
 			{/* Closing Quote */}
-			<div className="mt-16 text-center max-w-3xl mx-auto">
+			<div className="mt-12 text-center">
 				<p className="text-xl text-zinc-400 mb-4 italic">
-					"If it doesn't sell, it isn't creative."<br />
+					"If it doesn&apos;t sell, it isn&apos;t creative."<br />
 					<span className="text-sm text-zinc-500">— David Ogilvy</span>
 				</p>
 				<p className="text-lg text-zinc-300 mt-6">
-					I say: "If it doesn't work, it isn't technology."
+					I say: "If it doesn&apos;t work, it isn&apos;t technology."
 				</p>
 				<p className="text-zinc-400 mt-4">
-					If that's what you need, let's talk.
+					If that&apos;s what you need, let&apos;s talk.
 				</p>
 			</div>
 		</div>

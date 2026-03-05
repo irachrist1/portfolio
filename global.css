@@ -6,36 +6,113 @@
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
   }
-  
-  /* Smooth scrolling */
+
   html {
     scroll-behavior: smooth;
   }
-  
-  /* Ensure proper rendering on all devices */
+
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
+/*
+ * Light mode — Apple-inspired palette
+ * Scoped to `main` to avoid conflicts with sidebar (which uses explicit dark: classes)
+ *
+ * Apple reference colors:
+ *   Background:  #FFFFFF / #F5F5F7
+ *   Primary:     #1d1d1f
+ *   Secondary:   #424245
+ *   Tertiary:    #6e6e73
+ *   Quaternary:  #86868b
+ *   Borders:     #d2d2d7
+ *   Surfaces:    #f5f5f7
+ */
+
+/* --- Text --- */
+html:not(.dark) main .text-white      { color: #1d1d1f; }
+html:not(.dark) main .text-zinc-100   { color: #1d1d1f; }
+html:not(.dark) main .text-zinc-200   { color: #424245; }
+html:not(.dark) main .text-zinc-300   { color: #6e6e73; }
+html:not(.dark) main .text-zinc-400   { color: #86868b; }
+html:not(.dark) main .text-zinc-500   { color: #aeaeb2; }
+html:not(.dark) main .text-zinc-600   { color: #c7c7cc; }
+
+/* --- Preserve original colors inside dark surfaces (ArticleCover, etc.) --- */
+html:not(.dark) main .dark-surface .text-white    { color: #ffffff; }
+html:not(.dark) main .dark-surface .text-zinc-100 { color: #f4f4f5; }
+html:not(.dark) main .dark-surface .text-zinc-200 { color: #e4e4e7; }
+html:not(.dark) main .dark-surface .text-zinc-300 { color: #d4d4d8; }
+html:not(.dark) main .dark-surface .text-zinc-400 { color: #a1a1aa; }
+html:not(.dark) main .dark-surface .text-zinc-500 { color: #71717a; }
+
+/* --- Backgrounds --- */
+html:not(.dark) main .bg-zinc-900     { background-color: #fafafa; }
+html:not(.dark) main .bg-zinc-900\/30 { background-color: rgba(245,245,247,0.5); }
+html:not(.dark) main .bg-zinc-900\/40 { background-color: rgba(245,245,247,0.6); }
+html:not(.dark) main .bg-zinc-900\/50 { background-color: rgba(245,245,247,0.7); }
+html:not(.dark) main .bg-zinc-900\/60 { background-color: rgba(245,245,247,0.75); }
+html:not(.dark) main .bg-zinc-900\/70 { background-color: rgba(245,245,247,0.85); }
+html:not(.dark) main .bg-zinc-900\/20 { background-color: rgba(245,245,247,0.3); }
+html:not(.dark) main .bg-zinc-800     { background-color: #f5f5f7; }
+html:not(.dark) main .bg-zinc-800\/10 { background-color: rgba(245,245,247,0.15); }
+html:not(.dark) main .bg-zinc-800\/30 { background-color: rgba(245,245,247,0.4); }
+html:not(.dark) main .bg-zinc-800\/50 { background-color: rgba(245,245,247,0.6); }
+
+/* --- Borders --- */
+html:not(.dark) main .border-zinc-800     { border-color: #e8e8ed; }
+html:not(.dark) main .border-zinc-800\/40 { border-color: rgba(232,232,237,0.6); }
+html:not(.dark) main .border-zinc-800\/50 { border-color: rgba(232,232,237,0.7); }
+html:not(.dark) main .border-zinc-800\/80 { border-color: rgba(232,232,237,0.9); }
+html:not(.dark) main .border-zinc-700     { border-color: #d2d2d7; }
+html:not(.dark) main .border-zinc-700\/80 { border-color: rgba(210,210,215,0.9); }
+html:not(.dark) main .border-zinc-600     { border-color: #d2d2d7; }
+html:not(.dark) main .border-zinc-100     { border-color: #e8e8ed; }
+
+/* --- Hover states --- */
+html:not(.dark) main .hover\:text-white:hover            { color: #1d1d1f; }
+html:not(.dark) main .hover\:text-zinc-200:hover          { color: #1d1d1f; }
+html:not(.dark) main .hover\:text-zinc-300:hover          { color: #424245; }
+html:not(.dark) main .hover\:bg-zinc-700:hover            { background-color: #e8e8ed; }
+html:not(.dark) main .hover\:bg-zinc-800\/30:hover        { background-color: rgba(245,245,247,0.5); }
+html:not(.dark) main .hover\:border-zinc-700:hover        { border-color: #aeaeb2; }
+html:not(.dark) main .hover\:border-zinc-400\/50:hover    { border-color: rgba(174,174,178,0.5); }
+html:not(.dark) main .group-hover\:text-white:is(.group:hover *)  { color: #1d1d1f; }
+html:not(.dark) main .group-hover\:text-zinc-200:is(.group:hover *) { color: #1d1d1f; }
+html:not(.dark) main .group-hover\:text-zinc-300:is(.group:hover *) { color: #424245; }
+
+/* --- Surfaces & buttons --- */
+html:not(.dark) main .bg-zinc-100                       { background-color: #e8e8ed; color: #1d1d1f; }
+html:not(.dark) main .hover\:bg-white:hover              { background-color: #f5f5f7; }
+
+/* --- Card glow toning --- */
+html:not(.dark) main .hover\:bg-zinc-800\/10:hover       { background-color: rgba(245,245,247,0.3); }
+
+/* --- Ring adjustments for light mode --- */
+html:not(.dark) main .ring-zinc-900                      { --tw-ring-color: #e8e8ed; }
+
+/* --- Preserve dark surfaces (ArticleCover, ReadWithAI, etc.) --- */
+html:not(.dark) main .dark-surface .bg-zinc-900     { background-color: rgb(24 24 27); }
+html:not(.dark) main .dark-surface .bg-zinc-800     { background-color: rgb(39 39 42); }
+html:not(.dark) main .dark-surface .border-zinc-800 { border-color: rgb(39 39 42); }
+html:not(.dark) main .dark-surface .border-zinc-700 { border-color: rgb(63 63 70); }
+
 @layer utilities {
-  /* Mobile-first responsive utilities */
   .safe-top {
     padding-top: env(safe-area-inset-top);
   }
-  
+
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
-  
-  /* Touch-friendly tap targets (minimum 44px) */
+
   .tap-target {
     min-height: 44px;
     min-width: 44px;
   }
 
-  /* Hide scrollbars while keeping scroll */
   .scrollbar-hidden {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -47,4 +124,3 @@
     display: none;
   }
 }
-

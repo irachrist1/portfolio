@@ -116,10 +116,12 @@ export function ReadWithAIButtons({ prefillPrompt, fullPrompt }: Props) {
             key={item.provider}
             type="button"
             onClick={() => handleProviderClick(item.provider)}
-            className="px-2.5 py-1.5 text-sm font-medium text-zinc-100 bg-zinc-900/60 border border-zinc-700/80 rounded-full hover:bg-zinc-800/80 transition-colors inline-flex items-center gap-2"
+            className="group/ai px-2.5 py-1.5 text-sm font-medium text-zinc-100 bg-zinc-900/60 border border-zinc-700/80 rounded-full hover:bg-zinc-800/80 transition-all duration-200 inline-flex items-center gap-0"
           >
-            <span className="sr-only">{item.label}</span>
             <ProviderIcon provider={item.provider} />
+            <span className="max-w-0 overflow-hidden opacity-0 group-hover/ai:max-w-[80px] group-hover/ai:opacity-100 group-hover/ai:ml-2 transition-all duration-300 ease-out whitespace-nowrap text-xs">
+              {item.label}
+            </span>
           </button>
         ))}
       </div>

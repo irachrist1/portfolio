@@ -23,7 +23,7 @@ export function ArticleCover({ id, title, subtitle: _subtitle, compact = false }
   return (
     <div
       className={[
-        "relative overflow-hidden border-b border-zinc-800/80",
+        "relative overflow-hidden border-b border-zinc-800/80 dark-surface",
         compact ? "h-44" : "h-64 md:h-72 rounded-xl border border-zinc-800/80",
       ].join(" ")}
     >

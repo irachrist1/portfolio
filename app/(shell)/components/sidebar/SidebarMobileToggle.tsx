@@ -34,7 +34,7 @@ export function SidebarMobileToggle({
       {/* Mobile hamburger button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-lg bg-zinc-900/80 backdrop-blur border border-zinc-800 text-zinc-400 hover:text-zinc-100 transition-colors"
+        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-[#e8e8ed] dark:border-zinc-800 text-[#6e6e73] dark:text-zinc-400 hover:text-[#1d1d1f] dark:hover:text-zinc-100 transition-colors shadow-sm"
         aria-label="Open menu"
       >
         <Menu className="w-5 h-5" />
@@ -50,7 +50,7 @@ export function SidebarMobileToggle({
 
       {/* Sidebar wrapper — always visible on md+, slide-in on mobile */}
       <aside
-        className={`fixed left-0 top-0 h-full w-[250px] bg-zinc-900 border-r border-zinc-800 z-50 flex flex-col
+        className={`fixed left-0 top-0 h-full w-[250px] bg-[#fbfbfd] dark:bg-zinc-900 border-r border-[#e8e8ed] dark:border-zinc-800 z-50 flex flex-col
           transition-transform duration-200 ease-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           lg:translate-x-0`}
@@ -58,7 +58,7 @@ export function SidebarMobileToggle({
         {/* Close button on mobile */}
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 lg:hidden p-1 text-zinc-500 hover:text-zinc-300 transition-colors"
+          className="absolute top-4 right-4 lg:hidden p-1 text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
           aria-label="Close menu"
         >
           <X className="w-4 h-4" />

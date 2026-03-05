@@ -55,7 +55,7 @@ function ReleaseEntryCard({
   return (
     <div className="relative pl-8 group">
       {/* Timeline dot */}
-      <div className="absolute left-0 top-2 w-3 h-3 rounded-full bg-zinc-100 ring-4 ring-zinc-900 z-10" />
+      <div className="absolute left-0 top-2 w-3 h-3 rounded-full bg-[#1d1d1f] dark:bg-zinc-100 ring-4 ring-white dark:ring-zinc-900 z-10" />
 
       {/* Card */}
       <article
@@ -162,7 +162,7 @@ function UpdateEntryCard({
   return (
     <div className="relative pl-8 group">
       {/* Timeline dot - smaller for updates */}
-      <div className="absolute left-0.5 top-2.5 w-2 h-2 rounded-full bg-zinc-600 ring-4 ring-zinc-900 z-10" />
+      <div className="absolute left-0.5 top-2.5 w-2 h-2 rounded-full bg-[#86868b] dark:bg-zinc-600 ring-4 ring-white dark:ring-zinc-900 z-10" />
 
       {/* Card */}
       <article

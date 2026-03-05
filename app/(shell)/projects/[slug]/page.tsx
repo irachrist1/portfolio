@@ -30,7 +30,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="px-6 py-10 mx-auto max-w-4xl lg:px-8">
       {/* Project header */}
-      <div className="mb-8 xl:hidden">
+      <div className="mb-8">
         <Link
           href="/projects"
           className="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"

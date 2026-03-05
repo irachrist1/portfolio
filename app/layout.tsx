@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { ThemeProvider } from "./components/theme-provider";
 import { SITE_URL } from "./lib/site-url";
 
 export const metadata: Metadata = {
@@ -74,10 +75,10 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        className={`bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

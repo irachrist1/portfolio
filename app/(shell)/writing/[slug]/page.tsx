@@ -12,6 +12,7 @@ import {
   getPublishedArticles,
   WRITING_SITE_URL,
 } from "@/app/data/writing";
+import { RelatedArticles } from "@/app/components/writing/RelatedArticles";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -157,7 +158,7 @@ export default async function WritingArticlePage({ params }: PageProps) {
   return (
     <>
       <main className="px-6 py-10 mx-auto space-y-8 max-w-4xl lg:px-8 w-full">
-        <div className="mb-2 xl:hidden">
+        <div className="mb-2">
           <Link
             href="/writing"
             className="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
@@ -199,6 +200,8 @@ export default async function WritingArticlePage({ params }: PageProps) {
         <article className="rounded-xl border border-zinc-800/80 bg-zinc-900/20 p-5 md:p-8">
           <Markdown content={article.contentMarkdown} />
         </article>
+
+        <RelatedArticles currentSlug={slug} />
       </main>
 
       <script
