@@ -1,57 +1,11 @@
 {
-  "generatedAt": "2026-03-09T14:42:15.343Z",
+  "generatedAt": "2026-03-16T14:54:03.760Z",
   "windowDays": 7,
   "totals": {
-    "commits": 5,
-    "activeProjects": 2
+    "commits": 0,
+    "activeProjects": 0
   },
   "projects": [
-    {
-      "projectSlug": "portfolio",
-      "projectTitle": "Portfolio",
-      "githubRepo": "irachrist1/portfolio",
-      "commitCount": 4,
-      "lastCommitAt": "2026-03-05T15:51:38Z",
-      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/2785cf9188c3d1dae4c097cce678e4e205e80e41",
-      "recentCommits": [
-        {
-          "sha": "2785cf9",
-          "message": "Add global command palette search with Cmd/Ctrl+K",
-          "url": "https://github.com/irachrist1/portfolio/commit/2785cf9188c3d1dae4c097cce678e4e205e80e41",
-          "committedAt": "2026-03-05T15:51:38Z"
-        },
-        {
-          "sha": "0a92f9a",
-          "message": "fix: remove liquid glass pill border fringe on mobile tab bar",
-          "url": "https://github.com/irachrist1/portfolio/commit/0a92f9ab8d29cf7333b2faed88cfa49304528640",
-          "committedAt": "2026-03-05T15:38:05Z"
-        },
-        {
-          "sha": "f0078fa",
-          "message": "feat: redesign portfolio with Apple-inspired light mode, sidebar polish, and related articles",
-          "url": "https://github.com/irachrist1/portfolio/commit/f0078fa92956ca616e2b4dd2dc1cebb04dda98ba",
-          "committedAt": "2026-03-05T08:59:40Z"
-        }
-      ],
-      "error": null
-    },
-    {
-      "projectSlug": "mnotes",
-      "projectTitle": "MNotes",
-      "githubRepo": "irachrist1/mnotes",
-      "commitCount": 1,
-      "lastCommitAt": "2026-03-03T14:21:40Z",
-      "lastCommitUrl": "https://github.com/irachrist1/mnotes/commit/ef0ae61c67874e36f539e8c9826fd13c39a8ffe5",
-      "recentCommits": [
-        {
-          "sha": "ef0ae61",
-          "message": "chore: trigger CI to verify current build status",
-          "url": "https://github.com/irachrist1/mnotes/commit/ef0ae61c67874e36f539e8c9826fd13c39a8ffe5",
-          "committedAt": "2026-03-03T14:21:40Z"
-        }
-      ],
-      "error": null
-    },
     {
       "projectSlug": "beacon-skyway",
       "projectTitle": "Beacon Skyway",
@@ -73,9 +27,29 @@
       "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"404\"}"
     },
     {
+      "projectSlug": "mnotes",
+      "projectTitle": "MNotes",
+      "githubRepo": "irachrist1/mnotes",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": null
+    },
+    {
       "projectSlug": "opportunitymap",
       "projectTitle": "OpportunityMap",
       "githubRepo": "irachrist1/spark",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": null
+    },
+    {
+      "projectSlug": "portfolio",
+      "projectTitle": "Portfolio",
+      "githubRepo": "irachrist1/portfolio",
       "commitCount": 0,
       "lastCommitAt": null,
       "lastCommitUrl": null,
