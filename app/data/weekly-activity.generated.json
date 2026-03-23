@@ -1,11 +1,51 @@
 {
-  "generatedAt": "2026-03-16T14:54:03.760Z",
+  "generatedAt": "2026-03-23T14:49:39.743Z",
   "windowDays": 7,
   "totals": {
-    "commits": 0,
-    "activeProjects": 0
+    "commits": 3,
+    "activeProjects": 2
   },
   "projects": [
+    {
+      "projectSlug": "portfolio",
+      "projectTitle": "Portfolio",
+      "githubRepo": "irachrist1/portfolio",
+      "commitCount": 2,
+      "lastCommitAt": "2026-03-19T04:54:22Z",
+      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/63c5bdad814877b0141973fd4368624624be8ca0",
+      "recentCommits": [
+        {
+          "sha": "63c5bda",
+          "message": "chore: pin Node.js version to 22 LTS",
+          "url": "https://github.com/irachrist1/portfolio/commit/63c5bdad814877b0141973fd4368624624be8ca0",
+          "committedAt": "2026-03-19T04:54:22Z"
+        },
+        {
+          "sha": "b5946e5",
+          "message": "chore: refresh weekly activity data",
+          "url": "https://github.com/irachrist1/portfolio/commit/b5946e5cdd50c6b9f5f079ab129227a929030c39",
+          "committedAt": "2026-03-16T14:54:04Z"
+        }
+      ],
+      "error": null
+    },
+    {
+      "projectSlug": "opportunitymap",
+      "projectTitle": "OpportunityMap",
+      "githubRepo": "irachrist1/spark",
+      "commitCount": 1,
+      "lastCommitAt": "2026-03-19T04:54:12Z",
+      "lastCommitUrl": "https://github.com/irachrist1/spark/commit/e508760ad407520494222f6e08f82f3bdab1dddd",
+      "recentCommits": [
+        {
+          "sha": "e508760",
+          "message": "docs: archive notice pointing to SkillSync successor project",
+          "url": "https://github.com/irachrist1/spark/commit/e508760ad407520494222f6e08f82f3bdab1dddd",
+          "committedAt": "2026-03-19T04:54:12Z"
+        }
+      ],
+      "error": null
+    },
     {
       "projectSlug": "beacon-skyway",
       "projectTitle": "Beacon Skyway",
@@ -34,27 +74,7 @@
       "lastCommitAt": null,
       "lastCommitUrl": null,
       "recentCommits": [],
-      "error": null
-    },
-    {
-      "projectSlug": "opportunitymap",
-      "projectTitle": "OpportunityMap",
-      "githubRepo": "irachrist1/spark",
-      "commitCount": 0,
-      "lastCommitAt": null,
-      "lastCommitUrl": null,
-      "recentCommits": [],
-      "error": null
-    },
-    {
-      "projectSlug": "portfolio",
-      "projectTitle": "Portfolio",
-      "githubRepo": "irachrist1/portfolio",
-      "commitCount": 0,
-      "lastCommitAt": null,
-      "lastCommitUrl": null,
-      "recentCommits": [],
-      "error": null
+      "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"404\"}"
     },
     {
       "projectSlug": "rgi",
