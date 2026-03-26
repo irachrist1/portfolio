@@ -212,6 +212,97 @@ This portfolio is designed as a living system, not a static brochure. It central
 The site now reflects weekly momentum automatically while preserving curated milestone storytelling.`
   },
   {
+    slug: "daylens",
+    title: "Daylens",
+    description:
+      "Local-first AI time tracking for Mac and Windows, plus a mobile-first web companion — see where your day goes, block distractions, and chat with your activity data.",
+    category: "personal",
+    date: "2026-03-26",
+    links: [
+      { label: "Mac — GitHub", href: "https://github.com/irachrist1/daylens" },
+      { label: "Windows — GitHub", href: "https://github.com/irachrist1/daylens-windows" },
+      { label: "Web — GitHub", href: "https://github.com/irachrist1/daylens-web" },
+    ],
+    body: `## Overview
+
+Daylens is a family of apps that captures how you spend your time on desktop and in the browser, then helps you act on it with AI — without sending your raw activity to a cloud you do not control.
+
+## Surface Area
+
+- **macOS** — Swift-native menubar app with activity capture, focus blocks, and AI chat over your timeline.
+- **Windows** — Tauri-based desktop build with the same local-first philosophy and release automation.
+- **Web** — Mobile-first dashboard for reviewing sessions and trends when you are away from the desk.
+
+## What Shipped Recently
+
+- Patch releases focused on **auto-update reliability** (quarantine cleanup, download URL resolution) and **fullscreen / playback** edge cases in tracking.
+- Windows channel **1.0.x** with bundled font polish and release workflow hardening.
+
+## Tech Stack
+
+- **macOS:** Swift, native app lifecycle
+- **Windows:** Tauri, Rust-backed desktop shell
+- **Web:** Companion UI aligned with the same product story
+
+## Why It Matters
+
+Time is the one resource you cannot replenish. Daylens turns passive logging into something you can query, reason about, and improve — without trading privacy for insight.`
+  },
+  {
+    slug: "sync-blogs",
+    title: "Sync Blogs",
+    description:
+      "AI-assisted blogging platform with cross-platform content syndication — Node.js, Express 5, TypeScript.",
+    category: "personal",
+    date: "2026-03-26",
+    links: [
+      { label: "GitHub", href: "https://github.com/irachrist1/sync-blogs" },
+    ],
+    body: `## Overview
+
+Sync Blogs is a writing studio for publishing and syndicating content across channels. It pairs a traditional Express/TypeScript backend with AI-assisted drafting, review personas, and iterative editing workflows.
+
+## Key Features
+
+- **AI writing studio** — Draft and refine posts with structured review flows.
+- **Auth and sessions** — Account-based access for a serious editor experience.
+- **Content freshness** — Workflows that keep posts current as you iterate.
+
+## Tech Stack
+
+- **Runtime:** Node.js with **Express 5**
+- **Language:** TypeScript end-to-end
+- **Direction:** Next.js + Convex + Clerk + Tailwind migration plan in progress for a more productized web tier.
+
+## Status
+
+A **v2 rebuild** landed in March 2026 with a stronger editor surface and auth hardening. Ongoing work focuses on migration execution, mobile polish, and streaming task UX.`
+  },
+  {
+    slug: "ocr-extractor",
+    title: "OCR Extractor",
+    description:
+      "Collaborator project — document OCR pipeline with hardened tests and a refactored frontend action layer.",
+    category: "personal",
+    date: "2026-03-26",
+    links: [
+      { label: "GitHub", href: "https://github.com/kanmwangi2/ocr-extractor" },
+    ],
+    body: `## Overview
+
+OCR Extractor is a project I contribute to as a collaborator. The focus is on reliable extraction of text from documents with a clean separation between backend processing and frontend controls.
+
+## Recent Themes
+
+- **Regression coverage** — pytest runs hardened to keep CI trustworthy.
+- **Frontend bindings** — Action wiring refactored for predictable behavior under load.
+- **Cleanup** — Removal of stale legacy references (e.g. old OCR engine paths) to reduce confusion.
+
+## Role
+
+Collaborate on architecture, tests, and frontend integration while keeping the product stable for end users.`
+  },
+  {
     slug: "mnotes",
     title: "MNotes",
     description: "Personal AI assistant dashboard for entrepreneurs. Track income streams, ideas, mentorship, and get AI-powered business insights, all from one place.",

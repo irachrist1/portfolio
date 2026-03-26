@@ -1,12 +1,75 @@
 import { Card } from "../../components/card";
 import Link from "next/link";
+import {
+  Bot,
+  Workflow,
+  Code2,
+  Palette,
+} from "lucide-react";
 
 export const dynamic = "force-static";
 
+const categories = [
+  {
+    title: "AI platforms",
+    description: "Models, APIs, and retrieval",
+    icon: Bot,
+    accent: "from-violet-500/15 to-transparent",
+    items: [
+      "Claude API",
+      "Azure AI",
+      "OpenAI",
+      "Vectara RAG",
+      "NotebookLM",
+    ],
+  },
+  {
+    title: "Automation",
+    description: "Orchestration & copilots",
+    icon: Workflow,
+    accent: "from-sky-500/15 to-transparent",
+    items: [
+      "Microsoft Copilot Studio",
+      "Power Automate",
+      "n8n",
+      "Zapier",
+      "Make.com",
+    ],
+  },
+  {
+    title: "Development",
+    description: "Frontend to backend",
+    icon: Code2,
+    accent: "from-emerald-500/15 to-transparent",
+    items: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Python",
+      "Convex",
+      "Odoo ERP",
+    ],
+  },
+  {
+    title: "Design & content",
+    description: "Visual craft & narrative",
+    icon: Palette,
+    accent: "from-amber-500/15 to-transparent",
+    items: [
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Content strategy",
+      "Digital marketing",
+    ],
+  },
+];
+
 export default function SkillsPage() {
   return (
-    <div className="px-6 py-10 mx-auto space-y-16 max-w-4xl lg:px-8">
-      <div className="max-w-3xl">
+    <div className="px-6 py-10 mx-auto max-w-6xl lg:px-8">
+      <div className="max-w-3xl mb-12">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl mb-6">
           Tech Stack & Tools
         </h1>
@@ -15,95 +78,44 @@ export default function SkillsPage() {
         </p>
       </div>
 
-      {/* AI & Automation */}
-      <div>
-        <h2 className="text-3xl font-bold text-zinc-100 mb-8">AI & Automation</h2>
-        <Card>
-          <div className="p-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-zinc-200 mb-4">AI Platforms</h3>
-                <ul className="space-y-2 text-zinc-400">
-                  <li>• Claude API</li>
-                  <li>• Azure AI</li>
-                  <li>• OpenAI</li>
-                  <li>• Vectara RAG</li>
-                  <li>• NotebookLM</li>
-                </ul>
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        {categories.map((cat) => {
+          const Icon = cat.icon;
+          return (
+            <Card key={cat.title}>
+              <div
+                className={`relative h-full p-6 bg-gradient-to-br ${cat.accent} border-zinc-800/80`}
+              >
+                <div className="flex items-start gap-3 mb-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-600/80 bg-zinc-900/60 text-zinc-200">
+                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                  </span>
+                  <div>
+                    <h2 className="text-lg font-bold text-zinc-100 leading-tight">
+                      {cat.title}
+                    </h2>
+                    <p className="text-xs text-zinc-500 mt-0.5">{cat.description}</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {cat.items.map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex rounded-full border border-zinc-700/90 bg-zinc-900/50 px-2.5 py-1 text-xs font-medium text-zinc-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-zinc-200 mb-4">Automation Tools</h3>
-                <ul className="space-y-2 text-zinc-400">
-                  <li>• Microsoft Copilot Studio</li>
-                  <li>• Power Automate</li>
-                  <li>• n8n</li>
-                  <li>• Zapier</li>
-                  <li>• Make.com</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Card>
+            </Card>
+          );
+        })}
       </div>
 
-      {/* Development */}
-      <div>
-        <h2 className="text-3xl font-bold text-zinc-100 mb-8">Development</h2>
-        <Card>
-          <div className="p-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-zinc-200 mb-4">Frontend</h3>
-                <ul className="space-y-2 text-zinc-400">
-                  <li>• Next.js</li>
-                  <li>• React</li>
-                  <li>• JavaScript</li>
-                  <li>• Tailwind CSS</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-zinc-200 mb-4">Backend & Database</h3>
-                <ul className="space-y-2 text-zinc-400">
-                  <li>• Python</li>
-                  <li>• Convex</li>
-                  <li>• Odoo ERP</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      {/* Design & Content */}
-      <div>
-        <h2 className="text-3xl font-bold text-zinc-100 mb-8">Design & Content</h2>
-        <Card>
-          <div className="p-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-zinc-200 mb-4">Design Tools</h3>
-                <ul className="space-y-2 text-zinc-400">
-                  <li>• Figma</li>
-                  <li>• Adobe Photoshop</li>
-                  <li>• Adobe Illustrator</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-zinc-200 mb-4">Content</h3>
-                <ul className="space-y-2 text-zinc-400">
-                  <li>• Content strategy</li>
-                  <li>• Digital marketing</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      {/* CTA */}
-      <div className="text-center pt-8">
-        <p className="text-zinc-400 mb-6">
-          Want to see these skills in action?
+      <div className="text-center pt-14">
+        <p className="text-zinc-500 text-sm mb-6">
+          Want to see these in production?
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link

@@ -141,7 +141,7 @@ See you in your inbox soon.
 
 CT`,
     published: true,
-    publishedAt: "2026-02-28T22:00:00.000Z",
+    publishedAt: "2026-02-14T12:00:00.000Z",
     scheduledOrder: 1,
     tags: ["Newsletter", "AI Workflows", "Issue #48"],
     coverImage: DEFAULT_COVER_IMAGE,
@@ -242,7 +242,7 @@ CT
 
 **Get AI Native in 2026 — Issue 1 of 12** is a weekly series running through Q1. Each issue covers one phase of going from basic AI user to someone whose workflows actually run on it. No coding required.`,
     published: true,
-    publishedAt: "2026-02-28T22:00:00.000Z",
+    publishedAt: "2026-02-21T12:00:00.000Z",
     scheduledOrder: 2,
     tags: ["AI Tools", "Productivity", "Get AI Native", "Issue #49"],
     coverImage: DEFAULT_COVER_IMAGE,
@@ -531,7 +531,7 @@ The hype was early. The reality is catching up.
 
 CT`,
     published: true,
-    publishedAt: "2026-02-28T22:00:00.000Z",
+    publishedAt: "2026-02-28T12:00:00.000Z",
     scheduledOrder: 3,
     tags: ["AI Strategy", "Industry Analysis", "State of AI 2026", "Issue #50"],
     coverImage: DEFAULT_COVER_IMAGE,

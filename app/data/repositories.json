@@ -28,5 +28,20 @@
     "projectSlug": "contentflow",
     "projectTitle": "ContentFlow",
     "githubRepo": "irachrist1/andersen-content-dashboard"
+  },
+  {
+    "projectSlug": "sync-blogs",
+    "projectTitle": "Sync Blogs",
+    "githubRepo": "irachrist1/sync-blogs"
+  },
+  {
+    "projectSlug": "daylens",
+    "projectTitle": "Daylens",
+    "githubRepo": "irachrist1/daylens"
+  },
+  {
+    "projectSlug": "ocr-extractor",
+    "projectTitle": "OCR Extractor",
+    "githubRepo": "kanmwangi2/ocr-extractor"
   }
 ]

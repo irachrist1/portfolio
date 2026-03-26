@@ -52,5 +52,5 @@ next-env.d.ts
 # OS
 Thumbs.db
 
-# Local assets
-images/
+# Local assets (repo root only — do not use plain `images/` or public/ images are ignored)
+/images/

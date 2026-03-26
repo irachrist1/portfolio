@@ -1,47 +1,53 @@
 {
-  "generatedAt": "2026-03-23T14:49:39.743Z",
+  "generatedAt": "2026-03-26T17:59:01.965Z",
   "windowDays": 7,
   "totals": {
-    "commits": 3,
+    "commits": 51,
     "activeProjects": 2
   },
   "projects": [
     {
-      "projectSlug": "portfolio",
-      "projectTitle": "Portfolio",
-      "githubRepo": "irachrist1/portfolio",
-      "commitCount": 2,
-      "lastCommitAt": "2026-03-19T04:54:22Z",
-      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/63c5bdad814877b0141973fd4368624624be8ca0",
+      "projectSlug": "daylens",
+      "projectTitle": "Daylens",
+      "githubRepo": "irachrist1/daylens",
+      "commitCount": 50,
+      "lastCommitAt": "2026-03-25T16:24:32Z",
+      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/895655a78039dcb1d55abaaa86e99b3967bc50a2",
       "recentCommits": [
         {
-          "sha": "63c5bda",
-          "message": "chore: pin Node.js version to 22 LTS",
-          "url": "https://github.com/irachrist1/portfolio/commit/63c5bdad814877b0141973fd4368624624be8ca0",
-          "committedAt": "2026-03-19T04:54:22Z"
+          "sha": "895655a",
+          "message": "fix: preserve fullscreen playback tracking in v1.0.19",
+          "url": "https://github.com/irachrist1/daylens/commit/895655a78039dcb1d55abaaa86e99b3967bc50a2",
+          "committedAt": "2026-03-25T16:24:32Z"
         },
         {
-          "sha": "b5946e5",
-          "message": "chore: refresh weekly activity data",
-          "url": "https://github.com/irachrist1/portfolio/commit/b5946e5cdd50c6b9f5f079ab129227a929030c39",
-          "committedAt": "2026-03-16T14:54:04Z"
+          "sha": "00d5bea",
+          "message": "fix: preserve fullscreen tracking and prep v1.0.18 release",
+          "url": "https://github.com/irachrist1/daylens/commit/00d5beaf36c3667e62402db0d6016bf71bc923d6",
+          "committedAt": "2026-03-24T18:31:27Z"
+        },
+        {
+          "sha": "51ae0d7",
+          "message": "feat: hide apps/sites, fix update relaunch, suppress dev update banner",
+          "url": "https://github.com/irachrist1/daylens/commit/51ae0d71449308b57f16671494c4bca09f3fe15d",
+          "committedAt": "2026-03-23T06:13:57Z"
         }
       ],
       "error": null
     },
     {
-      "projectSlug": "opportunitymap",
-      "projectTitle": "OpportunityMap",
-      "githubRepo": "irachrist1/spark",
+      "projectSlug": "portfolio",
+      "projectTitle": "Portfolio",
+      "githubRepo": "irachrist1/portfolio",
       "commitCount": 1,
-      "lastCommitAt": "2026-03-19T04:54:12Z",
-      "lastCommitUrl": "https://github.com/irachrist1/spark/commit/e508760ad407520494222f6e08f82f3bdab1dddd",
+      "lastCommitAt": "2026-03-23T14:49:40Z",
+      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/1e62f29b52b2cee1a47c06e516d3bd0879c389f7",
       "recentCommits": [
         {
-          "sha": "e508760",
-          "message": "docs: archive notice pointing to SkillSync successor project",
-          "url": "https://github.com/irachrist1/spark/commit/e508760ad407520494222f6e08f82f3bdab1dddd",
-          "committedAt": "2026-03-19T04:54:12Z"
+          "sha": "1e62f29",
+          "message": "chore: refresh weekly activity data",
+          "url": "https://github.com/irachrist1/portfolio/commit/1e62f29b52b2cee1a47c06e516d3bd0879c389f7",
+          "committedAt": "2026-03-23T14:49:40Z"
         }
       ],
       "error": null
@@ -77,9 +83,39 @@
       "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"404\"}"
     },
     {
+      "projectSlug": "ocr-extractor",
+      "projectTitle": "OCR Extractor",
+      "githubRepo": "kanmwangi2/ocr-extractor",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"404\"}"
+    },
+    {
+      "projectSlug": "opportunitymap",
+      "projectTitle": "OpportunityMap",
+      "githubRepo": "irachrist1/spark",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": null
+    },
+    {
       "projectSlug": "rgi",
       "projectTitle": "RGI - Rwanda Government Intelligence",
       "githubRepo": "ChristianTonny/rgi",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": null
+    },
+    {
+      "projectSlug": "sync-blogs",
+      "projectTitle": "Sync Blogs",
+      "githubRepo": "irachrist1/sync-blogs",
       "commitCount": 0,
       "lastCommitAt": null,
       "lastCommitUrl": null,

@@ -1,4 +1,3 @@
-"use client";
 import { Mail, Linkedin, MapPin } from "lucide-react";
 import Link from "next/link";
 import { Card } from "../../components/card";
@@ -29,19 +28,16 @@ export const dynamic = "force-static";
 export default function ContactPage() {
 	return (
 		<div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
-			{/* Hero Section */}
-			<div className="mb-12">
-				<h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-4">
-					Let&apos;s Work Together
+			<div className="mb-10">
+				<h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-3">
+					Contact
 				</h1>
-				<p className="text-lg text-zinc-400 leading-relaxed">
-					Open to conversations about AI implementation, software engineering roles, speaking opportunities,
-					and collaborations in educational technology.
+				<p className="text-zinc-400">
+					Reach out by email or LinkedIn — I&apos;ll get back when I can.
 				</p>
 			</div>
 
-			{/* Contact Cards */}
-			<div className="grid w-full grid-cols-1 gap-4 mb-12 sm:grid-cols-3 sm:gap-6">
+			<div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
 				{socials.map((s, index) => (
 					<Card key={index}>
 						<Link
@@ -65,227 +61,13 @@ export default function ContactPage() {
 				))}
 			</div>
 
-			{/* What I'm Open To */}
-			<div className="space-y-8">
-				<h2 className="text-2xl font-bold text-zinc-100 mb-6">
-					What I&apos;m Open To
-				</h2>
-
-				<div className="grid md:grid-cols-2 gap-6">
-					<Card>
-						<div className="p-6">
-							<h3 className="text-xl font-bold text-zinc-100 mb-4">1. AI Implementation Projects</h3>
-							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you&apos;re a business that wants to implement AI but doesn&apos;t know where to start, I can help.
-								I don&apos;t just build—I assess, strategize, and execute complete implementations.
-							</p>
-							<p className="text-xs text-zinc-500 font-semibold mb-2">Ideal projects:</p>
-							<ul className="space-y-1 text-xs text-zinc-500">
-								<li>• Custom RAG systems for document/data querying</li>
-								<li>• AI readiness assessments and roadmaps</li>
-								<li>• Prototype development to validate concepts</li>
-								<li>• Training and knowledge transfer for your team</li>
-							</ul>
-						</div>
-					</Card>
-
-					<Card>
-						<div className="p-6">
-							<h3 className="text-xl font-bold text-zinc-100 mb-4">2. Full-Stack Development</h3>
-							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you need someone who can build complete systems from database to frontend, I can help.
-							</p>
-							<p className="text-xs text-zinc-500 font-semibold mb-2">Ideal projects:</p>
-							<ul className="space-y-1 text-xs text-zinc-500">
-								<li>• React-based web applications</li>
-								<li>• FastAPI backend development</li>
-								<li>• Enterprise system integrations</li>
-								<li>• Performance optimization projects</li>
-							</ul>
-						</div>
-					</Card>
-
-					<Card>
-						<div className="p-6">
-							<h3 className="text-xl font-bold text-zinc-100 mb-4">3. Technology Consulting</h3>
-							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you&apos;re looking for strategic guidance on technology decisions, I can help.
-							</p>
-							<p className="text-xs text-zinc-500 font-semibold mb-2">Ideal projects:</p>
-							<ul className="space-y-1 text-xs text-zinc-500">
-								<li>• ERP selection and implementation</li>
-								<li>• Digital transformation roadmaps</li>
-								<li>• Cybersecurity assessments</li>
-								<li>• Infrastructure architecture reviews</li>
-							</ul>
-						</div>
-					</Card>
-
-					<Card>
-						<div className="p-6">
-							<h3 className="text-xl font-bold text-zinc-100 mb-4">4. Speaking & Workshops</h3>
-							<p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-								If you want someone to speak at your event or facilitate workshops on AI implementation, I&apos;m interested.
-							</p>
-							<p className="text-xs text-zinc-500 font-semibold mb-2">Topics I can cover:</p>
-							<ul className="space-y-1 text-xs text-zinc-500">
-								<li>• AI implementation for businesses</li>
-								<li>• Building your first AI system</li>
-								<li>• Technology strategy for African contexts</li>
-								<li>• Career development in technology</li>
-							</ul>
-						</div>
-					</Card>
-				</div>
-
-				<Card>
-					<div className="p-8 text-center">
-						<h3 className="text-xl font-bold text-zinc-100 mb-4">5. Educational Technology Projects</h3>
-						<p className="text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-							If you&apos;re working on technology to improve education access in Africa, I definitely want to talk.
-							This is my passion project. If you&apos;re building in this space—whether for-profit or nonprofit—I&apos;d
-							love to explore collaboration.
-						</p>
-					</div>
-				</Card>
-			</div>
-
-			{/* How I Work */}
-			<div className="mt-12">
-				<h2 className="text-2xl font-bold text-zinc-100 mb-6">How I Work</h2>
-				<Card>
-					<div className="p-8">
-						<div className="space-y-6">
-							<div>
-								<h3 className="text-lg font-semibold text-zinc-200 mb-3">Engagement Models I Prefer:</h3>
-								<ul className="space-y-2 text-zinc-400">
-									<li>• <span className="text-zinc-300">Project-based:</span> Defined scope, clear deliverables, fixed timeline</li>
-									<li>• <span className="text-zinc-300">Retainer:</span> Ongoing support and development (minimum 10 hours/month)</li>
-									<li>• <span className="text-zinc-300">Equity:</span> For early-stage startups aligned with my mission</li>
-								</ul>
-							</div>
-							<div className="pt-6 border-t border-zinc-700">
-								<h3 className="text-lg font-semibold text-zinc-200 mb-3">My Process:</h3>
-								<ol className="space-y-3 text-zinc-400">
-									<li>1. <span className="text-zinc-300">Discovery Call</span> (30 minutes, free) - Understand your problem and assess fit</li>
-									<li>2. <span className="text-zinc-300">Proposal</span> (1 week) - Detailed scope, timeline, cost breakdown, success criteria</li>
-									<li>3. <span className="text-zinc-300">Kickoff</span> (Week 1) - Finalize requirements, set up communication</li>
-									<li>4. <span className="text-zinc-300">Execution</span> (Varies) - Regular updates, milestone reviews, iterative feedback</li>
-									<li>5. <span className="text-zinc-300">Delivery & Handover</span> - Complete documentation, training, support transition</li>
-								</ol>
-							</div>
-						</div>
-					</div>
-				</Card>
-			</div>
-
-			{/* What I Need From You */}
-			<div className="mt-12">
-				<h2 className="text-2xl font-bold text-zinc-100 mb-6">What I Need From You</h2>
-				<Card>
-					<div className="p-8">
-						<p className="text-zinc-400 mb-6">To work effectively, I need:</p>
-						<ul className="space-y-4 text-zinc-400">
-							<li>
-								<span className="font-semibold text-zinc-300">1. Clear Business Objectives</span><br />
-								<span className="text-sm">"Make it work with AI" isn&apos;t a goal. "Reduce customer support response time by 50%" is.</span>
-							</li>
-							<li>
-								<span className="font-semibold text-zinc-300">2. Access to Stakeholders</span><br />
-								<span className="text-sm">I need to talk to the people who will use what I build.</span>
-							</li>
-							<li>
-								<span className="font-semibold text-zinc-300">3. Realistic Timelines</span><br />
-								<span className="text-sm">Good work takes time. I can work fast, but not magically fast.</span>
-							</li>
-							<li>
-								<span className="font-semibold text-zinc-300">4. Decision-Making Authority</span><br />
-								<span className="text-sm">If you need three layers of approval for minor changes, we&apos;ll both be frustrated.</span>
-							</li>
-							<li>
-								<span className="font-semibold text-zinc-300">5. Measurement Criteria</span><br />
-								<span className="text-sm">How will we know if this succeeded? Define it upfront.</span>
-							</li>
-						</ul>
-					</div>
-				</Card>
-			</div>
-
-			{/* FAQ */}
-			<div className="mt-12">
-				<h2 className="text-2xl font-bold text-zinc-100 mb-6">Frequently Asked Questions</h2>
-				<div className="space-y-4">
-					<Card>
-						<div className="p-6">
-							<h3 className="text-lg font-semibold text-zinc-200 mb-2">What&apos;s your rate?</h3>
-							<p className="text-zinc-400 text-sm">
-								It depends on the project. For consulting: $75-150/hour depending on scope. For projects:
-								I prefer fixed-fee based on deliverables. For equity: Let&apos;s talk about the opportunity.
-							</p>
-						</div>
-					</Card>
-					<Card>
-						<div className="p-6">
-							<h3 className="text-lg font-semibold text-zinc-200 mb-2">Are you available for full-time employment?</h3>
-							<p className="text-zinc-400 text-sm">
-								Potentially, for the right opportunity. I&apos;m particularly interested in roles that combine
-								technical work with business impact, and anything related to educational technology in Africa.
-							</p>
-						</div>
-					</Card>
-					<Card>
-						<div className="p-6">
-							<h3 className="text-lg font-semibold text-zinc-200 mb-2">Can you work remotely?</h3>
-							<p className="text-zinc-400 text-sm">
-								Yes. I&apos;ve effectively collaborated across time zones and prefer asynchronous communication for most work.
-							</p>
-						</div>
-					</Card>
-					<Card>
-						<div className="p-6">
-							<h3 className="text-lg font-semibold text-zinc-200 mb-2">What&apos;s your availability?</h3>
-							<p className="text-zinc-400 text-sm">
-								Currently accepting projects starting from November 2025. For urgent needs, let&apos;s discuss.
-							</p>
-						</div>
-					</Card>
-				</div>
-			</div>
-
-			{/* Final CTA */}
-			<div className="mt-12">
-				<Card>
-					<div className="p-8 text-center">
-						<h2 className="text-2xl font-bold text-zinc-100 mb-4">Ready to Get Started?</h2>
-						<p className="text-zinc-400 mb-6">
-							When you reach out, please include: brief description of your project/opportunity,
-							timeline and budget (if applicable), and why you think we&apos;d be a good fit.
-						</p>
-						<p className="text-sm text-zinc-500 mb-6">
-							Response time: I aim to respond to all inquiries within 48 hours.
-						</p>
-						<Link
-							href="mailto:info@spcstech.com"
-							className="inline-block px-8 py-4 text-base font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
-						>
-							Send Me an Email
-						</Link>
-					</div>
-				</Card>
-			</div>
-
-			{/* Closing Quote */}
-			<div className="mt-12 text-center">
-				<p className="text-xl text-zinc-400 mb-4 italic">
-					"If it doesn&apos;t sell, it isn&apos;t creative."<br />
-					<span className="text-sm text-zinc-500">— David Ogilvy</span>
-				</p>
-				<p className="text-lg text-zinc-300 mt-6">
-					I say: "If it doesn&apos;t work, it isn&apos;t technology."
-				</p>
-				<p className="text-zinc-400 mt-4">
-					If that&apos;s what you need, let&apos;s talk.
-				</p>
+			<div className="mt-10">
+				<Link
+					href="mailto:info@spcstech.com"
+					className="inline-flex px-6 py-3 text-sm font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
+				>
+					Send an email
+				</Link>
 			</div>
 		</div>
 	);

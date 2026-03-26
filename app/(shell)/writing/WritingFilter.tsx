@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { ExternalLink, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   writingCategories,
   filterArticlesByCategory,
@@ -99,7 +99,7 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
     );
   }
 
-  // Main writing page — all articles + newsletter CTA
+  // Main writing page — all articles
   return (
     <div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
       <div className="mb-10">
@@ -110,25 +110,6 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
           Thoughts on AI implementation, technology trends, and building
           products that work.
         </p>
-      </div>
-
-      {/* Newsletter CTA */}
-      <div className="mb-12 rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-        <h2 className="text-xl font-bold text-zinc-100 mb-2">
-          Rwanda&apos;s Tech Insider
-        </h2>
-        <p className="text-zinc-400 text-sm mb-4">
-          Weekly practical insights on AI systems, workflows, and execution.
-        </p>
-        <Link
-          href="https://www.linkedin.com/newsletters/rwanda-s-tech-insider-7131233970339373056/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors"
-        >
-          Subscribe on LinkedIn
-          <ExternalLink className="w-3.5 h-3.5" />
-        </Link>
       </div>
 
       {/* Category pills — mobile only */}
