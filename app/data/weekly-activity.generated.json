@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-26T17:59:01.965Z",
+  "generatedAt": "2026-03-30T14:56:51.648Z",
   "windowDays": 7,
   "totals": {
-    "commits": 51,
+    "commits": 7,
     "activeProjects": 2
   },
   "projects": [
@@ -10,27 +10,27 @@
       "projectSlug": "daylens",
       "projectTitle": "Daylens",
       "githubRepo": "irachrist1/daylens",
-      "commitCount": 50,
-      "lastCommitAt": "2026-03-25T16:24:32Z",
-      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/895655a78039dcb1d55abaaa86e99b3967bc50a2",
+      "commitCount": 6,
+      "lastCommitAt": "2026-03-27T16:46:22Z",
+      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/ecb691ecac6082666c9ded4ea74a6c5ea5e2ff5b",
       "recentCommits": [
         {
-          "sha": "895655a",
-          "message": "fix: preserve fullscreen playback tracking in v1.0.19",
-          "url": "https://github.com/irachrist1/daylens/commit/895655a78039dcb1d55abaaa86e99b3967bc50a2",
-          "committedAt": "2026-03-25T16:24:32Z"
+          "sha": "ecb691e",
+          "message": "Fix usage totals and add CI workflow",
+          "url": "https://github.com/irachrist1/daylens/commit/ecb691ecac6082666c9ded4ea74a6c5ea5e2ff5b",
+          "committedAt": "2026-03-27T16:46:22Z"
         },
         {
-          "sha": "00d5bea",
-          "message": "fix: preserve fullscreen tracking and prep v1.0.18 release",
-          "url": "https://github.com/irachrist1/daylens/commit/00d5beaf36c3667e62402db0d6016bf71bc923d6",
-          "committedAt": "2026-03-24T18:31:27Z"
+          "sha": "f64fcec",
+          "message": "feat: add focus planner and prep v1.0.21 release",
+          "url": "https://github.com/irachrist1/daylens/commit/f64fcec2f5c74318a34895ca8075d18006dab0ee",
+          "committedAt": "2026-03-27T13:27:37Z"
         },
         {
-          "sha": "51ae0d7",
-          "message": "feat: hide apps/sites, fix update relaunch, suppress dev update banner",
-          "url": "https://github.com/irachrist1/daylens/commit/51ae0d71449308b57f16671494c4bca09f3fe15d",
-          "committedAt": "2026-03-23T06:13:57Z"
+          "sha": "3639d79",
+          "message": "chore: release v1.0.20",
+          "url": "https://github.com/irachrist1/daylens/commit/3639d798babe8611cf69e2dbef0929432e2855a4",
+          "committedAt": "2026-03-27T08:27:00Z"
         }
       ],
       "error": null
@@ -40,14 +40,14 @@
       "projectTitle": "Portfolio",
       "githubRepo": "irachrist1/portfolio",
       "commitCount": 1,
-      "lastCommitAt": "2026-03-23T14:49:40Z",
-      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/1e62f29b52b2cee1a47c06e516d3bd0879c389f7",
+      "lastCommitAt": "2026-03-26T17:59:24Z",
+      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/1984e51112bb3a369e7d78ae6c10e18e6075ddf6",
       "recentCommits": [
         {
-          "sha": "1e62f29",
-          "message": "chore: refresh weekly activity data",
-          "url": "https://github.com/irachrist1/portfolio/commit/1e62f29b52b2cee1a47c06e516d3bd0879c389f7",
-          "committedAt": "2026-03-23T14:49:40Z"
+          "sha": "1984e51",
+          "message": "feat: site cleanup, projects/changelog refresh, hero image, deploy prep",
+          "url": "https://github.com/irachrist1/portfolio/commit/1984e51112bb3a369e7d78ae6c10e18e6075ddf6",
+          "committedAt": "2026-03-26T17:59:24Z"
         }
       ],
       "error": null
