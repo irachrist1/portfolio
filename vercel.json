@@ -54,11 +54,11 @@
   "rewrites": [
     {
       "source": "/daylens",
-      "destination": "https://daylens-web.vercel.app/daylens"
+      "destination": "https://daylens-web-irachrist1s-projects.vercel.app/daylens"
     },
     {
       "source": "/daylens/:path*",
-      "destination": "https://daylens-web.vercel.app/daylens/:path*"
+      "destination": "https://daylens-web-irachrist1s-projects.vercel.app/daylens/:path*"
     }
   ]
 }
