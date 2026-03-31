@@ -558,57 +558,63 @@ CT`,
       "The average knowledge worker switches between apps and tabs over 1,200 times per day. Most people have no idea where their time actually goes. What if you did?",
     contentMarkdown: `# you have no idea where your time goes
 
-the average person switches between apps and browser tabs over 1,200 times a day. not per week. per day. Gloria Mark at UC Irvine spent years studying what that does to people — workers who are frequently interrupted throughout the day show significantly elevated cortisol levels by end of day compared to those who aren't. the kind of stress response your body usually saves for actual emergencies, triggered by the simple act of switching between Chrome and Slack seventeen times before lunch.
+in 2022, a [Harvard Business Review study](https://hbr.org/2022/08/how-much-time-and-energy-do-we-waste-toggling-between-applications) tracked 137 workers across three Fortune 500 companies and found the average person toggled between apps and websites over 1,200 times a day. that's one switch every 24 seconds in an 8-hour workday. separately, Gloria Mark at UC Irvine published research in 2008 finding that [it takes 23 minutes on average](https://ics.uci.edu/~gmark/chi08-mark.pdf) to fully recover focus after a single interruption. workers who were frequently interrupted showed significantly higher stress and fatigue by end of day compared to those who weren't.
 
-the wild thing is most people don't notice it happening. nobody sits down and thinks "today i will context switch 1,200 times." it just happens. and at the end of the day you feel like you worked hard but also somehow got nothing done. that gap between effort and output — that's where all those micro-switches live.
+put those together and the math gets uncomfortable.
 
-i wanted to understand my own version of that gap, so i started looking at tools.
+nobody decides to fragment their attention 1,200 times. it just happens. one notification, one quick tab check, one "i'll just look this up fast." and by the end of the day you feel like you worked but also somehow got nothing done. the gap between effort and output is where all those switches live.
 
-## i tried everything
+i wanted to understand my own version of that gap. so i started looking for a tool that could actually show me what my day looked like, not roughly but precisely. what was i doing at 2pm last tuesday. not which apps were open. what was i doing.
 
-![macOS Screen Time showing 13h 33m across the day — Dia 4h 19m, Codex 2h 20m, cmux 1h 12m — app names and durations, nothing else](/writing/51/screen-time.png)
+## what i tried
 
-the obvious first stop was Screen Time, which is already on my Mac. the problem is it shows you almost nothing useful. "Chrome: 6 hours." ok, but what was i doing in Chrome for 6 hours? was i reading documentation trying to debug something, or did i open one Stack Overflow tab and somehow end up watching a 40-minute YouTube video about the history of programming languages? Screen Time doesn't know. it counts containers, not what's inside them.
+![macOS Screen Time showing 13h 33m total — Dia 4h 19m, Codex 2h 20m, cmux 1h 12m — app names and durations, nothing more](/writing/51/screen-time.png)
 
-so i tried RescueTime, which actually runs in the background and tries to categorize what you do. it marks YouTube as distracting and coding editors as productive. the issue is those categories are too blunt to be honest. sometimes i'm on YouTube watching a conference talk that's directly useful. sometimes i'm in VS Code staring at code i've read fifteen times because i'm completely stuck. RescueTime would score both of those the same way — productive. they are not the same thing. also it sends all of this to their servers, which made me uncomfortable.
+Screen Time is the obvious first thing to reach for. it's already there. but this is what you get: app names, total durations. "Dia: 4 hours 19 minutes." what was i doing in Dia for 4 hours? researching, importing data, watching a tutorial? Screen Time doesn't know. it counts containers not what's inside them.
 
-StayFree was next. well-designed app, good blocking features, but it's really a phone app trying to help you use your phone less. that's a different problem than the one i was trying to solve. the desktop data it shows is the same story: app names, usage times.
+[RescueTime](https://rescuetime.com) tries harder. it's been around since 2008, runs in the background, categorizes your apps and websites into productive vs. distracting, and generates a daily score. there's a reason it still has users. but the categories are global and blunt. YouTube is "distracting" by default, even if you're watching a conference talk directly relevant to what you're building. VS Code is "productive" even when you've been staring at the same function for 45 minutes because you're completely stuck. and it all goes to their servers.
 
-RISE was interesting because it comes at the question from a completely different angle — it tracks your sleep and maps your predicted energy levels throughout the day, so you know when you're supposed to be at peak focus. i actually used it for a while. but it's making predictions based on your sleep patterns, not your real behavior. it told me my peak was 10am-12pm. what it didn't know was that i was deep in a debugging session from 9am until 2pm one day, genuinely in the zone the whole time, not because my circadian rhythm cooperated but because the problem was interesting enough. RISE had no idea that happened.
+[Rize](https://rize.io) is more recent and uses AI to categorize your sessions automatically. prettier interface than RescueTime, genuinely tries harder. but people who test it seriously report the auto-categorization is wrong about 30% of the time out of the box. it's $15/month, and if you stop paying, your historical data is deleted. that part bothered me more than anything else.
 
-none of these could answer the question i actually wanted answered: what was i doing at 2:37pm last Tuesday?
+[StayFree](https://stayfreeapps.com) has 30 million users and is genuinely well-designed. but it's a blocker. it's built to help you spend less time on your phone. that's a different problem than the one i had.
 
-## so i built daylens
+none of them could tell me what i was actually doing between 2pm and 4pm on a given day. they all answered a different, easier question.
 
-![Daylens timeline for March 30 — Tax Filing and Email 2h 56m, Mixed Development 3h 38m, X and YouTube 1h, Mixed Work 40m at night](/writing/51/timeline.png)
+## let me show you daylens
 
-that timeline is a real day of mine. not a demo. tax filing and email in the morning, a long development block in the afternoon, some browsing and social media later, and a mixed late session. named, timed, reconstructable.
+[Daylens](https://christian-tonny.dev/daylens) watches your apps and browser activity natively and builds your day as a timeline of labeled work blocks. no extensions, no screenshots, nothing leaves your machine.
 
-[Daylens](https://christian-tonny.dev/daylens) watches your apps and browser activity natively — no extensions needed, nothing sent anywhere — and groups raw activity into labeled work sessions like that. it reads from 12+ browsers directly without needing any plugins. instead of "Chrome: 6 hours" you get the actual shape of what you did.
+![Daylens timeline for March 30 showing four named sessions: Tax Filing and Email 2h 50m in the morning, Mixed Development 3h 26m in the afternoon, X.com and YouTube 15m, Mixed Work 4h 6m in the evening](/writing/51/timeline.png)
 
-![Daylens stats for March 30 — 14h 1m active, 62% focus score, recent sessions including Dia, Codex, cmux, ChatGPT Atlas](/writing/51/stats.png)
+that's a real day of mine. four sessions. not "apps that were open" but what i was actually doing and for how long. you can navigate to any day and see this same breakdown.
 
-it also gives you a focus score based on your own switching behavior that day compared to your history. not a made-up productivity rating — just a reflection of how often you were switching and how long you stayed on things. the intelligence insight in the corner is optional, runs on your own API key if you want it, and costs nothing if you don't.
+click on any block and you get the full picture.
 
-everything stays on your machine by default. no account needed, nothing leaves your device unless you choose to sync. the whole thing is open source so you can read exactly what it does.
+![Work block detail for Mixed Development and Research Work, 3h 26m, 219 context switches detected. Breakdown shows sites visited with time, supporting apps like Codex and cmux, and key pages that were open during the session. AI tag indicates automatic analysis.](/writing/51/timeline-popover.png)
 
-i built this because i needed it. figured other people might too.
+this is the part that makes Daylens different from everything else i tried. that "Mixed Development And Research Work" block isn't just a label i created. Daylens analyzed the session and understood what was happening: Codex as the primary tool for 1 hour 7 minutes, cmux for development work, Claude and Odoo pages open in the background. 219 context switches detected in that one session. the analysis is running on every block automatically, not sitting in a separate feature you have to go turn on.
+
+the stats view shows the day in numbers.
+
+![Daylens stats dashboard showing 14h 1m active today, 62% focus score, time allocation bar breaking down browsing vs development vs productivity, and an intelligence insight noting you've spent a lot of time browsing](/writing/51/stats.png)
+
+the focus score is based on your own switching behavior relative to your own history, not some external benchmark. the intelligence insight reads your actual data and surfaces what's worth knowing. it's not a generic tip generator.
+
+everything stays on your machine. no account needed, nothing leaves your device unless you choose to enable the web companion. the whole thing is [open source](https://github.com/irachrist1/daylens), so you can read exactly what it does.
 
 ## one more thing
 
-![Daylens insights chat — asking what i was working on between 6 and 7pm, then asking about weekly patterns, getting a table back with focus scores by day](/writing/51/insights.png)
+![Daylens insights tab showing a conversation: asking about focus patterns across the week, getting back a structured table with focus score and top category per day, and a follow-up question about where the user is most focused](/writing/51/insights.png)
 
-here's where it gets more interesting to me personally.
+once your days are tracked and analyzed, you can ask questions across all of it. that's the Insights tab. but the AI isn't just there. it's in every block on the timeline, running automatically, building the understanding of your work over time.
 
-once you have this data, you can give it to an AI. not in the vague hand-wavy sense — literally as context. right now when you open ChatGPT or Claude you have to explain your situation from scratch every time. "i'm working on a React app, been stuck on this auth thing for two hours, here's what i've tried so far..." you're the bottleneck. you have to manually transfer context from your head to the tool, and that transfer is friction.
+the direction i want to take this: right now when you use any AI tool you start from zero every time. you explain your situation, your context, what you've been working on. you're the relay between your actual work and the tool that's supposed to help you with it. that relay is friction, and friction compounds into the thing that makes people eventually stop.
 
-friction compounds. if it's annoying enough you start doing it inconsistently. and if you do it inconsistently the AI never builds a real picture of how you work.
+what i'm building toward is something that already has the picture. not because you told it, but because it was there. you open your AI assistant and it already knows you've been in your editor for two hours, that you kept switching to a particular documentation page, that your focus today is lower than usual. it doesn't ask you to catch it up.
 
-i think the missing piece is a passive layer that captures your context automatically and makes it available when you need it. not to surveil you — to give AI the eyes it needs to actually be useful. instead of you explaining what you've been doing, it already knows you've been in your editor for two hours, switched to docs three times, and just opened the GitHub issues page. it can skip the setup.
+the tracking is step one. the understanding is step two. what comes after, the kind of help that doesn't start from scratch, is what i'm working toward.
 
-that's what i want daylens to grow into. the tracking is step one. the insights are step two. what comes after — proactive help, real-time assistance that doesn't require you to explain anything first — that's what i'm building toward.
-
-it's free, open source, and i'd genuinely love to hear from anyone who's been thinking about this.
+free, open source, and i'd genuinely love to hear from anyone who's been thinking about this.
 
 [GitHub](https://github.com/irachrist1/daylens) | [Try Daylens](https://christian-tonny.dev/daylens)
 
