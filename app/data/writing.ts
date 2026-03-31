@@ -552,95 +552,47 @@ CT`,
   {
     id: "51",
     slug: "51-you-have-no-idea-where-your-time-goes",
-    title: "13 Hours. What Were You Actually Doing?",
+    title: "You Have No Idea Where Your Time Goes",
     subtitle: "Issue #51",
     previewText:
-      "Screen Time tells you Chrome was open for 6 hours. But what were you doing in Chrome? I went looking for a tool that could answer that. Couldn't find it. So I built one.",
-    contentMarkdown: `# 13 Hours. What Were You Actually Doing?
+      "The average knowledge worker switches between apps and tabs over 1,200 times per day. Most people have no idea where their time actually goes. What if you did?",
+    contentMarkdown: `# You Have No Idea Where Your Time Goes
 
-The average person switches between apps and tabs over 1,200 times a day. Not a week. A day.
+The average person switches between apps and tabs 1,200+ times a day. Most have no idea where their time actually goes. I know this because I didn't.
 
-Most of those switches are tiny. You're in VS Code, you hop to Slack, you glance at a browser tab, you go back. Each one takes maybe 2 seconds. But the mental cost of re-orienting yourself? That's where the real time goes. Studies suggest it can take up to 23 minutes to fully regain deep focus after a meaningful interruption.
+Screen Time told me I had Chrome open for 6 hours and VS Code open for 4. OK. But what was I doing in Chrome for 6 hours? Was I debugging something or watching YouTube? That distinction is the whole point, and Screen Time doesn't know.
 
-And here's the thing: you don't notice it happening. Nobody sits down and thinks "today I will context-switch 1,200 times." It just happens. Your brain fills in the gaps and at the end of the day you think "I was busy" — but you can't really say what you did. Not precisely.
+![macOS Screen Time showing 13h 33m of usage with app list — Dia 4h 19m, Codex 2h 20m, cmux 1h 12m](/writing/51/screen-time.png)
 
-## Screen Time tells you almost nothing
+That's what Screen Time looks like. App names, durations, nothing else. It tells you the container, not the content.
 
-Apple has Screen Time. Windows has Digital Wellbeing. They'll tell you things like "you had Chrome open for 6 hours today."
+So I spent a lot of time looking for something better. Something that tracked not just which apps were open but what you were actually doing in them. No screenshots sent to a server, no browser extensions, not built for managers to spy on employees. Just a tool for an individual who wants to understand their own time.
 
-![Apple Screen Time showing app names and durations — but nothing about what you were actually doing](/writing/51-you-have-no-idea-where-your-time-goes/screentime-app-list.png)
+I couldn't find it. Every option was either too shallow, too invasive, or too corporate. So I built it.
 
-Great. But what were you doing in Chrome for 6 hours? Were you deep in documentation fixing a bug, or did you drift from a Stack Overflow tab into YouTube into something about how planes are made?
+## Daylens
 
-These tools give you a silhouette of your day. App names and durations. They can't tell you what you were actually doing, what you were focused on, or where your attention went.
+[Daylens](https://christian-tonny.dev/daylens) tracks your apps and browser activity natively and groups it into meaningful work sessions. Instead of "Chrome: 6 hours," you see what actually happened.
 
-I thought this was fine — until I started paying attention to the gaps.
+![Daylens timeline view for March 30 — Tax Filing & Email 2h 56m, Mixed Development 3h 38m, X/YouTube/Email 1h, Mixed Work 40m](/writing/51/timeline.png)
 
-## The missing hours
+That's a real day. Named blocks, actual times, actual activities. You can look back at any day and reconstruct what you did — not because you wrote it down, but because Daylens was watching.
 
-I started noticing that I'd sit down at 9 AM, "work" until 6 PM, and feel like I got maybe 3 hours of real work done. Where did the other 6 go? I genuinely didn't know. My calendar showed meetings. My git log showed commits. But the space between those things was a complete mystery.
+![Daylens stats dashboard — 14h 1m active, 62% focus score, recent sessions across Dia, Codex, cmux, ChatGPT Atlas](/writing/51/stats.png)
 
-What was I doing at 2:37 PM on Tuesday? No idea. Was I deep in something useful or three links deep in a Wikipedia spiral? Couldn't tell you.
+Everything stays on your machine by default. No account required. Fully open source, so you can read every line of code if you want to verify that.
 
-So I went looking for a tool that could answer that honestly. I couldn't find it. Every option was either too shallow (just app names), too invasive (screenshots every 5 minutes uploaded to some server), or too corporate (built for managers to monitor employees, not for people to understand themselves).
+## The part I think matters more
 
-After enough time wasted looking, I decided to build it.
+AI assistants are getting genuinely capable. But they're blind. They don't know what you're working on unless you tell them, and telling them creates friction. Friction means you won't do it consistently, and inconsistency means the AI never builds a real picture of how you work.
 
-## What the actual story looks like
+The missing piece isn't a better chatbot. It's a passive layer that captures your context automatically and makes it available. Not to spy on you — to give the AI the eyes it needs to actually help you.
 
-Here's what Daylens shows for a real day — not app names, but what actually happened:
+![Daylens AI insights chat — asking about work patterns, getting a response with focus scores and a weekly breakdown table](/writing/51/insights.png)
 
-![Daylens Timeline view for Monday Mar 30 — showing Tax Filing & Email Planning, Mixed Development Work, YouTube & Email, and Mixed Work sessions as labeled blocks](/writing/51-you-have-no-idea-where-your-time-goes/daylens-timeline.png)
+That's what I want Daylens to grow into. The tracking is step one. The insights are step two. What comes after — the automations, the proactive help, the assistant that already knows what you're stuck on — that's where this gets genuinely useful.
 
-"Tax Filing, Email & Planning — 2h 55m." "Mixed Development and Research Work — 3h 28m." "X.com, YouTube, and Email — 6m."
-
-Not "you used Chrome for 2 hours." The actual story of what you were doing and when.
-
-That's a completely different picture. And for most people, the first time they see this level of detail about their own day, it's surprising.
-
-## The stats tell an even clearer story
-
-Once you have the timeline, you start seeing patterns. Your focus score. Where your time actually went by category. What your most active sessions were. And an AI that looks at all of it and tells you what it means.
-
-![Daylens Stats view — 14h 1m active, 62% focus score, time allocation by category, recent sessions, and an intelligence insight panel showing "Steady Progress"](/writing/51-you-have-no-idea-where-your-time-goes/daylens-stats.png)
-
-That "Steady Progress" insight on the right? It's not generic advice. It's generated from your actual activity — Daylens saw how you moved through apps that day, calculated your focus score, and wrote something specific to you.
-
-## Ask it anything
-
-The more useful part is asking questions. This is where it stops feeling like a tracking tool and starts feeling like something else.
-
-![Daylens AI Insights chat — answering "What was I working on between 5 PM and 7 PM yesterday?" and showing a focus pattern table with per-day browsing vs development breakdown](/writing/51-you-have-no-idea-where-your-time-goes/daylens-insights-chat.png)
-
-"What was I working on between 5 PM and 7 PM yesterday?" It answers from your actual data.
-
-"What are my patterns? Where am I most focused?" It builds a table from your week — which days you worked, what you were doing, what your focus score was — and tells you what it sees.
-
-This is where activity data becomes genuinely useful. Not just historical — it starts showing you things about how you work that you couldn't have known otherwise.
-
-## The bigger unlock: AI that already knows
-
-Here's the thing most people miss. Right now when you open ChatGPT or Claude, you have to explain everything from scratch. "I'm working on a React app, been stuck on this auth bug for two hours, here's what I tried..." You're the bottleneck. You manually carry context from your brain to the AI every single time.
-
-But what if the AI already knew?
-
-What if it could see you'd been in VS Code editing \\\`auth.ts\\\` for 45 minutes, searched Stack Overflow for "JWT refresh token expiry" three times, and just opened the library's GitHub issues page? It wouldn't need you to explain anything. It could say: "Looks like you're hitting the known issue with token refresh in v2.3. Here's the fix."
-
-That's not science fiction. That's just activity data plus a language model. The missing piece is a passive layer that captures your work context automatically — not to spy on you, but to give AI the eyes it needs to actually be useful.
-
-Models are getting extremely capable. But they're blind. They don't know what you're doing unless you tell them, and telling them creates friction. Friction you won't maintain consistently. And inconsistency means the AI never builds a real picture of how you work.
-
-## What I built
-
-Daylens is my answer to this. It tracks your apps and browser activity natively on your machine — no browser extensions, no server-side screenshots. It reads from 12+ browsers, groups activity into meaningful work sessions, and uses AI to generate insights grounded in what you actually did.
-
-![Before and After — Apple Screen Time shows 13h 33m with just app names. Daylens shows 14h 1m with focus scores, categorized sessions, and AI insights.](/writing/51-you-have-no-idea-where-your-time-goes/before-after.png)
-
-Everything stays on your device by default. No account required. Fully open source — you can read every line of code and verify what it does.
-
-It's not trying to be a productivity tool that judges you. It's a tool that shows you what's actually happening so you can decide what to do about it. Built because I needed it, and figured other people might too.
-
-The tracking is step one. The insights are step two. What comes after that — the automations, the proactive help, the real-time assistance — that's where it gets genuinely exciting.
+It's free, open source, and I'd love to hear from anyone who's thought about this problem.
 
 [GitHub](https://github.com/irachrist1/daylens) | [Try Daylens](https://christian-tonny.dev/daylens)
 
@@ -652,9 +604,9 @@ CT`,
     coverImage: DEFAULT_COVER_IMAGE,
     seo: {
       metaTitle:
-        "13 Hours. What Were You Actually Doing? (Issue #51)",
+        "You Have No Idea Where Your Time Goes (Issue #51)",
       metaDescription:
-        "Screen Time says Chrome was open for 6 hours. But what were you doing? I built Daylens — open-source, privacy-first time tracking that shows you the real story of your day.",
+        "The average knowledge worker switches apps 1,200 times a day. Most have no idea where their time goes. What if you did? Introducing Daylens: open-source, privacy-first time tracking.",
       ogImage: DEFAULT_COVER_IMAGE,
       twitterImage: DEFAULT_COVER_IMAGE,
       canonicalPath: "/writing/51-you-have-no-idea-where-your-time-goes",
