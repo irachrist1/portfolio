@@ -50,5 +50,15 @@
       "destination": "/",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/daylens",
+      "destination": "https://daylens-web.vercel.app/daylens"
+    },
+    {
+      "source": "/daylens/:path*",
+      "destination": "https://daylens-web.vercel.app/daylens/:path*"
+    }
   ]
 }

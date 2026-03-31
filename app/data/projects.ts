@@ -12,6 +12,10 @@ export type Project = {
   date?: string;
   links?: ProjectLink[];
   body: string;
+  screenshots?: string[];
+  tagline?: string;
+  appUrl?: string;
+  platforms?: string[];
 };
 
 export type ProjectCategory = {
@@ -215,36 +219,60 @@ The site now reflects weekly momentum automatically while preserving curated mil
     slug: "daylens",
     title: "Daylens",
     description:
-      "Local-first AI time tracking for Mac and Windows, plus a mobile-first web companion — see where your day goes, block distractions, and chat with your activity data.",
+      "Open-source, privacy-first time tracking for Mac and Windows. See exactly where your day goes, block distractions, and chat with your activity data using AI.",
+    tagline: "Know where your time actually goes.",
     category: "personal",
     date: "2026-03-26",
+    appUrl: "https://christian-tonny.dev/daylens",
+    platforms: ["macOS", "Windows", "Web"],
+    screenshots: [
+      "/projects/daylens/today-view.png",
+      "/projects/daylens/timeline-view.png",
+      "/projects/daylens/insights-chat.png",
+      "/projects/daylens/focus-session.png",
+    ],
     links: [
+      { label: "Open App", href: "https://christian-tonny.dev/daylens" },
       { label: "Mac — GitHub", href: "https://github.com/irachrist1/daylens" },
       { label: "Windows — GitHub", href: "https://github.com/irachrist1/daylens-windows" },
       { label: "Web — GitHub", href: "https://github.com/irachrist1/daylens-web" },
     ],
-    body: `## Overview
+    body: `## What is Daylens?
 
-Daylens is a family of apps that captures how you spend your time on desktop and in the browser, then helps you act on it with AI — without sending your raw activity to a cloud you do not control.
+Daylens is a family of apps that captures how you spend your time on desktop and in the browser, then helps you act on it with AI. Everything stays on your device by default. No account required. Fully open source.
 
-## Surface Area
+Most time trackers tell you "you had Chrome open for 3 hours." Daylens tells you what you were actually doing in Chrome, which sites you visited, how often you switched between tasks, and when your focus blocks happened.
+
+## How it works
+
+1. **Tracks automatically** — Daylens runs in your menubar and watches which apps and browser tabs are in focus. No manual timers, no browser extensions needed.
+2. **Groups into work blocks** — Raw app switches get grouped into meaningful work sessions. Instead of 200 individual events, you see "worked on the Q3 report from 5 PM to 7 PM."
+3. **AI-powered insights** — Ask questions like "What was I working on at 3 PM?" or "What was my biggest distraction this week?" and get answers grounded in your actual activity data.
+4. **Focus sessions** — Built-in Pomodoro timer with focus scoring. See how your focus compares across days.
+
+## Key features
+
+- **12+ browsers supported natively** — Safari, Chrome, Arc, Brave, Edge, Firefox, Zen, Opera, Vivaldi, and more. No extensions needed.
+- **Daily and weekly reports** — AI-generated summaries with evidence tables showing exactly where time went.
+- **Focus scoring** — Measures your daily focus percentage based on actual app-switching patterns.
+- **Privacy controls** — All data stays local. Optional web sync only if you choose to enable it.
+- **macOS widgets** — Quick stats on your lock screen and menu bar.
+
+## Surface area
 
 - **macOS** — Swift-native menubar app with activity capture, focus blocks, and AI chat over your timeline.
-- **Windows** — Tauri-based desktop build with the same local-first philosophy and release automation.
+- **Windows** — Tauri-based desktop build with the same local-first philosophy.
 - **Web** — Mobile-first dashboard for reviewing sessions and trends when you are away from the desk.
 
-## What Shipped Recently
+## Tech stack
 
-- Patch releases focused on **auto-update reliability** (quarantine cleanup, download URL resolution) and **fullscreen / playback** edge cases in tracking.
-- Windows channel **1.0.x** with bundled font polish and release workflow hardening.
-
-## Tech Stack
-
-- **macOS:** Swift, native app lifecycle
+- **macOS:** Swift 5.9, SwiftUI, GRDB (SQLite), Accessibility API
 - **Windows:** Tauri, Rust-backed desktop shell
-- **Web:** Companion UI aligned with the same product story
+- **Web:** Next.js, Convex, React, Tailwind
 
-## Why It Matters
+## Why I built this
+
+I kept finishing work days feeling like I only got 3 hours of real work done out of 9. But I couldn't tell where the other 6 hours went. Screen Time wasn't helpful. Nothing showed me the real story. So I built Daylens to answer that question for myself, and figured others might want the same thing.
 
 Time is the one resource you cannot replenish. Daylens turns passive logging into something you can query, reason about, and improve — without trading privacy for insight.`
   },
@@ -255,6 +283,7 @@ Time is the one resource you cannot replenish. Daylens turns passive logging int
       "AI-assisted blogging platform with cross-platform content syndication — Node.js, Express 5, TypeScript.",
     category: "personal",
     date: "2026-03-26",
+    platforms: ["Web"],
     links: [
       { label: "GitHub", href: "https://github.com/irachrist1/sync-blogs" },
     ],

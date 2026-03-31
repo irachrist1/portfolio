@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { Github } from "lucide-react";
+import { Github, ExternalLink, Monitor } from "lucide-react";
 import type { Project, ProjectCategory } from "@/app/data/projects";
 
 type Props = {
@@ -116,8 +116,60 @@ function ProjectsFilterInner({
                 const weeklyCommits =
                   weeklyCommitCounts[project.slug] ?? 0;
                 const githubUrl = project.links?.find(
-                  (l) => l.label === "GitHub"
+                  (l) => l.label === "GitHub" || l.href.includes("github.com")
                 )?.href;
+                const isFeatured = !!project.appUrl;
+
+                if (isFeatured) {
+                  return (
+                    <Link
+                      key={project.slug}
+                      href={`/projects/${project.slug}`}
+                      className="group block p-4 rounded-xl border border-zinc-800 hover:border-zinc-600 bg-zinc-900/50 hover:bg-zinc-900 transition-all mb-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="text-base font-semibold text-zinc-100 group-hover:text-white transition-colors">
+                              {project.title}
+                            </span>
+                            {weeklyCommits > 0 && (
+                              <span className="text-[10px] text-emerald-500 font-medium px-1.5 py-0.5 rounded-full bg-emerald-500/10">
+                                {weeklyCommits} commits
+                              </span>
+                            )}
+                          </div>
+                          {project.tagline && (
+                            <p className="text-sm text-zinc-400 mt-0.5">
+                              {project.tagline}
+                            </p>
+                          )}
+                          <p className="text-xs text-zinc-500 mt-1.5 line-clamp-2">
+                            {project.description}
+                          </p>
+                        </div>
+                        <ExternalLink className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 flex-shrink-0 mt-1" />
+                      </div>
+                      <div className="mt-3 flex items-center gap-3">
+                        {project.platforms?.map((p) => (
+                          <span
+                            key={p}
+                            className="inline-flex items-center gap-1 text-[10px] text-zinc-500"
+                          >
+                            <Monitor className="w-2.5 h-2.5" />
+                            {p}
+                          </span>
+                        ))}
+                        {githubUrl && (
+                          <span className="inline-flex items-center gap-1 text-[10px] text-zinc-500">
+                            <Github className="w-2.5 h-2.5" />
+                            Open Source
+                          </span>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                }
 
                 return (
                   <Link

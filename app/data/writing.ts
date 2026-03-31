@@ -549,6 +549,123 @@ CT`,
       applyGoal: "Map the article to a practical 5-day action plan I can execute this week.",
     },
   },
+  {
+    id: "51",
+    slug: "51-you-have-no-idea-where-your-time-goes",
+    title: "You Have No Idea Where Your Time Goes",
+    subtitle: "Issue #51",
+    previewText:
+      "The average knowledge worker switches between apps and tabs over 1,200 times per day. Most people have no idea where their time actually goes. What if you did?",
+    contentMarkdown: `# You Have No Idea Where Your Time Goes
+
+Here's something that might surprise you. The average knowledge worker switches between apps and browser tabs **over 1,200 times per day**. Not per week. Per day.
+
+Most of those switches are tiny. You're in VS Code, you hop to Slack, you glance at a browser tab, you go back. Each one takes maybe 2 seconds. But the mental cost of re-orienting yourself? That's where the real time goes. Studies suggest it can take up to 23 minutes to fully regain deep focus after a meaningful interruption.
+
+And here's the thing: you don't notice it happening. Nobody sits down and thinks "today I will context-switch 1,200 times." It just happens. Your brain fills in the gaps and at the end of the day you think "I was busy" but you can't really say what you did. Not precisely.
+
+## The Screen Time Problem
+
+Apple has Screen Time. Windows has Digital Wellbeing. They'll tell you things like "you spent 3 hours in Chrome today." Great. But what were you doing in Chrome? Were you deep in documentation for a bug you were fixing, or were you watching YouTube tutorials that slowly drifted into recommended videos about how planes are made?
+
+These tools give you a vague shape of your day. A silhouette. They tell you which apps were open, not what you were actually doing in them.
+
+And honestly, for a long time I thought that was enough. Until I started paying attention to the gaps.
+
+## The Gaps
+
+I started noticing that I'd sit down at 9 AM, "work" until 6 PM, and feel like I only got maybe 3 hours of real work done. Where did the other 6 hours go? I genuinely didn't know. And I couldn't reconstruct it. My calendar showed meetings. My git log showed commits. But the space between those things was a complete mystery.
+
+What was I doing at 2:37 PM on Tuesday? No idea. Was I researching something useful or was I three links deep into a Wikipedia rabbit hole? Couldn't tell you.
+
+This bothered me enough that I started building something.
+
+## What If You Actually Knew?
+
+Imagine you could look at your day and see: "From 5 PM to 7 PM on Wednesday, I worked on the Q3 report. I had VS Code and three Chrome tabs open: Google Docs, the analytics dashboard, and Stack Overflow. I switched between them 47 times but stayed mostly focused."
+
+Not "you used Chrome for 2 hours." The actual story of what you did.
+
+Or: "Between 1 PM and 3 PM, you bounced between Slack, Twitter, and YouTube 89 times. You opened VS Code 6 times but never stayed longer than 2 minutes."
+
+That's a very different picture. And it's the kind of picture that most people have never seen of their own work habits.
+
+## OK So You Have the Data. Now What?
+
+Here's where it gets interesting. Because the data itself is useful, sure. Seeing where your time actually goes has value on its own. A lot of people are genuinely shocked when they first see it.
+
+But the real unlock is what happens when you feed this data into an AI.
+
+Think about it. Right now when you use ChatGPT or Claude, you have to explain everything from scratch. "I'm working on a React app, I've been stuck on this auth bug for two hours, here's what I've tried..." You're the bottleneck. You have to manually transfer context from your brain to the AI.
+
+But what if the AI already knew?
+
+What if it could see that you've been in VS Code editing \\\`auth.ts\\\` for the last 45 minutes, you've searched Stack Overflow for "JWT refresh token expiry" three times, and you just opened the library's GitHub issues page? It wouldn't need you to explain anything. It could just say: "Hey, looks like you're hitting the known issue with token refresh in v2.3. Here's the workaround."
+
+That's not science fiction. That's just activity data plus an LLM.
+
+## Some Concrete Examples
+
+**For developers:** Your tracking data shows you spend 40% of your coding time switching between documentation and your editor. An AI assistant notices this pattern and starts pre-fetching relevant docs based on the file you're editing. Or it notices you always search for the same CSS flexbox properties and just keeps a cheat sheet ready.
+
+**For writers:** You've been in Google Docs for 3 hours but your word count only went up by 200 words. The AI can tell you're stuck and offer to help brainstorm, or suggest taking a break because your editing pattern shows you're deleting more than you're writing.
+
+**For anyone:** "Last week you spent 11 hours in meetings and 4 hours recovering from them (based on your post-meeting app-switching patterns). That's 15 hours, nearly half your work week, on synchronous communication." That's the kind of insight that changes how you plan your week.
+
+**For focus:** The data shows your deepest focus blocks happen between 10 AM and 12 PM. So you start protecting those hours. No meetings, no Slack. Your AI assistant learns this and starts batching non-urgent notifications for after noon.
+
+## The Real Vision
+
+The way I see it, the best AI assistant wouldn't be one you have to talk to. It would be one that quietly watches how you work, understands your patterns, and helps at the right moment without you asking.
+
+Sort of like a really good coworker who's been sitting next to you for years. They know your habits. They know when you're in the zone and shouldn't be interrupted. They know when you're stuck and might want a nudge.
+
+We're not there yet. But the foundation is this: you need the data first. You need accurate, detailed, honest data about how you actually spend your time on your computer. Not the story you tell yourself. The real thing.
+
+## Why I Built Daylens
+
+I couldn't find a tool that did this well. The existing options were either too shallow (just app names and durations), too invasive (screenshots every 5 minutes sent to some server), or too corporate (designed for managers to monitor employees, not for individuals to understand themselves).
+
+So I built [Daylens](https://christian-tonny.dev/daylens). It tracks your apps and browser activity natively on your machine. No browser extensions needed. It reads from 12+ browsers, groups your activity into meaningful work blocks, and uses AI to generate actual insights grounded in what you did, not generic productivity advice.
+
+Everything stays on your device by default. There's no account required, no data leaving your machine unless you explicitly choose to sync it. And it's fully open source so you can read every line of code and verify that for yourself.
+
+It's not trying to be a corporate surveillance tool. It's a personal tool. Built because I wanted to understand my own habits, and I figured other people might want that too.
+
+## The Bigger Picture
+
+I think we're at an interesting point with AI. The models are getting really capable. But they're blind. They don't know what you're doing unless you tell them. And telling them is friction. Friction means you won't do it consistently. And inconsistency means the AI can never build a real picture of how you work.
+
+The missing piece is a passive, privacy-respecting layer that captures your work context automatically. Not to spy on you. To help you. To give AI the eyes it needs to actually be useful in your daily workflow.
+
+That's what Daylens is trying to be. A foundation. The tracking is step one. The insights are step two. And what comes after, the automations, the proactive help, the real-time assistance, that's where this gets genuinely exciting.
+
+If you're curious, Daylens is free and open source. Check it out, poke around the code, and let me know what you think.
+
+[GitHub](https://github.com/irachrist1/daylens) | [Try Daylens](https://christian-tonny.dev/daylens)
+
+CT`,
+    published: true,
+    publishedAt: "2026-03-30T12:00:00.000Z",
+    scheduledOrder: 4,
+    tags: ["Daylens", "Time Tracking", "AI Productivity", "Open Source", "Issue #51"],
+    coverImage: DEFAULT_COVER_IMAGE,
+    seo: {
+      metaTitle:
+        "You Have No Idea Where Your Time Goes (Issue #51)",
+      metaDescription:
+        "The average knowledge worker switches apps 1,200 times a day. Most have no idea where their time goes. What if you did? Introducing Daylens: open-source, privacy-first time tracking.",
+      ogImage: DEFAULT_COVER_IMAGE,
+      twitterImage: DEFAULT_COVER_IMAGE,
+      canonicalPath: "/writing/51-you-have-no-idea-where-your-time-goes",
+    },
+    readWithAI: {
+      summaryGoal:
+        "Summarize the core argument for why passive activity tracking is the missing foundation for useful AI assistants.",
+      applyGoal:
+        "Help me evaluate my own time-tracking habits and identify where Daylens could provide the most value.",
+    },
+  },
 ];
 
 function stripMarkdown(markdown: string): string {
