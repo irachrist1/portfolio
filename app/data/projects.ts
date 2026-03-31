@@ -182,6 +182,50 @@ This combination of project-based and course-based learning helps solidify conce
 
   // ===== PERSONAL APPS =====
   {
+    slug: "spcs",
+    title: "SPCS Landing",
+    description:
+      "Premium landing page for SPCS — an IT services, technology consulting, and smart renovation firm in Kigali. Built with a bespoke dark/light design system, parallax hero, glassmorphism elements, and scroll-reveal animations.",
+    tagline: "Technology that makes spaces work better.",
+    category: "personal",
+    date: "2026-03-30",
+    platforms: ["Web"],
+    links: [
+      { label: "GitHub", href: "https://github.com/irachrist1/spcs-landing" },
+      { label: "Live Site", href: "https://spcs-landing-kext649s9-irachrist1s-projects.vercel.app" },
+    ],
+    body: `## Overview
+
+SPCS is a Kigali-based firm combining IT infrastructure, technology consulting, and smart renovation under one roof. This project is their public-facing landing page — designed and built from scratch to match the quality of their work.
+
+## Design System
+
+The site uses a fully custom design system with no third-party component libraries:
+
+- **Palette** — Warm dark charcoal (\`#141210\`) for dark sections, bone white (\`#fcf9f8\`) for light sections, amber (\`#d4822a\`) as the single accent
+- **Typography** — \`clamp()\`-based display scale (xl, lg, md, headline, label) with optical sizing and tight letter-spacing
+- **Animations** — Staggered hero load sequence, IntersectionObserver scroll reveals, parallax hero image, marquee proof strip
+- **Glassmorphism** — Disciplined use: nav dropdown (88% opacity dark glass + blur), floating stat card over images (5% white glass), nowhere else
+- **Custom cursor** — 6px amber dot + lagged ring with lerp 0.12, expands on interactive elements
+
+## Page Structure
+
+Ten sections in deliberate dark/light alternation: hero → proof strip → feature pillars → signature differentiator → outcomes metrics → use case scenarios → process steps → closing CTA → footer.
+
+## Key Sections
+
+- **Hero** — Full-viewport, full-bleed architectural photography at 55% opacity with bottom-aligned text and parallax scroll
+- **Feature Pillars** — Three service areas (IT, Consulting, Smart Renovation) as alternating image/text splits with a cinematic 21:9 final panel
+- **Signature Section** — Dark section with grid overlay, two-column layout, floating glass stat card (same pattern used in SPCS-derived design system)
+- **Metrics** — 4-column divider grid with amber accent numbers
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS + bespoke CSS design system
+- **Deployment:** Vercel`,
+  },
+  {
     slug: "portfolio",
     title: "Portfolio",
     description: "This website. Built as a living project hub with weekly Git activity, changelog timeline, and structured project narratives.",
@@ -219,10 +263,10 @@ The site now reflects weekly momentum automatically while preserving curated mil
     slug: "daylens",
     title: "Daylens",
     description:
-      "Open-source, privacy-first time tracking for Mac and Windows. See exactly where your day goes, block distractions, and chat with your activity data using AI.",
+      "Privacy-first activity tracker for Mac and Windows. See exactly where your day goes — every app, every site, grouped into work blocks — then chat with your data using AI.",
     tagline: "Know where your time actually goes.",
     category: "personal",
-    date: "2026-03-26",
+    date: "2026-03-30",
     appUrl: "https://christian-tonny.dev/daylens",
     platforms: ["macOS", "Windows", "Web"],
     screenshots: [
