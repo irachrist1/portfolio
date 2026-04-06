@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-30T14:56:51.648Z",
+  "generatedAt": "2026-04-06T14:40:08.226Z",
   "windowDays": 7,
   "totals": {
-    "commits": 7,
+    "commits": 23,
     "activeProjects": 2
   },
   "projects": [
@@ -10,27 +10,27 @@
       "projectSlug": "daylens",
       "projectTitle": "Daylens",
       "githubRepo": "irachrist1/daylens",
-      "commitCount": 6,
-      "lastCommitAt": "2026-03-27T16:46:22Z",
-      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/ecb691ecac6082666c9ded4ea74a6c5ea5e2ff5b",
+      "commitCount": 13,
+      "lastCommitAt": "2026-04-02T23:52:30Z",
+      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/8c7f0fd78e23b8409d418ed837a9e0b1ef70796b",
       "recentCommits": [
         {
-          "sha": "ecb691e",
-          "message": "Fix usage totals and add CI workflow",
-          "url": "https://github.com/irachrist1/daylens/commit/ecb691ecac6082666c9ded4ea74a6c5ea5e2ff5b",
-          "committedAt": "2026-03-27T16:46:22Z"
+          "sha": "8c7f0fd",
+          "message": "release: prep v1.0.28",
+          "url": "https://github.com/irachrist1/daylens/commit/8c7f0fd78e23b8409d418ed837a9e0b1ef70796b",
+          "committedAt": "2026-04-02T23:52:30Z"
         },
         {
-          "sha": "f64fcec",
-          "message": "feat: add focus planner and prep v1.0.21 release",
-          "url": "https://github.com/irachrist1/daylens/commit/f64fcec2f5c74318a34895ca8075d18006dab0ee",
-          "committedAt": "2026-03-27T13:27:37Z"
+          "sha": "766c1a4",
+          "message": "release: prep v1.0.27",
+          "url": "https://github.com/irachrist1/daylens/commit/766c1a47c0e21766cdda50b99acc1aa099cedf77",
+          "committedAt": "2026-04-02T19:34:51Z"
         },
         {
-          "sha": "3639d79",
-          "message": "chore: release v1.0.20",
-          "url": "https://github.com/irachrist1/daylens/commit/3639d798babe8611cf69e2dbef0929432e2855a4",
-          "committedAt": "2026-03-27T08:27:00Z"
+          "sha": "0de98d6",
+          "message": "test: make update-check environment assertions deterministic",
+          "url": "https://github.com/irachrist1/daylens/commit/0de98d6a22e1d4059a754a78f20bacf2c5bc82f6",
+          "committedAt": "2026-04-02T10:48:56Z"
         }
       ],
       "error": null
@@ -39,15 +39,27 @@
       "projectSlug": "portfolio",
       "projectTitle": "Portfolio",
       "githubRepo": "irachrist1/portfolio",
-      "commitCount": 1,
-      "lastCommitAt": "2026-03-26T17:59:24Z",
-      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/1984e51112bb3a369e7d78ae6c10e18e6075ddf6",
+      "commitCount": 10,
+      "lastCommitAt": "2026-03-31T14:18:56Z",
+      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/02789cc1bdf600f59e788cbdf1a4b99b6c1d9cac",
       "recentCommits": [
         {
-          "sha": "1984e51",
-          "message": "feat: site cleanup, projects/changelog refresh, hero image, deploy prep",
-          "url": "https://github.com/irachrist1/portfolio/commit/1984e51112bb3a369e7d78ae6c10e18e6075ddf6",
-          "committedAt": "2026-03-26T17:59:24Z"
+          "sha": "02789cc",
+          "message": "Add SPCS project, wire Daylens screenshots, update project data",
+          "url": "https://github.com/irachrist1/portfolio/commit/02789cc1bdf600f59e788cbdf1a4b99b6c1d9cac",
+          "committedAt": "2026-03-31T14:18:56Z"
+        },
+        {
+          "sha": "39c5bd1",
+          "message": "Fix daylens proxy URL",
+          "url": "https://github.com/irachrist1/portfolio/commit/39c5bd149a76895961caacce93a91c4de842e2b9",
+          "committedAt": "2026-03-31T13:31:21Z"
+        },
+        {
+          "sha": "250d1f0",
+          "message": "Add Daylens announcement tour (Issue 52), update Issue 51 essay",
+          "url": "https://github.com/irachrist1/portfolio/commit/250d1f0782097257578884b37179b8cb9080a4a6",
+          "committedAt": "2026-03-31T10:00:57Z"
         }
       ],
       "error": null
