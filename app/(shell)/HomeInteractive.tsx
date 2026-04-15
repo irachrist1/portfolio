@@ -177,6 +177,7 @@ function CardStack({
               <motion.div
                 key={itemIdx}
                 className="absolute inset-x-0 top-0 origin-top"
+                style={{ pointerEvents: depth === 0 ? "auto" : "none" }}
                 initial={
                   depth === VISIBLE - 1
                     ? { scale: props.scale - 0.04, y: props.y + 8, opacity: 0 }
