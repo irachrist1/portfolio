@@ -2,12 +2,38 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Sun, Moon, Monitor } from "lucide-react";
 
-export function ThemeToggle() {
+export function ThemeToggle({ compact }: { compact?: boolean } = {}) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
+
+  if (compact) {
+    if (!mounted) return <div className="w-8 h-8" />;
+
+    const nextTheme =
+      theme === "dark" ? "light" : theme === "light" ? "system" : "dark";
+    const icon =
+      theme === "dark" ? (
+        <Moon className="w-4 h-4" />
+      ) : theme === "light" ? (
+        <Sun className="w-4 h-4" />
+      ) : (
+        <Monitor className="w-4 h-4" />
+      );
+
+    return (
+      <button
+        onClick={() => setTheme(nextTheme)}
+        className="w-8 h-8 flex items-center justify-center rounded-lg text-[#86868b] dark:text-zinc-500 hover:text-[#1d1d1f] dark:hover:text-zinc-300 hover:bg-[#f5f5f7] dark:hover:bg-zinc-800 transition-colors"
+        aria-label="Toggle theme"
+      >
+        {icon}
+      </button>
+    );
+  }
 
   const options = [
     { value: "light", label: "Light" },

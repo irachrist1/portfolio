@@ -1,60 +1,88 @@
-import { Card } from "../../components/card";
 import Link from "next/link";
 
 export const dynamic = "force-static";
 
 export default function AboutPage() {
   return (
-    <div className="px-6 py-10 mx-auto space-y-16 max-w-4xl lg:px-8">
-      <div className="max-w-3xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl mb-8">
-          About Me
-        </h1>
+    <div className="px-6 py-10 mx-auto max-w-2xl lg:px-8">
+      <h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-10">
+        About
+      </h1>
 
-        <div className="space-y-6 text-zinc-300 leading-relaxed">
-          <p>
-            I've long been fascinated by how AI can be used to solve real business problems by changing how you use tools and which strategies and frameworks you adopt.
-          </p>
-          <p>
-            That's what I'm trying to do at <span className="text-zinc-100 font-semibold">Andersen in Rwanda</span>, where I'm building out our AI Advisory practice. We help companies figure out if they're ready for AI, then build the actual frameworks and tools to help them get there faster - everything from automating research to creating market intelligence systems.
-          </p>
-          <p>
-            In my free time, I'm trying to solve the education problem around how schools, mentors and students approach mentoring. Career choice is something that every student and graduate faces and many wonder how do I choose a career that is both fulfilling and societally transformational that will truly make an impact in my lifetime and I think it's something worth spending time on to try and help students make such choices.
-          </p>
-        </div>
+      <div className="space-y-5 text-[15px] text-zinc-400 leading-relaxed mb-12">
+        <p>
+          Software engineer and writer based in Kigali, Rwanda. At{" "}
+          <span className="text-zinc-200">Andersen Rwanda</span>, I build AI
+          automation tools for research, compliance, and market analysis — the
+          kind of work that turns a business process into something that runs
+          itself. I care about things that ship and things that work.
+        </p>
+        <p>
+          On the side, I&apos;m building{" "}
+          <Link
+            href="/projects/daylens"
+            className="text-zinc-200 hover:text-zinc-100 underline underline-offset-2 decoration-zinc-700 hover:decoration-zinc-500 transition-colors"
+          >
+            Daylens
+          </Link>{" "}
+          — a local-first time tracking app for Mac and Windows that uses AI to
+          make sense of where your hours actually go. I also write a newsletter
+          about AI and building products. Not theory. Practical tools, real
+          workflows, once a week.
+        </p>
       </div>
 
-      <Card>
-        <div className="p-8 max-w-3xl">
-          <h2 className="text-2xl font-bold text-zinc-100 mb-6">Currently Working On</h2>
-          <div className="space-y-4 text-zinc-300">
-            <div>
-              <p className="font-semibold text-zinc-200 mb-2">At Andersen Rwanda:</p>
-              <ul className="space-y-2 text-sm text-zinc-400">
-                <li>• AI Implementation for businesses and Technology advisory</li>
-                <li>• Internal development of AI agents</li>
-                <li>• Building automation tools for faster citable research, compliance, and market analysis</li>
-                <li>• ERP management with Odoo and Microsoft 365 administration</li>
-              </ul>
-            </div>
-            <div className="pt-4">
-              <p className="font-semibold text-zinc-200 mb-2">Personal Projects:</p>
-              <ul className="space-y-2 text-sm text-zinc-400">
-                <li>• Spark - Career mentoring tools to help students make better career choices</li>
-                <li>• Rwanda's first AI-powered government intelligence platform (NISR Hackathon)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </Card>
+      {/* Current — plain lines, no bullets, no headers */}
+      <div className="space-y-2 text-sm text-zinc-500 mb-16">
+        <p>
+          Building{" "}
+          <Link
+            href="/projects/daylens"
+            className="text-zinc-400 hover:text-zinc-200 transition-colors"
+          >
+            Daylens
+          </Link>{" "}
+          — v1 on Mac and Windows, web companion live
+        </p>
+        <p>
+          Building{" "}
+          <Link
+            href="/projects/sync-blogs"
+            className="text-zinc-400 hover:text-zinc-200 transition-colors"
+          >
+            Sync Blogs
+          </Link>{" "}
+          — AI writing studio for cross-platform syndication
+        </p>
+        <p>AI automation at Andersen Rwanda — research, compliance, market intel</p>
+        <p>
+          Writing{" "}
+          <Link
+            href="/writing"
+            className="text-zinc-400 hover:text-zinc-200 transition-colors"
+          >
+            Rwanda&apos;s Tech Insider
+          </Link>
+          , weekly
+        </p>
+      </div>
 
-      <div className="pt-8">
-        <Link
-          href="/contact"
-          className="inline-block px-8 py-4 text-base font-medium text-zinc-900 bg-zinc-100 rounded-lg hover:bg-white transition-colors duration-200"
+      {/* Contact — plain text links */}
+      <div className="space-y-1 text-sm">
+        <a
+          href="mailto:ctonny111@gmail.com"
+          className="block text-zinc-500 hover:text-zinc-200 transition-colors"
         >
-          Get In Touch
-        </Link>
+          ctonny111@gmail.com
+        </a>
+        <a
+          href="https://linkedin.com/in/irachrist1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block text-zinc-500 hover:text-zinc-200 transition-colors"
+        >
+          linkedin.com/in/irachrist1
+        </a>
       </div>
     </div>
   );

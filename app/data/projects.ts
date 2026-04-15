@@ -229,6 +229,7 @@ Ten sections in deliberate dark/light alternation: hero → proof strip → feat
     slug: "portfolio",
     title: "Portfolio",
     description: "This website. Built as a living project hub with weekly Git activity, changelog timeline, and structured project narratives.",
+    tagline: "A living portfolio that tracks its own progress.",
     category: "personal",
     externalUrl: "https://christian-tonny.vercel.app",
     date: "2026-02-27",
@@ -325,6 +326,7 @@ Time is the one resource you cannot replenish. Daylens turns passive logging int
     title: "Sync Blogs",
     description:
       "AI-assisted blogging platform with cross-platform content syndication — Node.js, Express 5, TypeScript.",
+    tagline: "Write once, publish everywhere.",
     category: "personal",
     date: "2026-03-26",
     platforms: ["Web"],
@@ -356,6 +358,7 @@ A **v2 rebuild** landed in March 2026 with a stronger editor surface and auth ha
     title: "OCR Extractor",
     description:
       "Collaborator project — document OCR pipeline with hardened tests and a refactored frontend action layer.",
+    tagline: "Turn any document into structured data.",
     category: "personal",
     date: "2026-03-26",
     links: [
@@ -379,6 +382,7 @@ Collaborate on architecture, tests, and frontend integration while keeping the p
     slug: "mnotes",
     title: "MNotes",
     description: "Personal AI assistant dashboard for entrepreneurs. Track income streams, ideas, mentorship, and get AI-powered business insights, all from one place.",
+    tagline: "Your business brain, always on.",
     category: "personal",
     externalUrl: "https://mnotes-omega.vercel.app/",
     date: "2026-02-12",
@@ -432,6 +436,7 @@ Dashboard 85% complete. Landing page 95%. AI system 70% (server-side, persistent
     slug: "momo-p",
     title: "MoMo Analytics",
     description: "MTN Mobile Money SMS transaction analysis dashboard with smart categorization, filtering, and data visualization.",
+    tagline: "See exactly where every franc went.",
     category: "personal",
     date: "2025-11-15",
     links: [
@@ -464,6 +469,7 @@ Successfully processes and categorizes 1600+ transaction messages with high accu
     slug: "beacon-skyway",
     title: "Beacon Skyway",
     description: "Comprehensive ground handling operations management system for African aviation with real-time tracking and analytics.",
+    tagline: "Ground handling for African aviation, simplified.",
     category: "personal",
     externalUrl: "https://beacon-skyway.vercel.app/",
     date: "2025-11-20",
@@ -499,6 +505,7 @@ African airlines and airports seeking operational efficiency improvements.`
     slug: "opportunitymap",
     title: "OpportunityMap",
     description: "Career discovery platform helping Rwandan students understand themselves, explore 100+ careers, and connect with professional mentors.",
+    tagline: "Find the career behind the title.",
     category: "career",
     externalUrl: "https://spark-six-omega.vercel.app",
     date: "2025-12-10",
@@ -535,6 +542,7 @@ African airlines and airports seeking operational efficiency improvements.`
     slug: "skillsync",
     title: "SkillsSync",
     description: "Skills-to-Jobs matcher connecting users' skills to real job opportunities in Rwanda with AI-powered learning paths.",
+    tagline: "Match what you know to work that exists.",
     category: "career",
     date: "2025-10-15",
     links: [
@@ -566,6 +574,7 @@ In active development with 3 contributors.`
     slug: "contentflow",
     title: "ContentFlow",
     description: "Content planning and management Kanban board with drag-drop, status tracking, and API integration for Andersen's content workflow.",
+    tagline: "Content workflows that actually flow.",
     category: "andersen",
     externalUrl: "https://andersen-content-dashboard.vercel.app",
     date: "2025-11-01",
@@ -596,6 +605,7 @@ Visual content management application for planning, tracking, and managing conte
     slug: "ai-pages",
     title: "AI Pages",
     description: "Andersen readiness assessments and AI tools for website integration, helping teams evaluate AI adoption capabilities.",
+    tagline: "Measure AI readiness before you build.",
     category: "andersen",
     date: "2025-10-01",
     links: [
@@ -621,6 +631,7 @@ Help Andersen's clients understand their AI readiness and identify opportunities
     slug: "trove",
     title: "Trove",
     description: "codeXtreme Hall of Fame platform displaying hackathon winners, tracking competitions, and celebrating community achievements.",
+    tagline: "Where hackathon wins get their permanent home.",
     category: "community",
     date: "2025-11-10",
     links: [
@@ -658,6 +669,7 @@ Neobrutalist design with:
     slug: "rgi",
     title: "RGI - Rwanda Government Intelligence",
     description: "AI-powered government intelligence platform transforming NISR data into instant policy insights for Rwanda's 23 ministries.",
+    tagline: "Policy insights from Rwanda's own data.",
     category: "analytics",
     date: "2025-01-15",
     links: [
@@ -698,6 +710,7 @@ Transform weeks of government decision-making into 30 seconds of AI-powered inte
     slug: "rti",
     title: "RTI - Rwanda Tech Index",
     description: "Dashboard tracking industry evolution, market trends, business growth, and compliance scores for Rwanda's tech ecosystem.",
+    tagline: "Track Rwanda's tech ecosystem in real time.",
     category: "analytics",
     externalUrl: "https://irachrist1.github.io/rti/",
     date: "2025-09-01",
@@ -732,6 +745,7 @@ Investors and analysts evaluating Rwanda's tech market.`
     slug: "rwanda-tech-cluster",
     title: "Rwanda Tech Cluster",
     description: "Market share analysis tool tracking business performance and competitive positioning across Rwanda's technology sector.",
+    tagline: "Map who is winning in Rwanda's tech market.",
     category: "analytics",
     date: "2025-08-15",
     links: [
@@ -756,6 +770,7 @@ Help stakeholders understand the competitive landscape of Rwanda's growing tech 
     slug: "sme-diagnostic",
     title: "SME Diagnostic Tool",
     description: "Assessment tool helping Rwandan SMEs evaluate business potential across 9 dimensions with personalized recommendations.",
+    tagline: "Score your business across 9 dimensions.",
     category: "analytics",
     externalUrl: "https://irachrist1.github.io/sme/",
     date: "2025-07-01",
@@ -795,6 +810,7 @@ Andersen Rwanda - helping SMEs grow.`
     slug: "via",
     title: "VIA Report",
     description: "Technical report on establishing a technology system, documenting architecture decisions and implementation strategies.",
+    tagline: "Architecture decisions, documented for the record.",
     category: "reports",
     date: "2025-06-01",
     links: [

@@ -15,11 +15,13 @@
     "publish:50": "node scripts/publish-article.mjs --slug=50-state-of-ai-2026"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.89.0",
     "@radix-ui/react-dialog": "^1.1.15",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
     "next": "^16.1.1",
     "next-themes": "^0.4.6",
+    "posthog-js": "^1.369.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",

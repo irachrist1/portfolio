@@ -3,6 +3,7 @@ import { projects } from "@/app/data/projects";
 import { Sidebar } from "./components/sidebar/Sidebar";
 import { MobileTabBar } from "./components/sidebar/MobileTabBar";
 import { CommandPaletteProvider } from "./components/command-palette/CommandPaletteProvider";
+import { ShellContainer } from "./components/ShellContainer";
 
 const writingSearchItems = getPublishedArticles().map((article) => ({
   title: article.title,
@@ -23,11 +24,9 @@ export default function ShellLayout({
 }) {
   return (
     <CommandPaletteProvider writing={writingSearchItems} projects={projectSearchItems}>
-      <div className="flex min-h-screen bg-white dark:bg-zinc-950">
-        <Sidebar />
-        <main className="flex-1 min-h-screen lg:ml-[250px] pb-24 lg:pb-0">{children}</main>
-        <MobileTabBar />
-      </div>
+      <ShellContainer sidebar={<Sidebar />} mobileTabBar={<MobileTabBar />}>
+        {children}
+      </ShellContainer>
     </CommandPaletteProvider>
   );
 }

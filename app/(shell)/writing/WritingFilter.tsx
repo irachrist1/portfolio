@@ -32,7 +32,7 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
 
   const title = activeCategory ? activeCategory.label : "Writing";
 
-  // Category-filtered view — clean, focused
+  // Category-filtered view
   if (activeCategory) {
     return (
       <div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
@@ -63,7 +63,6 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
                 {article.publishedAt
                   ? new Date(article.publishedAt).toLocaleDateString("en-US", {
                       month: "short",
-                      day: "numeric",
                       year: "numeric",
                     })
                   : ""}
@@ -73,21 +72,19 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
         </div>
 
         {filtered.length === 0 && (
-          <p className="text-sm text-zinc-500 py-8 text-center">
+          <p className="text-sm text-zinc-500 py-8">
             No articles in this category yet.
           </p>
         )}
 
-        {/* Suggest similar topics */}
         {otherCategories.length > 0 && (
           <div className="mt-12 pt-8 border-t border-zinc-800">
-            <p className="text-xs text-zinc-500 mb-3">Explore other topics</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {otherCategories.map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/writing?category=${cat.id}`}
-                  className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-800 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 transition-colors"
+                  className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
                 >
                   {cat.label}
                 </Link>
@@ -99,34 +96,27 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
     );
   }
 
-  // Main writing page — all articles
+  // Main writing page
   return (
     <div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-3">
-          {title}
+      <div className="flex items-baseline justify-between mb-2">
+        <h1 className="text-3xl font-bold tracking-tight text-zinc-100">
+          Writing
         </h1>
-        <p className="text-lg text-zinc-400 leading-relaxed">
-          Thoughts on AI implementation, technology trends, and building
-          products that work.
-        </p>
+        <div className="flex gap-4">
+          {writingCategories.map((cat) => (
+            <Link
+              key={cat.id}
+              href={`/writing?category=${cat.id}`}
+              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+            >
+              {cat.label}
+            </Link>
+          ))}
+        </div>
       </div>
 
-      {/* Category pills — mobile only */}
-      <div className="flex gap-2 mb-8 overflow-x-auto pb-2 lg:hidden">
-        {writingCategories.map((cat) => (
-          <Link
-            key={cat.id}
-            href={`/writing?category=${cat.id}`}
-            className="flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors"
-          >
-            {cat.label}
-          </Link>
-        ))}
-      </div>
-
-      {/* Article list */}
-      <div className="space-y-1">
+      <div className="mt-8 space-y-1">
         {filtered.map((article) => (
           <Link
             key={article.slug}
@@ -140,7 +130,6 @@ function WritingFilterInner({ articles }: { articles: Article[] }) {
               {article.publishedAt
                 ? new Date(article.publishedAt).toLocaleDateString("en-US", {
                     month: "short",
-                    day: "numeric",
                     year: "numeric",
                   })
                 : ""}
@@ -157,11 +146,9 @@ export function WritingFilter({ articles }: { articles: Article[] }) {
     <Suspense
       fallback={
         <div className="px-6 py-10 mx-auto max-w-3xl lg:px-8">
-          <div className="mb-10">
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-100 mb-3">
-              Writing
-            </h1>
-          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-100">
+            Writing
+          </h1>
         </div>
       }
     >

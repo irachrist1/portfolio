@@ -3,8 +3,21 @@
 import { Search } from "lucide-react";
 import { useCommandPalette } from "../command-palette/CommandPaletteProvider";
 
-export function SearchTrigger() {
+export function SearchTrigger({ compact }: { compact?: boolean } = {}) {
   const { open } = useCommandPalette();
+
+  if (compact) {
+    return (
+      <button
+        type="button"
+        onClick={open}
+        className="w-8 h-8 flex items-center justify-center rounded-lg text-[#86868b] dark:text-zinc-500 hover:text-[#1d1d1f] dark:hover:text-zinc-300 hover:bg-[#f5f5f7] dark:hover:bg-zinc-800 transition-colors"
+        aria-label="Open search"
+      >
+        <Search className="w-4 h-4" />
+      </button>
+    );
+  }
 
   return (
     <div className="px-4 py-3">

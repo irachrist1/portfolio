@@ -1,9 +1,10 @@
 import "../global.css";
-import { Inter } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import localFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 import { ThemeProvider } from "./components/theme-provider";
+import { PostHogProvider } from "./components/posthog-provider";
 import { SITE_URL } from "./lib/site-url";
 
 export const metadata: Metadata = {
@@ -60,6 +61,13 @@ const calSans = localFont({
   display: "swap",
 });
 
+const dmSerifDisplay = DM_Serif_Display({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-serif-display",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -68,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={[inter.variable, calSans.variable].join(" ")}
+      className={[inter.variable, calSans.variable, dmSerifDisplay.variable].join(" ")}
       suppressHydrationWarning
     >
       <head>
@@ -78,7 +86,9 @@ export default function RootLayout({
         className={`bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
