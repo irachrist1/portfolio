@@ -91,8 +91,8 @@ function ArticleCard({ article, isFront = false }: { article: ArticleItem; isFro
       href={`/writing/${article.slug}`}
       className={`block w-full px-4 py-3 rounded-xl bg-zinc-900 border transition-colors ${
         isFront
-          ? "border-zinc-700 ring-1 ring-zinc-700 hover:bg-zinc-800/70"
-          : "border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800/70"
+          ? "border-zinc-700 ring-1 ring-zinc-700 hover:bg-zinc-800"
+          : "border-zinc-800"
       }`}
       onClick={(e) => e.stopPropagation()}
     >
@@ -117,8 +117,8 @@ function ProjectCard({ project, isFront = false }: { project: ProjectItem; isFro
       href={`/projects/${project.slug}`}
       className={`block w-full px-4 py-3 rounded-xl bg-zinc-900 border transition-colors ${
         isFront
-          ? "border-zinc-700 ring-1 ring-zinc-700 hover:bg-zinc-800/70"
-          : "border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800/70"
+          ? "border-zinc-700 ring-1 ring-zinc-700 hover:bg-zinc-800"
+          : "border-zinc-800"
       }`}
       onClick={(e) => e.stopPropagation()}
     >
