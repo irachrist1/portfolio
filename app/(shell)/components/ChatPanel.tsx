@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, useSpring, useMotionValue } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X, ArrowUp, ExternalLink } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -23,83 +23,10 @@ type Message = {
   widget?: WidgetType | null;
 };
 
-// ── Tilt wrapper ──────────────────────────────────────────────────────────────
-
-function TiltSurface({
-  children,
-  className,
-  maxAngle = 8,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  maxAngle?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const rotateX = useSpring(0, { stiffness: 300, damping: 30, mass: 0.5 });
-  const rotateY = useSpring(0, { stiffness: 300, damping: 30, mass: 0.5 });
-
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    rotateY.set(x * maxAngle * 2);
-    rotateX.set(-y * maxAngle * 2);
-  };
-  const onLeave = () => {
-    rotateX.set(0);
-    rotateY.set(0);
-  };
-
-  // Outer wrapper sets perspective on the parent so transforms don't clip.
-  // The padding + negative margin give the card breathing room against any
-  // overflow:auto ancestor (the chat scroll container) without shifting layout.
-  return (
-    <div style={{ perspective: "800px", padding: "10px", margin: "-10px" }}>
-      <motion.div
-        ref={ref}
-        onMouseMove={onMove}
-        onMouseLeave={onLeave}
-        style={{ rotateX, rotateY }}
-        className={className}
-      >
-        {children}
-      </motion.div>
-    </div>
-  );
-}
-
-// ── Streaming text — word-by-word float animation ─────────────────────────────
-
-function stripMarkdownSymbols(text: string): string {
-  return text
-    .replace(/\*\*(.+?)\*\*/g, "$1")
-    .replace(/\*(.+?)\*/g, "$1")
-    .replace(/`(.+?)`/g, "$1")
-    .replace(/\+\+(.+?)\+\+/g, "$1");
-}
+// ── Streaming text — simple render, no per-word animation overhead ────────────
 
 function StreamingText({ content }: { content: string }) {
-  const words = stripMarkdownSymbols(content).split(/(\s+)/);
-  return (
-    <span>
-      {words.map((chunk, i) =>
-        chunk.trim() ? (
-          <motion.span
-            key={`${chunk}-${i}`}
-            initial={{ opacity: 0, y: 3 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.12, ease: "easeOut" }}
-            style={{ display: "inline" }}
-          >
-            {chunk}
-          </motion.span>
-        ) : (
-          <span key={i}>{chunk}</span>
-        )
-      )}
-    </span>
-  );
+  return <span>{content}</span>;
 }
 
 // ── Widget Renderers ──────────────────────────────────────────────────────────
@@ -110,34 +37,32 @@ function ArticleListWidget({
   articles: { title: string; slug: string; publishedAt: string | null }[];
 }) {
   return (
-    <TiltSurface maxAngle={6}>
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 280, damping: 28 }}
-        className="mt-3 rounded-xl border border-zinc-700 bg-zinc-900/60 overflow-hidden"
-      >
-        {articles.map((a, i) => (
-          <Link
-            key={a.slug}
-            href={`/writing/${a.slug}`}
-            className={`flex items-baseline justify-between gap-3 px-4 py-3 hover:bg-zinc-800/60 border-l-2 border-l-transparent hover:border-l-zinc-600 transition-colors ${
-              i < articles.length - 1 ? "border-b border-zinc-700/60" : ""
-            }`}
-          >
-            <span className="text-sm text-zinc-100 leading-snug">{a.title}</span>
-            {a.publishedAt && (
-              <span className="text-xs text-zinc-600 shrink-0">
-                {new Date(a.publishedAt).toLocaleDateString("en-US", {
-                  month: "short",
-                  year: "numeric",
-                })}
-              </span>
-            )}
-          </Link>
-        ))}
-      </motion.div>
-    </TiltSurface>
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="mt-3 rounded-xl border border-zinc-700 bg-zinc-900/60 overflow-hidden"
+    >
+      {articles.map((a, i) => (
+        <Link
+          key={a.slug}
+          href={`/writing/${a.slug}`}
+          className={`flex items-baseline justify-between gap-3 px-4 py-3 hover:bg-zinc-800/60 transition-colors ${
+            i < articles.length - 1 ? "border-b border-zinc-700/60" : ""
+          }`}
+        >
+          <span className="text-sm text-zinc-100 leading-snug">{a.title}</span>
+          {a.publishedAt && (
+            <span className="text-xs text-zinc-600 shrink-0">
+              {new Date(a.publishedAt).toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+              })}
+            </span>
+          )}
+        </Link>
+      ))}
+    </motion.div>
   );
 }
 
@@ -155,13 +80,12 @@ function ProjectCardWidget({
   links?: { label: string; href: string }[];
 }) {
   return (
-    <TiltSurface maxAngle={6}>
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 280, damping: 28 }}
-        className="mt-3 rounded-xl border border-zinc-700 border-l-2 border-l-zinc-500 bg-zinc-900/60 p-4"
-      >
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="mt-3 rounded-xl border border-zinc-700 border-l-2 border-l-zinc-500 bg-zinc-900/60 p-4"
+    >
         <div className="flex items-start justify-between gap-2 mb-2">
           <div>
             <h3 className="text-sm font-medium text-zinc-100">{title}</h3>
@@ -191,8 +115,7 @@ function ProjectCardWidget({
             ))}
           </div>
         )}
-      </motion.div>
-    </TiltSurface>
+    </motion.div>
   );
 }
 
@@ -208,42 +131,40 @@ function ContactCardWidget({
   location: string;
 }) {
   return (
-    <TiltSurface maxAngle={6}>
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 280, damping: 28 }}
-        className="mt-3 rounded-xl border border-zinc-700 bg-zinc-900/60 p-4 space-y-2"
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="mt-3 rounded-xl border border-zinc-700 bg-zinc-900/60 p-4 space-y-2"
+    >
+      <div className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center text-[13px] font-medium text-zinc-300 mb-3">
+        CT
+      </div>
+      <p className="text-sm font-medium text-zinc-200 -mt-1 mb-3">Christian Tonny</p>
+      <a
+        href={`mailto:${email}`}
+        className="flex items-center gap-2 text-sm text-zinc-200 hover:text-zinc-100 transition-colors"
       >
-        <div className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center text-[13px] font-medium text-zinc-300 mb-3">
-          CT
-        </div>
-        <p className="text-sm font-medium text-zinc-200 -mt-1 mb-3">Christian Tonny</p>
-        <a
-          href={`mailto:${email}`}
-          className="flex items-center gap-2 text-sm text-zinc-200 hover:text-zinc-100 transition-colors"
-        >
-          {email}
-        </a>
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
-        >
-          LinkedIn <ExternalLink className="w-3 h-3" />
-        </a>
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
-        >
-          GitHub <ExternalLink className="w-3 h-3" />
-        </a>
-        <p className="text-xs text-zinc-500 pt-1">{location}</p>
-      </motion.div>
-    </TiltSurface>
+        {email}
+      </a>
+      <a
+        href={linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
+      >
+        LinkedIn <ExternalLink className="w-3 h-3" />
+      </a>
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
+      >
+        GitHub <ExternalLink className="w-3 h-3" />
+      </a>
+      <p className="text-xs text-zinc-500 pt-1">{location}</p>
+    </motion.div>
   );
 }
 
@@ -258,44 +179,37 @@ function NowCardWidget({
   }[];
 }) {
   return (
-    <TiltSurface maxAngle={6}>
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 280, damping: 28 }}
-        className="mt-3 rounded-xl border border-zinc-700 bg-zinc-800/50 p-3 space-y-2"
-      >
-        {items.map((item, i) => (
-          <div
-            key={item.title}
-            className="bg-zinc-800/60 border border-zinc-700 rounded-lg px-4 py-4"
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-[15px] font-medium text-zinc-100">
-                {item.projectTitle}
-              </span>
-              <span className="text-xs text-zinc-300">{item.progress}%</span>
-            </div>
-            <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2 mb-2">
-              {item.description}
-            </p>
-            <div className="h-2 bg-zinc-700 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${item.progress}%` }}
-                transition={{
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 20,
-                  delay: 0.1 * i,
-                }}
-                className="h-full bg-zinc-300 rounded-full"
-              />
-            </div>
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="mt-3 rounded-xl border border-zinc-700 bg-zinc-800/50 p-3 space-y-2"
+    >
+      {items.map((item, i) => (
+        <div
+          key={item.title}
+          className="bg-zinc-800/60 border border-zinc-700 rounded-lg px-4 py-4"
+        >
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-[15px] font-medium text-zinc-100">
+              {item.projectTitle}
+            </span>
+            <span className="text-xs text-zinc-300">{item.progress}%</span>
           </div>
-        ))}
-      </motion.div>
-    </TiltSurface>
+          <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2 mb-2">
+            {item.description}
+          </p>
+          <div className="h-2 bg-zinc-700 rounded-full overflow-hidden">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${item.progress}%` }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 * i }}
+              className="h-full bg-zinc-300 rounded-full"
+            />
+          </div>
+        </div>
+      ))}
+    </motion.div>
   );
 }
 
@@ -537,7 +451,7 @@ export function ChatPanel({ open, onClose }: ChatPanelProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 bg-zinc-950/92 backdrop-blur-md flex flex-col"
+          className="fixed inset-0 z-50 bg-zinc-950 flex flex-col"
         >
           {/* Close */}
           <div className="flex justify-end px-6 pt-6 shrink-0">
