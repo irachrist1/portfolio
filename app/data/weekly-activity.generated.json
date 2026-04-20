@@ -1,36 +1,65 @@
 {
-  "generatedAt": "2026-04-13T15:07:53.902Z",
+  "generatedAt": "2026-04-20T15:09:52.647Z",
   "windowDays": 7,
   "totals": {
-    "commits": 5,
-    "activeProjects": 1
+    "commits": 40,
+    "activeProjects": 2
   },
   "projects": [
     {
       "projectSlug": "daylens",
       "projectTitle": "Daylens",
       "githubRepo": "irachrist1/daylens",
-      "commitCount": 5,
-      "lastCommitAt": "2026-04-07T07:22:47Z",
-      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/1dde73d0f278c762de531812d2224c1928137859",
+      "commitCount": 36,
+      "lastCommitAt": "2026-04-20T14:58:05Z",
+      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/34586dbb5e9d1d126612bea6a8902104fa33b2f0",
       "recentCommits": [
         {
-          "sha": "1dde73d",
-          "message": "fix: harden focus, weekly, and resume routing across natural phrasings",
-          "url": "https://github.com/irachrist1/daylens/commit/1dde73d0f278c762de531812d2224c1928137859",
-          "committedAt": "2026-04-07T07:22:47Z"
+          "sha": "34586db",
+          "message": "release: sync in-repo cask to v1.0.29",
+          "url": "https://github.com/irachrist1/daylens/commit/34586dbb5e9d1d126612bea6a8902104fa33b2f0",
+          "committedAt": "2026-04-20T14:58:05Z"
         },
         {
-          "sha": "d843d45",
-          "message": "fix: harden benchmark follow-ups and range routing",
-          "url": "https://github.com/irachrist1/daylens/commit/d843d4573349997d8fda2f0031016c0333a021b1",
-          "committedAt": "2026-04-07T00:08:14Z"
+          "sha": "19cfbf1",
+          "message": "release: prep v1.0.29 with friendlier install UX",
+          "url": "https://github.com/irachrist1/daylens/commit/19cfbf1ae9ce081133f0d2135c049dc7448cdd91",
+          "committedAt": "2026-04-20T14:41:40Z"
         },
         {
-          "sha": "a55c159",
-          "message": "fix: surface window titles to Claude and harden entity-time routing",
-          "url": "https://github.com/irachrist1/daylens/commit/a55c1594cfde7103d440d3eaff47fd02b396a834",
-          "committedAt": "2026-04-06T23:43:28Z"
+          "sha": "37e35d7",
+          "message": "docs: rewrite in-DMG README for non-technical users",
+          "url": "https://github.com/irachrist1/daylens/commit/37e35d7d26962c006eda45bea3994a259e579ab3",
+          "committedAt": "2026-04-20T14:38:19Z"
+        }
+      ],
+      "error": null
+    },
+    {
+      "projectSlug": "portfolio",
+      "projectTitle": "Portfolio",
+      "githubRepo": "irachrist1/portfolio",
+      "commitCount": 4,
+      "lastCommitAt": "2026-04-18T14:13:29Z",
+      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/3c77ab725a75fb2e2ba4ae4e11ed28e7711bf9be",
+      "recentCommits": [
+        {
+          "sha": "3c77ab7",
+          "message": "Fix card hover bleed-through: use opaque hover bg on front card only",
+          "url": "https://github.com/irachrist1/portfolio/commit/3c77ab725a75fb2e2ba4ae4e11ed28e7711bf9be",
+          "committedAt": "2026-04-18T14:13:29Z"
+        },
+        {
+          "sha": "8fb242e",
+          "message": "Merge pull request #1 from irachrist1/claude/fix-ui-and-performance-FX4kz",
+          "url": "https://github.com/irachrist1/portfolio/commit/8fb242e7aa255b1bdc3e41f46e0c1f74fb65c644",
+          "committedAt": "2026-04-18T14:02:13Z"
+        },
+        {
+          "sha": "654fd44",
+          "message": "Fix stacked card hover bleed, chat contrast, widget borders/perf, AI tone",
+          "url": "https://github.com/irachrist1/portfolio/commit/654fd44e7a1579d6d1da04d339004f865e596a25",
+          "committedAt": "2026-04-15T07:02:13Z"
         }
       ],
       "error": null
@@ -79,16 +108,6 @@
       "projectSlug": "opportunitymap",
       "projectTitle": "OpportunityMap",
       "githubRepo": "irachrist1/spark",
-      "commitCount": 0,
-      "lastCommitAt": null,
-      "lastCommitUrl": null,
-      "recentCommits": [],
-      "error": null
-    },
-    {
-      "projectSlug": "portfolio",
-      "projectTitle": "Portfolio",
-      "githubRepo": "irachrist1/portfolio",
       "commitCount": 0,
       "lastCommitAt": null,
       "lastCommitUrl": null,
