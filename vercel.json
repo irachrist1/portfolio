@@ -49,6 +49,16 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/Daylens",
+      "destination": "/daylens",
+      "permanent": true
+    },
+    {
+      "source": "/Daylens/:path*",
+      "destination": "/daylens/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [
