@@ -1,59 +1,36 @@
 {
-  "generatedAt": "2026-04-27T15:29:09.994Z",
+  "generatedAt": "2026-05-04T15:53:56.481Z",
   "windowDays": 7,
   "totals": {
-    "commits": 40,
-    "activeProjects": 2
+    "commits": 17,
+    "activeProjects": 1
   },
   "projects": [
     {
       "projectSlug": "daylens",
       "projectTitle": "Daylens",
       "githubRepo": "irachrist1/daylens",
-      "commitCount": 38,
-      "lastCommitAt": "2026-04-25T13:34:44Z",
-      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/4e83fe4e1d1697ddaebd21647b0afdc43581046b",
+      "commitCount": 17,
+      "lastCommitAt": "2026-05-04T10:42:30Z",
+      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/a2ecb757869100fe2fd8f28112db7c5023062d92",
       "recentCommits": [
         {
-          "sha": "4e83fe4",
-          "message": "fix(release): verify unpacked native runtime files",
-          "url": "https://github.com/irachrist1/daylens/commit/4e83fe4e1d1697ddaebd21647b0afdc43581046b",
-          "committedAt": "2026-04-25T13:34:44Z"
+          "sha": "a2ecb75",
+          "message": "docs(changelog): note restored Windows downloads in Unreleased (#15)",
+          "url": "https://github.com/irachrist1/daylens/commit/a2ecb757869100fe2fd8f28112db7c5023062d92",
+          "committedAt": "2026-05-04T10:42:30Z"
         },
         {
-          "sha": "310a63d",
-          "message": "fix(release): skip complete unpacked native deps",
-          "url": "https://github.com/irachrist1/daylens/commit/310a63d23bbf0bc6a6e01909d85d7d3b497a48cd",
-          "committedAt": "2026-04-25T13:26:06Z"
+          "sha": "ccd45ea",
+          "message": "fix(ci): make Windows code-signing optional — unblock unsigned releases",
+          "url": "https://github.com/irachrist1/daylens/commit/ccd45ea535d6868e3e90b69861e77e7fdf412dee",
+          "committedAt": "2026-05-04T10:40:07Z"
         },
         {
-          "sha": "69345b2",
-          "message": "fix(release): skip native repair when already unpacked",
-          "url": "https://github.com/irachrist1/daylens/commit/69345b23b7b367dd59514e49e7cb51c7970c9724",
-          "committedAt": "2026-04-25T13:19:38Z"
-        }
-      ],
-      "error": null
-    },
-    {
-      "projectSlug": "portfolio",
-      "projectTitle": "Portfolio",
-      "githubRepo": "irachrist1/portfolio",
-      "commitCount": 2,
-      "lastCommitAt": "2026-04-20T20:19:26Z",
-      "lastCommitUrl": "https://github.com/irachrist1/portfolio/commit/b6f956a99950cf79cf248d622f0d797baf028bb0",
-      "recentCommits": [
-        {
-          "sha": "b6f956a",
-          "message": "fix(csp): let /daylens proxy reach Convex by excluding it from global CSP",
-          "url": "https://github.com/irachrist1/portfolio/commit/b6f956a99950cf79cf248d622f0d797baf028bb0",
-          "committedAt": "2026-04-20T20:19:26Z"
-        },
-        {
-          "sha": "fe3110a",
-          "message": "Fix Daylens path casing redirects",
-          "url": "https://github.com/irachrist1/portfolio/commit/fe3110a34491d7db036257d26e9607f90750ce52",
-          "committedAt": "2026-04-20T15:35:03Z"
+          "sha": "f6333df",
+          "message": "docs(changelog): note silent Windows auto-updates (#13)",
+          "url": "https://github.com/irachrist1/daylens/commit/f6333df022b9a32436b658a56bb204eb5cf9cd9e",
+          "committedAt": "2026-05-04T10:31:55Z"
         }
       ],
       "error": null
@@ -102,6 +79,16 @@
       "projectSlug": "opportunitymap",
       "projectTitle": "OpportunityMap",
       "githubRepo": "irachrist1/spark",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": null
+    },
+    {
+      "projectSlug": "portfolio",
+      "projectTitle": "Portfolio",
+      "githubRepo": "irachrist1/portfolio",
       "commitCount": 0,
       "lastCommitAt": null,
       "lastCommitUrl": null,
