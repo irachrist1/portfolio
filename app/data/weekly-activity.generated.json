@@ -1,40 +1,11 @@
 {
-  "generatedAt": "2026-05-04T15:53:56.481Z",
+  "generatedAt": "2026-05-11T16:24:19.071Z",
   "windowDays": 7,
   "totals": {
-    "commits": 17,
-    "activeProjects": 1
+    "commits": 0,
+    "activeProjects": 0
   },
   "projects": [
-    {
-      "projectSlug": "daylens",
-      "projectTitle": "Daylens",
-      "githubRepo": "irachrist1/daylens",
-      "commitCount": 17,
-      "lastCommitAt": "2026-05-04T10:42:30Z",
-      "lastCommitUrl": "https://github.com/irachrist1/daylens/commit/a2ecb757869100fe2fd8f28112db7c5023062d92",
-      "recentCommits": [
-        {
-          "sha": "a2ecb75",
-          "message": "docs(changelog): note restored Windows downloads in Unreleased (#15)",
-          "url": "https://github.com/irachrist1/daylens/commit/a2ecb757869100fe2fd8f28112db7c5023062d92",
-          "committedAt": "2026-05-04T10:42:30Z"
-        },
-        {
-          "sha": "ccd45ea",
-          "message": "fix(ci): make Windows code-signing optional — unblock unsigned releases",
-          "url": "https://github.com/irachrist1/daylens/commit/ccd45ea535d6868e3e90b69861e77e7fdf412dee",
-          "committedAt": "2026-05-04T10:40:07Z"
-        },
-        {
-          "sha": "f6333df",
-          "message": "docs(changelog): note silent Windows auto-updates (#13)",
-          "url": "https://github.com/irachrist1/daylens/commit/f6333df022b9a32436b658a56bb204eb5cf9cd9e",
-          "committedAt": "2026-05-04T10:31:55Z"
-        }
-      ],
-      "error": null
-    },
     {
       "projectSlug": "beacon-skyway",
       "projectTitle": "Beacon Skyway",
@@ -54,6 +25,16 @@
       "lastCommitUrl": null,
       "recentCommits": [],
       "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"404\"}"
+    },
+    {
+      "projectSlug": "daylens",
+      "projectTitle": "Daylens",
+      "githubRepo": "irachrist1/daylens",
+      "commitCount": 0,
+      "lastCommitAt": null,
+      "lastCommitUrl": null,
+      "recentCommits": [],
+      "error": null
     },
     {
       "projectSlug": "mnotes",
